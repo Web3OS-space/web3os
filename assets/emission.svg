@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-label="Illustrative mining emission: annual release and cumulative total over 30 years" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12">
+<rect width="760" height="340" fill="#ffffff"/>
+<line x1="64" y1="292.0" x2="696" y2="292.0" stroke="#e3e8f0"/>
+<text x="56" y="296.0" text-anchor="end" fill="#2f74b5">0M</text>
+<text x="704" y="296.0" fill="#0d1433">0M</text>
+<line x1="64" y1="228.0" x2="696" y2="228.0" stroke="#e3e8f0"/>
+<text x="56" y="232.0" text-anchor="end" fill="#2f74b5">20M</text>
+<text x="704" y="232.0" fill="#0d1433">200M</text>
+<line x1="64" y1="164.0" x2="696" y2="164.0" stroke="#e3e8f0"/>
+<text x="56" y="168.0" text-anchor="end" fill="#2f74b5">40M</text>
+<text x="704" y="168.0" fill="#0d1433">400M</text>
+<line x1="64" y1="100.0" x2="696" y2="100.0" stroke="#e3e8f0"/>
+<text x="56" y="104.0" text-anchor="end" fill="#2f74b5">60M</text>
+<text x="704" y="104.0" fill="#0d1433">600M</text>
+<line x1="64" y1="36.0" x2="696" y2="36.0" stroke="#e3e8f0"/>
+<text x="56" y="40.0" text-anchor="end" fill="#2f74b5">80M</text>
+<text x="704" y="40.0" fill="#0d1433">800M</text>
+<rect x="67.2" y="36.0" width="14.7" height="256.0" rx="2" fill="#4fc3f7"/>
+<text x="74.5" y="310" text-anchor="middle" fill="#555">Y1</text>
+<rect x="88.2" y="61.6" width="14.7" height="230.4" rx="2" fill="#4fc3f7"/>
+<rect x="109.3" y="84.6" width="14.7" height="207.4" rx="2" fill="#4fc3f7"/>
+<rect x="130.4" y="105.4" width="14.7" height="186.6" rx="2" fill="#4fc3f7"/>
+<rect x="151.4" y="124.0" width="14.7" height="168.0" rx="2" fill="#4fc3f7"/>
+<text x="158.8" y="310" text-anchor="middle" fill="#555">Y5</text>
+<rect x="172.5" y="140.8" width="14.7" height="151.2" rx="2" fill="#4fc3f7"/>
+<rect x="193.6" y="156.0" width="14.7" height="136.0" rx="2" fill="#4fc3f7"/>
+<rect x="214.6" y="169.6" width="14.7" height="122.4" rx="2" fill="#4fc3f7"/>
+<rect x="235.7" y="181.8" width="14.7" height="110.2" rx="2" fill="#4fc3f7"/>
+<rect x="256.8" y="192.8" width="14.7" height="99.2" rx="2" fill="#4fc3f7"/>
+<text x="264.1" y="310" text-anchor="middle" fill="#555">Y10</text>
+<rect x="277.8" y="202.7" width="14.7" height="89.3" rx="2" fill="#4fc3f7"/>
+<rect x="298.9" y="211.7" width="14.7" height="80.3" rx="2" fill="#4fc3f7"/>
+<rect x="320.0" y="219.7" width="14.7" height="72.3" rx="2" fill="#4fc3f7"/>
+<rect x="341.0" y="226.9" width="14.7" height="65.1" rx="2" fill="#4fc3f7"/>
+<rect x="362.1" y="233.4" width="14.7" height="58.6" rx="2" fill="#4fc3f7"/>
+<text x="369.5" y="310" text-anchor="middle" fill="#555">Y15</text>
+<rect x="383.2" y="239.3" width="14.7" height="52.7" rx="2" fill="#4fc3f7"/>
+<rect x="404.2" y="244.6" width="14.7" height="47.4" rx="2" fill="#4fc3f7"/>
+<rect x="425.3" y="249.3" width="14.7" height="42.7" rx="2" fill="#4fc3f7"/>
+<rect x="446.4" y="253.6" width="14.7" height="38.4" rx="2" fill="#4fc3f7"/>
+<rect x="467.4" y="257.4" width="14.7" height="34.6" rx="2" fill="#4fc3f7"/>
+<text x="474.8" y="310" text-anchor="middle" fill="#555">Y20</text>
+<rect x="488.5" y="260.9" width="14.7" height="31.1" rx="2" fill="#4fc3f7"/>
+<rect x="509.6" y="264.0" width="14.7" height="28.0" rx="2" fill="#4fc3f7"/>
+<rect x="530.6" y="266.8" width="14.7" height="25.2" rx="2" fill="#4fc3f7"/>
+<rect x="551.7" y="269.3" width="14.7" height="22.7" rx="2" fill="#4fc3f7"/>
+<rect x="572.8" y="271.6" width="14.7" height="20.4" rx="2" fill="#4fc3f7"/>
+<text x="580.1" y="310" text-anchor="middle" fill="#555">Y25</text>
+<rect x="593.8" y="273.6" width="14.7" height="18.4" rx="2" fill="#4fc3f7"/>
+<rect x="614.9" y="275.5" width="14.7" height="16.5" rx="2" fill="#4fc3f7"/>
+<rect x="636.0" y="277.1" width="14.7" height="14.9" rx="2" fill="#4fc3f7"/>
+<rect x="657.0" y="278.6" width="14.7" height="13.4" rx="2" fill="#4fc3f7"/>
+<rect x="678.1" y="279.9" width="14.7" height="12.1" rx="2" fill="#4fc3f7"/>
+<text x="685.5" y="310" text-anchor="middle" fill="#555">Y30</text>
+<polyline points="74.5,266.4 95.6,243.4 116.7,222.6 137.7,204.0 158.8,187.2 179.9,172.0 200.9,158.4 222.0,146.2 243.1,135.2 264.1,125.3 285.2,116.3 306.3,108.3 327.3,101.1 348.4,94.6 369.5,88.7 390.5,83.4 411.6,78.7 432.7,74.4 453.7,70.6 474.8,67.1 495.9,64.0 516.9,61.2 538.0,58.7 559.1,56.4 580.1,54.4 601.2,52.5 622.3,50.9 643.3,49.4 664.4,48.1 685.5,46.9" fill="none" stroke="#0d1433" stroke-width="2.5"/>
+<text x="64" y="22" fill="#2f74b5" font-weight="600">Annual release (bars, left axis)</text>
+<text x="696" y="22" text-anchor="end" fill="#0d1433" font-weight="600">Cumulative mined (line, right axis)</text>
+<text x="380.0" y="332" text-anchor="middle" fill="#555">Year after mainnet launch; default 10% yearly cut, illustrative upper bound, governed on-chain</text>
+</svg>

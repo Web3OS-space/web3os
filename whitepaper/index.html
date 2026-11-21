@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>web3os.space — The Web3 Operating System</title>
+<meta name="description" content="Web3OS, the Web3 operating system: store files, find what is worth finding, sell your work and run apps on one network no single company owns. Public whitepaper.">
+<meta property="og:title" content="web3os.space — The Web3 Operating System">
+<meta property="og:description" content="A decentralized, AI-driven storage and value-search network (DePIN). Testnet stage.">
+<meta property="og:image" content="https://web3os.space/token/web3os-logo-1024.png">
+<meta property="og:url" content="https://web3os.space/">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/token/web3os-logo.png">
+<style>
+:root{--navy:#0d1433;--sky:#4fc3f7;--blue:#2f74b5;--ink:#1c2333;--muted:#5b6578;--line:#e3e8f0;--bg:#f6f8fc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font:16.5px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:#fff}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+header.bar{position:sticky;top:0;z-index:10;background:var(--navy);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+header.bar .in{max-width:1180px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:24px}
+header.bar .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+header.bar .brand img{width:34px;height:34px}
+header.bar nav{margin-left:auto;display:flex;gap:22px;font-size:15px}
+header.bar nav a{color:#cfe9fb;white-space:nowrap}header.bar nav a:hover{color:#fff;text-decoration:none}
+.hero{background:radial-gradient(1200px 400px at 70% -10%,#1d3a7a 0,var(--navy) 60%);color:#fff;text-align:center;padding:64px 20px 56px}
+.hero img{width:132px;height:132px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.35))}
+.hero h1{font-size:44px;line-height:1.15;margin:18px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:26px;font-weight:600;color:var(--sky);margin:0 0 12px;letter-spacing:.2px}
+.hero p.sub{font-size:20px;color:#cfe9fb;max-width:760px;margin:0 auto 22px}
+.hero .badge{display:inline-block;border:1px solid rgba(79,195,247,.55);color:var(--sky);border-radius:999px;padding:4px 14px;font-size:13.5px;margin-bottom:26px}
+.hero .cta a{display:inline-block;margin:6px 6px 0;padding:11px 22px;border-radius:8px;font-weight:600;font-size:15.5px}
+.hero .cta a.p{background:var(--sky);color:var(--navy)}.hero .cta a.s{border:1px solid #7fa6d6;color:#fff}
+.hero .cta a:hover{text-decoration:none;filter:brightness(1.08)}
+.wrap{max-width:1180px;margin:0 auto;padding:36px 20px 64px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:48px}
+aside.toc{position:sticky;top:84px;align-self:start;max-height:calc(100vh - 100px);overflow:auto;font-size:14px;border-right:1px solid var(--line);padding-right:16px}
+aside.toc .t{font-weight:700;color:var(--navy);text-transform:uppercase;font-size:12px;letter-spacing:1px;margin-bottom:8px}
+aside.toc ul{list-style:none;margin:0;padding:0}aside.toc ul ul{padding-left:12px;margin:2px 0 6px}
+aside.toc li{margin:3px 0}aside.toc a{color:var(--muted)}aside.toc a:hover{color:var(--blue)}
+main{min-width:0}
+main h2{font-size:28px;color:var(--navy);margin:48px 0 14px;padding-top:6px;border-top:1px solid var(--line)}
+main h2:first-of-type{margin-top:8px;border-top:0}
+main h3{font-size:20px;color:var(--navy);margin:30px 0 10px}
+main blockquote{margin:18px 0;padding:14px 18px;background:var(--bg);border-left:4px solid var(--sky);border-radius:0 8px 8px 0;color:#2c3548}
+main blockquote p{margin:6px 0}
+main table{border-collapse:collapse;width:100%;margin:16px 0;font-size:15px;display:block;overflow-x:auto}
+main th,main td{border:1px solid var(--line);padding:8px 12px;vertical-align:top}
+main th{background:var(--bg);color:var(--navy);text-align:left}
+main tr:nth-child(even) td{background:#fbfcfe}
+main hr{display:none}
+main code{background:var(--bg);padding:1px 5px;border-radius:4px;font-size:.92em}
+main figure{margin:20px 0;padding:14px;border:1px solid var(--line);border-radius:10px}
+main figure img{width:100%;height:auto;display:block}
+main figure figcaption{font-size:13.5px;color:var(--muted);margin-top:8px;text-align:center}
+footer{background:var(--navy);color:#b8c6dd;font-size:14px}
+footer .in{max-width:1180px;margin:0 auto;padding:28px 20px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center}
+footer img{width:28px;height:28px}footer a{color:#cfe9fb}
+@media (max-width:900px){.wrap{grid-template-columns:1fr;gap:20px}aside.toc{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line);padding:0 0 14px}header.bar nav{gap:14px;font-size:14px}.hero h1{font-size:34px}.hero p.tag{font-size:26px;font-weight:600;color:var(--sky);margin:0 0 12px;letter-spacing:.2px}
+.hero p.sub{font-size:17px}.hero p.tag{font-size:21px}}
+@media (max-width:560px){header.bar nav a.opt{display:none}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="in">
+<a class="brand" href="/"><img src="/token/web3os-logo.png" alt="Web3OS logo">web3os.space</a>
+<nav><a href="/whitepaper/#1-what-is-web3os">Whitepaper</a><a class="opt" href="/whitepaper/#3-tokenomics">The coin</a><a class="opt" href="/whitepaper/#8-miner-onboarding-guide-testnet-stage">Test network</a><a href="/whitepaper/#11-brand-license-security-and-contact">Contact</a></nav>
+</div></header>
+<section class="hero" id="top">
+<img src="/token/web3os-logo.png" alt="Web3OS logo">
+<h1>web3os.space</h1>
+<p class="tag">The Web3 Operating System</p>
+<p class="sub">A computer that belongs to everyone. It starts with storage that keeps your files safe, then adds apps, computing power and AI, on one network that no single company owns.</p>
+<div class="badge">Test stage · test coins have no value and are not for sale</div>
+<div class="cta"><a class="p" href="/whitepaper/">Read the public whitepaper</a><a class="s" href="/whitepaper/#8-miner-onboarding-guide-testnet-stage">Join the test network</a><a class="s" href="/whitepaper/#11-brand-license-security-and-contact">Contact</a></div>
+</section>
+<div class="wrap">
+<aside class="toc"><div class="t">Public whitepaper</div>
+<ul>
+<li><a href="#1-what-is-web3os" id="toc-1-what-is-web3os">1. What is
+Web3OS</a></li>
+<li><a href="#2-capabilities-plain-language"
+id="toc-2-capabilities-plain-language">2. Capabilities (plain
+language)</a></li>
+<li><a href="#3-tokenomics" id="toc-3-tokenomics">3. Tokenomics</a></li>
+<li><a href="#4-per-role-manual" id="toc-4-per-role-manual">4. Per-role
+manual</a></li>
+<li><a href="#5-penalties--behavior--consequence"
+id="toc-5-penalties--behavior--consequence">5. Penalties &amp; "behavior
+→ consequence"</a></li>
+<li><a href="#6-registration--per-role-risk"
+id="toc-6-registration--per-role-risk">6. Registration &amp; per-role
+risk</a></li>
+<li><a href="#7-compliance--risk-disclosure-honest"
+id="toc-7-compliance--risk-disclosure-honest">7. Compliance &amp; risk
+disclosure (honest)</a></li>
+<li><a href="#8-miner-onboarding-guide-testnet-stage"
+id="toc-8-miner-onboarding-guide-testnet-stage">8. Miner onboarding
+guide (testnet stage)</a></li>
+<li><a href="#9-for-investors-read-the-risks-first"
+id="toc-9-for-investors-read-the-risks-first">9. For investors (read the
+risks first)</a></li>
+<li><a href="#10-how-web3os-compares--honest-pros--cons"
+id="toc-10-how-web3os-compares--honest-pros--cons">10. How Web3OS
+compares — honest pros &amp; cons</a></li>
+<li><a href="#11-brand-license-security-and-contact"
+id="toc-11-brand-license-security-and-contact">11. Brand, license,
+security and contact</a></li>
+</ul>
+</aside>
+<main>
+<blockquote>
+<p><strong>web3os.space: a decentralized operating system built up from
+storage on its own chain. Persistent storage first, then applications,
+then CPU, GPU and AI services, all settled natively on
+Web3OSChain.</strong> This is the <strong>minimal-disclosure public
+edition</strong>: vision, capabilities, tokenomics, per-role usage and
+risk/compliance only. It <strong>omits internal module architecture,
+consensus/security implementation, and operational secrets</strong>
+(those remain private; the protocol core is BSL 1.1-licensed —
+auditable, each version converting to full open source no later than
+four years after its release). The authoritative, precise rules are the
+full whitepaper and on-chain governance.</p>
+<p><strong>Currently in testnet; token and parameters may change. This
+is not investment advice; digital assets are high-risk.</strong>
+Features marked <em>(planned)</em> are specified but not yet live; the
+full whitepaper's Appendix I lists what has landed.</p>
+</blockquote>
+<hr />
+<h2 id="1-what-is-web3os">1. What is Web3OS</h2>
+<h3 id="from-storage-to-an-operating-system">From storage to an
+operating system</h3>
+<p><strong>Web3OS (web3os.space) is a decentralized operating system,
+and storage is its starting point.</strong> An operating system needs
+persistent storage before anything else: applications, their state and
+their users' files must survive restarts, operators leaving and
+companies closing. Blockchains settle value well but do not keep data;
+cloud drives keep data but one company owns it. web3os.space starts
+where both stop:</p>
+<ol type="1">
+<li><strong>Persistent storage (live on testnet).</strong> Files are
+compressed and encrypted on the device, erasure-coded across independent
+storage nodes, and paid only against storage proofs the chain
+checks.</li>
+<li><strong>Applications on that storage <em>(being
+built)</em>.</strong> Every application is a content-addressed service
+image whose code and data live in the same storage; messaging is the
+first platform service.</li>
+<li><strong>Memory, CPU, GPU and AI <em>(being built; GPU container
+passthrough is in the code, the public market is planned)</em>.</strong>
+Compute and hosting are leases of the same kind, paid from escrow per
+period served, so applications and AI workloads run on the network the
+way files are stored on it.</li>
+<li><strong>Virtual and augmented reality, the Web3 metaverse
+<em>(planned)</em>.</strong> 3D assets are stored as content, shared
+worlds run on regional hosting leases and rendering on GPU leases, so VR
+and AR applications use the same storage, payments and leases;
+web3os.space will build such applications itself.</li>
+</ol>
+<p><strong>Its own chain is the second advantage.</strong> Web3OSChain
+is a sovereign chain, not a contract on someone else's: every payment,
+creator share, storage reward and lease settles natively on it, and the
+rules change only by on-chain governance.</p>
+<ul>
+<li><strong>No gas to think about for everyday use.</strong> Search,
+browse and preview are free within a daily quota per account. Downloads
+are paid per chunk with off-chain signed vouchers settled in one claim,
+so a download is not a stream of fee-paying transactions, and the
+discovery cost is inside the price (§13.2, no separate gas charge).</li>
+<li><strong>One coin.</strong> Any chain fee is paid in WEB3OS, never
+ETH; withdrawing to Ethereum needs no ETH either, because the bridge
+charges the Ethereum gas in WEB3OS.</li>
+</ul>
+<p>The rest of this section describes what runs today: the storage
+network and the marketplace on it.</p>
+<p>Web3OS is today a <strong>community-run network drive ＋
+media/knowledge marketplace</strong>. You can store files, find data,
+and buy/sell video, music, documents, games, and software. <strong>No
+single company runs it</strong> — people around the world ("miners") run
+it on their own disks and machines, so <strong>no single party can
+delete lawful content, and censorship is hard; illegal content is
+removed under the published rules (§14), and a Private file that shares
+bytes with removed content loses them.</strong></p>
+<ul>
+<li><strong>How search works:</strong> built-in AI scores content by
+<em>value</em> — good content surfaces by merit, <strong>not ads or
+keyword SEO</strong>.</li>
+<li><strong>You control your data:</strong> private data is encrypted on
+your device; miners only see ciphertext (encrypted, but not
+zero-knowledge secret; see section 7 below).</li>
+<li><strong>Free account, tokens only when paying:</strong>
+browsing/searching/previewing is free but needs an account (created on
+your device in the app, or a wallet you connect), because every search
+uses the network's resources; no ID. You need a little token only to
+download or to earn by uploading.</li>
+</ul>
+<p>The native token <strong>Web3OS</strong> lives on Web3OS's own chain,
+<strong>Web3OSChain</strong>, and is used for payments, staking, mining
+rewards, and governance; wrapped copies can move to Ethereum for
+trading.</p>
+<h3
+id="where-the-idea-comes-from-from-seeding-credit-to-a-usable-token">Where
+the idea comes from: from seeding credit to a usable token</h3>
+<p>Web3OS started from a simple question about file sharing: <strong>why
+do people keep sharing a file after they already have it?</strong></p>
+<p><strong>BitTorrent (BT)</strong> proved that strangers can move huge
+files to each other with no central server: everyone who downloads a
+piece also uploads it to others. But BT has no reward for staying. Once
+people finish a download they close the client, nobody keeps the file
+online, and sooner or later the file dies.</p>
+<p><strong>Private trackers (PT)</strong> fixed that with credit. An
+invite-only site records how much each member uploads and downloads.
+Members who keep files online ("seeding") earn <strong>upload
+credit</strong> or bonus points, and they need that credit to keep
+downloading. Seeding becomes worth something, so files on good PT sites
+stay alive for years.</p>
+<p>PT credit still has limits:</p>
+<ul>
+<li><strong>It is locked inside one site.</strong> You cannot move it,
+sell it or use it anywhere else.</li>
+<li><strong>You cannot buy it.</strong> Someone with no spare disk or
+bandwidth has no fair way in.</li>
+<li><strong>One administrator controls it.</strong> The site can change
+the rules, wipe balances or shut down, and every point is lost with
+it.</li>
+<li><strong>It relies on what each client reports.</strong> A client
+that lies about its upload numbers can inflate its credit.</li>
+<li><strong>Creators get nothing.</strong> The credit rewards people who
+share a file, never the people who made it.</li>
+</ul>
+<p><strong>Web3OS keeps the PT principle and turns the credit into a
+token you can actually use.</strong> People who keep files stored and
+online, and who deliver downloads, earn <strong>Web3OS</strong>, the
+network's native token. The token is:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">PT upload credit</th>
+<th style="text-align: left;">WEB3OS token</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Earned by seeding on one site</td>
+<td style="text-align: left;">Earned by storing and delivering files for
+the whole network</td>
+</tr>
+<tr>
+<td style="text-align: left;">Counted from client self-reports</td>
+<td style="text-align: left;">Paid only against storage proofs the chain
+checks</td>
+</tr>
+<tr>
+<td style="text-align: left;">Spent only on that site's downloads</td>
+<td style="text-align: left;">Spent on any paid download, storage,
+compute or <code>.web3os</code> names</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cannot be bought or transferred</td>
+<td style="text-align: left;">Transferable once the liquidity pool is
+built and deep enough (until then earned coins are for use on the
+network only, see "Launch liquidity" in section 3); from then on anyone
+without spare disk can buy it to pay for downloads</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rules and balances set by an admin</td>
+<td style="text-align: left;">Rules public and on chain, changed only by
+community governance</td>
+</tr>
+<tr>
+<td style="text-align: left;">Creators earn nothing</td>
+<td style="text-align: left;">Creators receive the largest share of
+every paid download</td>
+</tr>
+</tbody>
+</table>
+<p>In short: <strong>seeding earns credit, and in Web3OS that credit is
+a token you can trade, buy and spend on downloads.</strong> It is a
+utility token for using the network, not a promise of profit (see the
+honest note below and §6–§7).</p>
+<h3 id="why-take-part--what-each-role-gets-you-in-everyday-words">Why
+take part — what each role gets you (in everyday words)</h3>
+<p>Think of Web3OS as a <strong>town library, a market and a court run
+by the townspeople themselves</strong>. Nobody owns the building;
+everyone who helps keep it running gets something back. You start as a
+visitor and add roles when you want to.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">If you are…</th>
+<th style="text-align: left;">You do</th>
+<th style="text-align: left;">What you get</th>
+<th style="text-align: left;">What it costs or risks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A visitor</strong> (Role 1)</td>
+<td style="text-align: left;">Search, browse and preview</td>
+<td style="text-align: left;">Results ranked by value, not by who paid
+for ads; a free daily quota; no ID</td>
+<td style="text-align: left;">Nothing but a free account</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A buyer</strong> (Role 2)</td>
+<td style="text-align: left;">Pay to download a file</td>
+<td style="text-align: left;">You pay the creator and the people who
+deliver it, not a middleman; a refund path if the file is a virus, a
+degraded variant or not as described; purchases can move into your own
+encrypted vault</td>
+<td style="text-align: left;">The price of the file; a small deposit
+when you file a refund claim, lost only if the claim is abusive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A creator / uploader</strong>
+(Role 3)</td>
+<td style="text-align: left;">Publish your videos, music, documents or
+software</td>
+<td style="text-align: left;">The largest share of every paid download,
+paid automatically on chain; free publishing within your allowance; AI
+previews and classification; subtitles in the original language and
+English made on your own devices, translated live into each reader's
+language on their device <em>(planned)</em>; protection against
+copycats, because deposits and juries stand between you and false
+accusations</td>
+<td style="text-align: left;">Publishing can't be undone; earnings wait
+in escrow until you register as the copyright holder; cheating (malware,
+fakes, re-cuts) costs your earnings and your reputation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A miner</strong> (Role 4)</td>
+<td style="text-align: left;">Lend spare disk space and bandwidth</td>
+<td style="text-align: left;">Tokens for keeping files safe and online,
+plus a fee for every download you deliver; the delivery fee comes from
+real usage, not only from new coins</td>
+<td style="text-align: left;">A disk and a connection that stay up; a
+stake that is cut only by an adjudicated case outcome, while a missed or
+false storage proof costs the pay</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A compute / hosting
+provider</strong> (Role 4b) <em>(planned)</em></td>
+<td style="text-align: left;">Rent out a GPU or run other people's
+containers</td>
+<td style="text-align: left;">Pay drawn from the customer's escrow for
+every period you serve</td>
+<td style="text-align: left;">A stake, burned only for proven resource
+fraud; repeated outages end the lease and lower your reputation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A staker / voter</strong> (Role
+5)</td>
+<td style="text-align: left;">Lock tokens with a validator</td>
+<td style="text-align: left;">A say in fees, rules and how the shared
+fund is spent; a floating yield (never a fixed, guaranteed rate)</td>
+<td style="text-align: left;">Locked tokens; their price can fall; vote
+weight is capped so no single account rules</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>An app developer</strong> (Role
+7)</td>
+<td style="text-align: left;">Build apps, alone or with an AI coding
+assistant</td>
+<td style="text-align: left;">No server to run; sign-in, storage,
+payments and messages built in; your share of every sale or subscription
+in your app, paid automatically</td>
+<td style="text-align: left;">Your time; the storage of your app's files
+is paid like any other file</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A juror / reporter</strong> (Role
+6)</td>
+<td style="text-align: left;">Judge disputes the AI can't settle, or
+report bad files</td>
+<td style="text-align: left;">A reward for careful rulings; valid
+reports raise your reputation; a safer market for everyone, including
+you</td>
+<td style="text-align: left;">A deposit that is lost for careless or
+malicious work</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why this is better than a normal platform:</strong> there is
+no company in the middle that can delete lawful content or your files at
+will (illegal content is removed under the published rules, and a
+Private file sharing bytes with removed content loses them), change the
+payout split overnight or sell your attention to advertisers. The rules
+are public, the money moves automatically, and anything that costs
+someone money or reputation is decided by fixed rules plus a human jury,
+never by an AI alone.</p>
+<p><strong>Honest note:</strong> nothing here promises a profit. Token
+prices move and can go to zero, rewards depend on how much the network
+is actually used, and several features are still <em>(planned)</em>. The
+full rules for each role are in §4, the penalties in §5 and the risks in
+§6–§7.</p>
+<hr />
+<h2 id="2-capabilities-plain-language">2. Capabilities (plain
+language)</h2>
+<p>Web3OS's built-in AI assistant automatically:</p>
+<ul>
+<li><strong>Understands your files:</strong> detects
+video/music/image/document/game; generates previews, classification,
+original-language and English subtitles, and <strong>live translation
+into your language on your own device</strong> <em>(planned)</em>.</li>
+<li><strong>Guards safety:</strong> scans when you publish —
+<strong>known viruses and trojans, disguised file types, duplicates and
+known illegal content are blocked by deterministic checks</strong> and
+never get listed; brand-new malware can still slip through.</li>
+<li><strong>Protects buyers:</strong> if you buy a
+virus/degraded-variant/not-as-described item, you can dispute it:
+automatic checks are deterministic detectors, never an AI guess, and the
+rest goes to a <strong>human jury</strong>.</li>
+<li><strong>Protects honest uploaders:</strong> obvious bad files are
+blocked before yours, so you're not lumped in with them; and to falsely
+accuse you, someone must post a deposit and risks a reputation penalty —
+so frivolous reports don't pay.</li>
+</ul>
+<p><strong>Honest limits of AI:</strong> AI is good at catching
+<em>known</em> bad things and <em>obvious</em>
+impersonation/duplication; <strong>brand-new malware or sophisticated
+re-cuts (re-editing, speed-changing, inserting ads to resell)</strong>
+may slip past → those go to a <strong>human jury</strong>. <strong>Any
+final decision involving money or penalties is made by "rules ＋ human
+jury", never AI alone</strong> — to prevent a fooled AI from punishing
+you.</p>
+<p>Capability areas (without disclosing internals): decentralized
+storage &amp; delivery, GPU compute and container hosting,
+value-oriented search &amp; discovery, multilingual
+subtitles/translation, content safety &amp; dispute arbitration, an
+optional decentralized compute market, and decentralized naming.</p>
+<hr />
+<h2 id="3-tokenomics">3. Tokenomics</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Token / standard</td>
+<td style="text-align: left;"><strong>Web3OS</strong>, native to
+Web3OSChain (wrapped on Ethereum through an audited bridge), decimals
+<strong>9</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Total supply (fixed cap)</td>
+<td style="text-align: left;"><strong>1,000,000,000 WEB3OS
+(1B)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Price</td>
+<td style="text-align: left;">No reference or target price; the market
+sets it. $0.20 is only the cold-start settlement price used until the
+liquidity pool is deep enough (<strong>not a price promise</strong>);
+mainnet launches with no token sale offered to anyone, and the project
+sells no Web3OS at launch with one disclosed exception: it sells coins
+from the small necessary-fees slice (0.5%), at the market price, to pay
+its audit, legal and set-up bills (see "Necessary fees" below). The
+protocol-owned liquidity vault sells nothing and holds no liquidity
+position, and no other project funds are converted to other assets.
+Building the liquidity pool and selling by the vault can be switched on
+only by a governance vote held after written legal opinions for the US
+and the EU. Until that pool is built and deep enough, the coins the
+network pays you are for use on the network only and cannot be sent to
+another account (see "Launch liquidity" below)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Allocation (mainnet intent)</td>
+<td style="text-align: left;"><strong>~80% mining reserve</strong>
+(earned over the curve) / <strong>genesis premint 4%</strong> —
+protocol-owned liquidity seed 2.5%, security-bounty bucket 1% (3M cap,
+the rest burned at genesis), necessary fees 0.5%; nothing sold at launch
+except part of the necessary-fees slice, to pay the project's bills /
+<strong>remainder ~14–16% (ecosystem·team·treasury·growth) streamed
+gradually from the curve — vesting·governance·timelock, NOT a genesis
+bag</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Release</td>
+<td style="text-align: left;">80% mining reserve released on a
+<strong>curve that only declines and never ends: 10% less each year by
+default; each year the chain suggests the cut from the past year's price
+(0–20%) and the community confirms it by vote</strong>;
+<strong>non-mining buckets are all vesting ＋ governance control ＋
+timelock</strong>, milestone-bound, no early dumping</td>
+</tr>
+<tr>
+<td style="text-align: left;">Inflation control</td>
+<td style="text-align: left;"><strong>Burn-Mint Equilibrium
+(BME):</strong> above the durability floor, zero verified demand → zero
+minting; adaptation can only reduce issuance, never over-issue → net
+issuance bound never broken</td>
+</tr>
+<tr>
+<td style="text-align: left;">Staking yield (stake bonded to a validator
+only: own bond or delegation)</td>
+<td style="text-align: left;"><strong>Floating, not a fixed guaranteed
+rate</strong> (target range set by governance); paid from the existing
+emission curve, <strong>no out-of-curve issuance →
+non-inflationary</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Network revenue</td>
+<td style="text-align: left;">Public download fees, prepaid Private
+storage, decentralized compute and container hosting,
+<code>.web3os</code> domain registration/renewal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Testnet has exactly the same supply as mainnet: a fixed
+1,000,000,000, the same curve and the same 4% genesis premint; on
+testnet the premint only funds the test faucet and the validators'
+starting stake, and test tokens have no value.</strong> Mainnet uses a
+<strong>genesis premint of 4%</strong> earmarked solely for the
+protocol-owned liquidity seed (2.5%), the security-bounty bucket (1%; 3M
+cap, the rest burned at genesis) and necessary fees (0.5%); a later CEX
+listing is funded by a governance vote from the treasury stream;
+team/treasury/growth are <strong>streamed from the curve
+(vesting·governance·timelock), not a genesis bag</strong>; the ~80%
+mining reserve releases over the curve.</p>
+<p><strong>In plain language — what the genesis premint is for.</strong>
+When the network goes live, almost no coins exist yet — miners earn them
+slowly, year after year. But a few things need coins on day one, or the
+network can't run or be traded, so a <strong>small starting batch
+(4%)</strong> is pre-made and used <strong>only</strong> for three
+launch needs:</p>
+<ol type="1">
+<li><strong>Liquidity (2.5%, the biggest slice).</strong> To trade
+Web3OS there must be a pool holding coins on <em>both</em> sides (Web3OS
++ USDC). Without it, one buy spikes the price and you can't sell back.
+This batch builds that pool, and no ETH or stablecoin has to be raised
+for it: after the legal opinions and the vote, the vault places the
+whole batch in the pool as Web3OS only, from the opening price upward.
+Whoever pays USDC into the pool receives Web3OS from it, each coin a
+little dearer than the one before, and the USDC stays in the pool as its
+other side, where later sellers are paid from it; nobody at the project
+receives it. The vault has no withdrawal key; the signers' Safe can
+remove liquidity only after the time lock and only to the chain treasury
+escrow or the winter-reserve account (anti-rug).</li>
+<li><strong>Security-bounty bucket (1%).</strong> Pays validated
+security reports under published terms and a severity schedule fixed in
+advance, up to 3M; the rest is burned at genesis. Testnet tokens have no
+value and earn nothing on mainnet by themselves: testnet validators and
+miners earn from mainnet epoch 0 under the same rules as everyone
+else.</li>
+<li><strong>Necessary fees (0.5%).</strong> Security audits
+(CertiK/Hacken), the legal opinion, the legal entities, on-chain
+deployment gas and project infrastructure. <strong>Plain disclosure:
+this is the one slice the project itself may sell.</strong> Auditors,
+lawyers and registries bill in dollars, and the project has no other
+money to pay them, so the project sells coins from this slice, and only
+this slice, to pay those bills. Each sale pays one published bill of an
+outside party, is recorded on chain before it happens, stays under a cap
+per week set by a governance vote, and is made at the market price in a
+public pool that is deep enough, which cannot exist before the stage-2
+pool is built (see "Launch liquidity" below), so in stage 1 nothing is
+sold and these bills are paid from grants and equity; there is no fixed
+price, no discount, no promise of any return, and no marketing. The
+project has not yet received a lawyer's opinion on these sales in the
+United States or the European Union; it has asked for one first. The
+rules bind the signers of this slice by published policy, not by code,
+so a breach would be visible on chain but not blocked. These sales add
+coins to the market that would otherwise stay locked or be burned (at
+most 0.5% of the total supply over the life of the slice). Nothing else
+is sold by the project at launch.</li>
+</ol>
+<p>There is no exchange-listing batch: a later CEX listing is funded
+from the treasury stream by a governance vote. The team, treasury and
+growth budgets get <strong>no big bag at launch</strong> — see next.</p>
+<p><strong>In plain language — what "streamed from the curve (vesting)"
+means, with an example.</strong> <em>Vesting</em> = coins unlock a
+little at a time on a fixed schedule, not all at once. <em>Streamed from
+the curve</em> = the team/treasury/growth share is minted
+<strong>gradually over years (like a salary drip)</strong>, never
+pre-printed into a wallet that could be dumped on you.</p>
+<blockquote>
+<p><strong>Example.</strong> The team share is 8% (80,000,000). Instead
+of getting 80M on launch day, it <strong>vests linearly over 347 weekly
+epochs (about 80 months) from launch, with no cliff</strong> — about
+<strong>1M per month</strong>. So insiders <strong>cannot dump a giant
+bag at listing</strong> — their payout is tied to building the project
+for years. The mining reserve works the same way: ~80% is released to
+miners <strong>slowly, each year less than the year before (10% less by
+default)</strong>, not minted up front.</p>
+</blockquote>
+<p><strong>As emission shrinks — does the ecosystem keep going?
+Yes.</strong> The declining emission is a <strong>bootstrap subsidy, not
+the long-term engine.</strong> Miner income stands on two legs: (1)
+<strong>delivery miners are paid by real usage fees from day
+one</strong> — every download pays a bandwidth fee, which has nothing to
+do with emission and lasts as long as people use the network; (2)
+<strong>storage miners</strong> keeping the durability floor are paid by
+floor minting within the curve; <strong>whenever that falls short (a
+price drop, or the shrinking curve), the winter reserve tops it up by
+rule, only up to the reserve's balance — funded by fees, treasury yield,
+orphan-file shares and issuance set aside in good years, not by printing
+new tokens. This is a cost-compensation rule, not a guaranteed income
+for any miner.</strong> As real demand grows, fee revenue replaces the
+shrinking emission; as emission shrinks the network runs on
+<strong>download fees, Private-storage rental, compute usage and
+<code>.web3os</code> domain fees</strong>. <strong>BME</strong> keeps it
+non-inflationary: above the durability floor, minting needs matching
+burns, and burned tokens never reopen minting capacity under the fixed
+1B cap. This is the same "block-subsidy → transaction-fees" handoff
+mature networks use. <strong>Honest caveat:</strong> this only holds if
+real usage actually grows by then — if demand never shows up, fees won't
+replace the subsidy and miners leave. That adoption risk is the
+project's core bet (see §7). If both reserve legs run dry, the miner
+floor is only a published target: the protocol never prints above the
+curve to pay it, and it protects existing files by pausing new Public
+admissions and evicting extra cache copies first (§15.1).</p>
+<h3 id="who-actually-earns-money-in-plain-words">Who actually earns
+money (in plain words)</h3>
+<p>Every time someone pays to download a file, that <strong>single
+payment is split four ways</strong> — like a music-streaming payout, but
+on-chain and automatic:</p>
+<ol type="1">
+<li><strong>The creator (copyright owner)</strong> gets the largest
+share — whatever is left after the others.</li>
+<li><strong>The "delivery" host</strong> who actually sent you the bytes
+gets a <strong>bandwidth fee</strong> — paid per download, like a
+courier paid per delivery.</li>
+<li><strong>A small platform fund (the "treasury")</strong> takes a
+fixed cut — this pays for <strong>ongoing development, the search index,
+and ecosystem grants.</strong></li>
+<li><strong>A small slice (about 4%) is burned</strong> — removed from
+supply for good. This is what stops anyone from earning rewards by
+downloading their own files: a self-buyer loses money, about 7% of the
+price at the default settings.</li>
+</ol>
+<p>Separately, the <strong>"storage" hosts</strong> — the people who
+keep your file safe and online even when nobody is downloading it — are
+paid by the network's <strong>floor minting</strong> for every file
+until the idle reclaim removes it, popular or not. That is
+<strong>not</strong> taken out of your download fee.</p>
+<p><strong>So where do the developers/operators get paid?</strong> Two
+ways — and <em>not</em> by secretly skimming your downloads:</p>
+<ul>
+<li>A <strong>dedicated team budget (8% of all tokens)</strong> that
+unlocks slowly, month by month, over 80 months (the vesting drip
+described above) — so the team is paid to <strong>keep
+building</strong>, not to dump tokens.</li>
+<li>The <strong>platform-fund cut (#3 above):</strong> because the
+treasury takes a small slice of <em>every</em> download fee, development
+keeps being funded by <strong>real usage</strong> — even long after the
+initial team budget is gone.</li>
+</ul>
+<p><strong>What is "POL" (protocol-owned liquidity)?</strong> To buy or
+sell Web3OS, there has to be an <strong>"exchange pool"</strong> holding
+coins on both sides. Most projects <em>rent</em> this pool from
+outsiders who can <strong>yank it out at any moment</strong> — and when
+they do, the price collapses and you can't sell (a "rug pull"). Web3OS
+instead <strong>owns and locks</strong> its own pool: the vault has
+<strong>no withdrawal key</strong>, and the signers' Safe can remove
+liquidity only after the time lock and only to the chain treasury escrow
+or the winter-reserve account, so once the pool is funded there is
+always somewhere to buy and sell, and the trading fees stay in the pool.
+A slice of the launch batch (the <strong>"POL"</strong> portion) is set
+aside as <strong>protocol-owned trading liquidity</strong>. At mainnet
+launch the vault does not sell Web3OS (the project's only sales are from
+the small necessary-fees slice described above, to pay its bills), and
+there is no pool at all: the coin cannot be bought, and coins paid by
+the network cannot be sent to anyone. The pool is built, and the vault
+adds half of the platform-fund cut to it each week, only if a governance
+vote, held after legal opinions for the US and the EU, turns that
+on.</p>
+<p><strong>Launch liquidity: use first, trade later (ADR-246).</strong>
+Mainnet opens in two stages.</p>
+<ul>
+<li><strong>Stage 1, no pool.</strong> Everything the network pays you
+(mining, storage, hosting, message relay, creator shares, staking yield)
+is a utility coin: you can pay fees and gas, buy storage and downloads,
+post stake and collateral and stake for votes with it, but you
+<strong>cannot send it to another account</strong> or bridge it out, not
+even to a second account of your own. Nobody can buy the coin in this
+stage.</li>
+<li><strong>Stage 2, the project builds liquidity.</strong> After
+written legal opinions for the US and the EU and a governance vote, the
+liquidity batch above is placed in one pool, and the official site and
+the wallet link to that pool. This is building liquidity, not a sale
+round: there is no fixed price, no buyers' list, no allocation and no
+deadline, and the USDC that buyers pay stays in the pool.</li>
+<li><strong>Then your coins unlock step by step.</strong> Once buyers
+have paid enough USDC into the pool for it to pass the network's depth
+test (about USD 250,000 of USDC at the default setting), the lock starts
+to lift: one 26th of your earned coins each week, about six months in
+all. A week in which the pool is below the test unlocks nothing, and
+what was already unlocked stays unlocked. Coins you earned before the
+start and coins you earn during these months follow the same weekly
+steps, so nothing unlocks all at once.</li>
+<li>⚠️ <strong>No date is promised, and it may never happen.</strong> If
+the opinions say no, the vote fails, or buyers do not come, earned coins
+stay use-only. The opening price is a voted number no market has tested,
+the pool gives no support below it, and the holders who vote on these
+settings are the same people whose coins are locked. If you stake earned
+coins and later buy coins, the bought ones are held until the schedule
+releases them or your stake is back. Do not mine expecting to sell on a
+known day.</li>
+</ul>
+<blockquote>
+<p><strong>Not investment advice.</strong> Token prices are highly
+volatile and may go to zero. Assess for yourself and follow your local
+laws before participating.</p>
+</blockquote>
+<hr />
+<h2 id="4-per-role-manual">4. Per-role manual</h2>
+<h3 id="role-1--just-browsing--searching-free-account-needed">Role 1 —
+Just browsing / searching (free, account needed)</h3>
+<ul>
+<li><strong>Can do:</strong> free browse/search/preview and see AI
+scores. (Full content/download needs token.)</li>
+<li><strong>Rules:</strong> get an account first (searching uses network
+resources): create one on your device or connect a wallet you already
+have; free, pseudonymous (no ID; your account is public, and every paid
+read is recorded under it).</li>
+<li><strong>Penalties:</strong> virtually none; the only case is
+<strong>frantic query-spamming</strong> gets the account temporarily
+rate-limited (a daily free quota per kind: 200 searches, 500 browses, 10
+previews, ten times that when staked; then growing delays). Normal use
+is unaffected.</li>
+</ul>
+<h3 id="role-2--buyer--downloader">Role 2 — Buyer / downloader</h3>
+<ul>
+<li><strong>Can do:</strong> download Public content with token, move
+purchases into your private vault (Private), prepay your own storage for
+a period you choose (renew before it ends, or the files are dropped
+after a short grace window) <em>(planned)</em>.</li>
+<li><strong>Rules:</strong>
+<strong>virus/degraded-variant/not-as-described/fake-HD/missing-parts</strong>
+→ refund claim <strong>while the purchase is open</strong> (claims
+gather for one week from the first claim), which counts toward a
+threshold (default 5% of the file's qualifying downloads and at least 20
+buyers) before a jury decides; "previewed it and changed my mind" is
+<strong>not</strong> refundable; claims require a <strong>small
+deposit</strong> to deter abuse.</li>
+<li><strong>Outcomes:</strong> valid claim → ✅ no penalty, refunded
+first; malicious/freeloading claim → 💰 deposit slashed ＋ 📉 reputation
+cut; repeat abuse → reputation drops, claim rights restricted.</li>
+</ul>
+<h3 id="role-3--uploader--creator-earn-by-uploading">Role 3 — Uploader /
+creator (earn by uploading)</h3>
+<ul>
+<li><strong>Can do:</strong> upload media/docs/software, earn royalties
+on downloads, register as copyright holder; if someone else published
+your work, file a claim with your proof from its page ("This is my
+work") — a human jury decides contested cases, and if you win you choose
+to keep it up and collect, or take it down <em>(planned)</em>.</li>
+<li><strong>AI helps you:</strong> auto classification/preview, plus
+subtitles and live on-device translation <em>(planned)</em>; only
+deterministic checks block a file, never an AI guess → if you're honest
+you're rarely mis-accused.</li>
+<li><strong>Key rules:</strong> uploads land in your private vault;
+<strong>publishing is one switch, off by default, and can't be
+undone</strong>; publishing is free within the allowance (beyond it, a
+deposit; a choice of a small refundable bond or a device puzzle is
+<em>(planned)</em>); a published file nobody else downloads in full for
+a year, scored low or never scored, is removed for good after a 7-day
+notice; before then anyone can renew it by paying about a year of its
+storage cost; <strong>until you register as the copyright holder, you
+get 1% of your file's earnings once your publication is opened and 99%
+waits in escrow</strong> (26 weeks without a dispute, so the real
+owner's money cannot be taken by someone who only uploaded the work; the
+registered holder or a winning claimant then receives it weekly, and an
+escrow nobody claims goes to the public digital asset maintenance fund,
+never to the uploader); <strong>payouts stop while an ownership claim or
+a report freeze is open</strong>, and an upheld buyer refund case is
+paid from the escrowed share first; <strong>no malware, no impersonating
+originals by re-format/re-cut, no not-as-described</strong> (fake HD,
+fake full version, missing DLC).</li>
+<li><strong>Outcomes:</strong> honest original/legal → ✅ normal
+royalties + AI value-add; low-value/borderline (first, minor) → ⚠️
+warning; repeat → 📉 reputation cut;
+<strong>impersonation/not-as-described</strong> → 🚫 takedown + buyer
+refund + slash that file's reward + reputation cut (money flows to the
+true original creator); <strong>bundled malware</strong> → 💰 forfeit
+that file's reward and any publishing bond + 🚫 takedown + a strike +
+heavy reputation cut; <strong>serious illegal</strong>
+(weapons/explosives/bio) → the same + heavy penalty; <strong>three
+strikes within a year</strong> → publishing ends for good (ADR-205);
+<strong>CSAM &amp; zero-tolerance</strong> → ⛔ instant ban + max slash
++ <strong>permanent ban</strong> (no "first warning").</li>
+<li><strong>Tip:</strong> changing format/filename to dodge dedup is
+useless — AI looks at the <strong>content itself</strong>.</li>
+</ul>
+<h3
+id="role-3b--sponsor-pay-so-that-everyone-gets-a-work-free-planned">Role
+3b — Sponsor (pay so that everyone gets a work free)
+<em>(planned)</em></h3>
+<ul>
+<li><strong>Can do:</strong> a publisher, or one advertiser the
+publisher names, locks coins on a Public work as a <strong>promotion
+stake</strong>. While the stake can pay, any account with a small
+balance and no strike takes the full work free, once a week; the stake
+pays the delivery and the network fee of every free copy.</li>
+<li><strong>What you lock, and for how long:</strong> you choose the
+amount, a weekly budget and a <strong>lock term</strong> (between a
+network-set minimum and maximum). <strong>Before the term ends you
+cannot take any of it back.</strong> A top-up can make the term longer,
+never shorter.</li>
+<li><strong>The locked coins are spent:</strong> every free copy reduces
+the stake. The weekly budget is your worst case per week, and accounts
+that are not real viewers can take all of it.</li>
+<li><strong>Yield (floating, not promised):</strong> a few weeks of
+budget stay ready to pay copies and earn nothing. The rest is staked
+with the validator you pick and earns the network's ordinary staking
+yield, less that validator's commission; the yield is added to the
+promotion. <strong>The yield changes every week, can be zero, and nobody
+promises or guarantees it.</strong> There is no fixed rate. A small
+stake may have nothing staked at all.</li>
+<li><strong>Risk of loss:</strong> if your validator is penalised by the
+network (slashing), part of the staked coins is destroyed. That loss is
+yours; nobody refunds it. An offline or jailed validator earns you
+nothing.</li>
+<li><strong>Who holds the coins:</strong> the network's own rules, in an
+account no person or company has a key to. The project does not hold,
+lend or re-stake them and takes no share of the yield. The stake gives
+<strong>no vote</strong>.</li>
+<li><strong>What comes back:</strong> after the term you may end the
+promotion and take back what is left. Staked coins return after the
+network's unstaking wait (about three weeks) and earn nothing while they
+wait. Before the term, coins come back only if the work itself leaves
+(reclaimed, banned, or moved to another holder by an ownership ruling)
+or as the small remainder below the cost of one copy.</li>
+<li><strong>Delisting:</strong> when you withdraw, or when the stake can
+no longer pay for one more copy, <strong>the work is no longer offered
+to new readers, free or paid</strong>. It is listed again when it is
+funded again, or sold again after the publisher returns it to sale or
+the withdrawal has been paid out. A publisher who names an advertiser
+cannot end the promotion while that advertiser's stake can still pay for
+a copy. People who already own it keep it.</li>
+<li><strong>Advertising:</strong> a work that contains paid placement
+must say so, naming who paid; the label shows before the first
+byte.</li>
+</ul>
+<h3 id="role-4--miner-provide-disk-earn-tokens">Role 4 — Miner (provide
+disk, earn tokens)</h3>
+<ul>
+<li><strong>Can do:</strong> store files for the network on your disk
+and deliver reliably on download → earn tokens; storage collateral earns
+no staking yield (yield goes only to stake bonded to a validator).</li>
+<li><strong>At mainnet launch your rewards are utility-only:</strong>
+you can use them on the network (fees, storage, stake, collateral,
+votes) but cannot send or sell them until the project's liquidity pool
+is built and deep enough; after that they unlock in weekly steps over
+about six months, pausing whenever the pool is too shallow. No date is
+promised (section 3, "Launch liquidity").</li>
+<li><strong>Rules:</strong> you <strong>must actually store and be able
+to deliver</strong>; each round a public random draw picks pieces of the
+copies you hold, and you must prove on chain, within a short window,
+that you still have them (live on testnet, parameters under
+calibration).</li>
+<li><strong>Outcomes:</strong> reliable → ✅ mining rewards; occasional
+dropout → ⚠️ lower score, less reward; missed or failed proof → 💰 the
+pay since your last proven round is forfeited and all your floor columns
+stop counting until you prove a later round; a missed or false proof
+slashes no stake, which is cut only by an adjudicated case outcome.</li>
+</ul>
+<h3 id="role-4b--compute--hosting-customer-and-provider-planned">Role 4b
+— Compute / hosting customer and provider <em>(planned)</em></h3>
+<ul>
+<li><strong>Customer:</strong> rent GPU jobs or run your own containers
+on community machines; you fund an escrow up front, it is drawn per
+period, and what is not drawn comes back when you close. Keep your
+program's secrets in a small, capped <strong>lease wallet</strong>, so a
+leak costs at most the cap.</li>
+<li><strong>Provider:</strong> offer your machine's containers or GPU,
+win leases by bidding, and earn from the escrow; you post a stake that
+is burned only for proven resource fraud, and repeated outages end the
+lease and lower your reputation.</li>
+</ul>
+<h3 id="role-5--staker--voter-governance">Role 5 — Staker / voter
+(governance)</h3>
+<ul>
+<li><strong>Can do:</strong> delegate stake to a validator to
+<strong>vote</strong> on rules, fees, and treasury use (above ~$100
+equivalent); that stake also earns the staking yield. <strong>Yield
+(floating, governance-set range) goes only to stake bonded to a
+validator</strong>; juror, storage and hosting collateral earn their
+role pay.</li>
+<li><strong>How capital is bounded:</strong> voting requires staking to
+a threshold (~$100 equiv., adjusts with price); <strong>vote weight =
+stake × an age multiplier, capped per account</strong> (stake counts
+linearly, so splitting across accounts never adds weight beyond the
+stake's own); <strong>per-account vote cap</strong>, so a single account
+cannot meet a vote's turnout bar alone, except in a small pool or right
+after a large drop in total stake; <strong>the dev team caps at 20%
+combined, stepping to 10% and then 5% as on-chain handover conditions
+are met</strong>, and <strong>cannot use that weight to change the most
+core rules</strong>.</li>
+<li><strong>Outcomes:</strong> normal stake/vote → ✅ voting weight +
+decision-making (yield only on stake bonded to a validator); proposal
+spam → 💰 proposal deposit slashed; sock-puppet vote farming → 💰 slash
++ 📉 reputation cut (farming accounts is slow and expensive — not worth
+it).</li>
+</ul>
+<h3 id="role-6--juror--reporter-disputes">Role 6 — Juror / reporter
+(disputes)</h3>
+<ul>
+<li><strong>Can do:</strong> be <strong>randomly drawn</strong> as a
+juror to decide what AI can't (e.g., is this an impersonation); or
+<strong>report</strong> bad files. Correct rulings earn rewards; valid
+reports raise reputation.</li>
+<li><strong>Rules:</strong> ruling <strong>with the majority</strong>
+earns; bad/outlier rulings are penalized; reports require a deposit, and
+<strong>false reports forfeit it</strong>.</li>
+<li><strong>Outcomes:</strong> diligent &amp; aligned → ✅ reward +
+reputation up; bad/outlier/committed but not revealed → 💰 juror deposit
+slashed + 📉 reputation cut (declining a seat by not committing costs
+nothing); valid report → 📈 reputation up; malicious report → 💰 report
+deposit slashed + 📉 reputation cut.</li>
+</ul>
+<h3 id="role-7--app-developer-people-and-ai-coding-assistants">Role 7 —
+App developer (people and AI coding assistants)</h3>
+<ul>
+<li><strong>Can do:</strong> build an application as a folder of static
+web files plus a manifest that declares its services, the scopes it asks
+for and the author's share of sales; publish both to the network and
+point a registered name at the manifest. The user's own node resolves
+the name, checks the user's grant and runs the front end in a sandboxed
+frame with no network access; every call goes through the node, which
+decides. One dependency-free SDK file (Apache 2.0) covers sign-in,
+content and streams, payments, subscriptions, compute jobs, metered
+calls, goods and messaging; the guide's examples come from the reference
+applications.</li>
+<li><strong>Rules:</strong> an app's spending power is a capped
+allowance the user sets at the point of action, and larger purchases are
+confirmed again, so a scam or compromised app loses at most that
+allowance; the author share is capped by a governance parameter; apps
+run no code outside the sandbox and add nothing to consensus.</li>
+<li><strong>Outcomes:</strong> sales, subscriptions and in-app purchases
+pay the author share automatically; a refused call returns a documented
+code the app handles.</li>
+<li><strong>For AI coding assistants:</strong> the <a
+href="https://web3os.space/developers/guide">developer guide</a> and the
+generated <a href="https://web3os.space/developers/reference">call,
+scope and refusal reference</a> are the whole contract, in plain text;
+<a href="https://web3os.space/llms.txt">llms.txt</a> is the entry point.
+Application logic is tested without a browser under Node's built-in test
+runner.</li>
+<li><strong>Status:</strong> the guide and the reference are public. The
+developer kit (the SDK, a sample application and a local test node) is
+published once the remaining application interfaces land. Developer
+contact: <a
+href="mailto:contact@web3os.space">contact@web3os.space</a>.</li>
+</ul>
+<hr />
+<h2 id="5-penalties--behavior--consequence">5. Penalties &amp; "behavior
+→ consequence"</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Penalty</th>
+<th style="text-align: left;">Plain meaning</th>
+<th style="text-align: left;">Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">⚠️ Warning</td>
+<td style="text-align: left;">A reminder, <strong>nothing
+deducted</strong></td>
+<td style="text-align: left;">Chance to fix; only repeats get real
+penalties</td>
+</tr>
+<tr>
+<td style="text-align: left;">📉 Reputation cut</td>
+<td style="text-align: left;">Your "credit score" drops</td>
+<td style="text-align: left;">Smaller vote weight, slower payouts,
+restricted features if severe</td>
+</tr>
+<tr>
+<td style="text-align: left;">💰 Slash bond/reward</td>
+<td style="text-align: left;">Your posted bond or deposit, or your
+earned reward, is taken</td>
+<td style="text-align: left;">Real money loss</td>
+</tr>
+<tr>
+<td style="text-align: left;">🚫 Takedown + refund</td>
+<td style="text-align: left;">File removed network-wide, buyer
+refunded</td>
+<td style="text-align: left;">Wasted upload + reputation loss</td>
+</tr>
+<tr>
+<td style="text-align: left;">⛔ Permanent ban</td>
+<td style="text-align: left;">Account permanently expelled</td>
+<td style="text-align: left;">Most severe; for CSAM &amp; zero-tolerance
+illegal</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Behavior</th>
+<th style="text-align: center;">⚠️</th>
+<th style="text-align: center;">📉</th>
+<th style="text-align: center;">💰</th>
+<th style="text-align: center;">🚫</th>
+<th style="text-align: center;">⛔</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Low-value/borderline upload (first)</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Same issue, repeated</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Impersonating the original</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Not as described (fake HD/missing)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Bundled malware/adware</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Serious illegal (weapons/bio)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">CSAM &amp; zero-tolerance</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅(max)</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">Miner missing a storage proof (pay for
+that period forfeited)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Buyer malicious refund abuse</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅(deposit)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Juror bad ruling / false report</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅(deposit)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Vote farming / sock-puppets</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>In one line:</strong> honest work isn't penalized; mistakes
+get a chance to fix (warning); deliberate abuse costs reputation and
+deposits; serious illegality is taken down and banned.
+<strong>Reputation can't be bought or transferred — cheating only hurts
+yourself.</strong></p>
+</blockquote>
+<hr />
+<h2 id="6-registration--per-role-risk">6. Registration &amp; per-role
+risk</h2>
+<p>Two methods, <strong>same account identity, same
+reputation/assets</strong>, both pseudonymous (no ID; your account is
+public, and every paid read is recorded under it):</p>
+<ul>
+<li><strong>(A) Create an account on this device</strong> (default) —
+the key is made on your device, a 12/24-word seed backup is offered, and
+a passkey unlocks the app on that device only (it is not a backup).</li>
+<li><strong>(B) Connect a wallet you already have</strong> — one
+signature lets the app hold a short-lived session key (at most one
+epoch, ended by rotating your key) that signs free reads; payments
+always go through a confirmation you approve.</li>
+</ul>
+<p>There is no social login and no key splitting (MPC). Recovery is only
+through <strong>on-chain guardians</strong> you choose, who can rotate
+your key but never spend <em>(planned)</em>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Role</th>
+<th style="text-align: left;">Suggested</th>
+<th style="text-align: left;">Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Browse/search</td>
+<td style="text-align: left;">Either method</td>
+<td style="text-align: left;">Skipping the seed backup = a lost device
+loses the account</td>
+</tr>
+<tr>
+<td style="text-align: left;">Buyer</td>
+<td style="text-align: left;">Either method; keep the seed backup
+offline</td>
+<td style="text-align: left;">Lost seed and device = lost purchases</td>
+</tr>
+<tr>
+<td style="text-align: left;">Uploader</td>
+<td style="text-align: left;">Either method; <strong>back up the seed
+before you earn</strong></td>
+<td style="text-align: left;">Lost key = lost income</td>
+</tr>
+<tr>
+<td style="text-align: left;">Miner</td>
+<td style="text-align: left;"><strong>Hardware wallet, or a device
+account with an offline seed backup</strong></td>
+<td style="text-align: left;">Lost access = lost stake + income</td>
+</tr>
+<tr>
+<td style="text-align: left;">Staker/voter</td>
+<td style="text-align: left;"><strong>Hardware wallet</strong></td>
+<td style="text-align: left;">Lost access = lost stake</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rule of thumb:</strong> <strong>back up your seed offline;
+nobody, including Web3OS, can recover a lost key.</strong> <strong>KYC
+is a separate matter</strong>: never required for an account; the only
+identity check is the registrar-verified copyright-party registration,
+and a future optional zero-knowledge personhood proof may carry only a
+capped bonus, with <strong>no document disclosure</strong>.</p>
+<hr />
+<h2 id="7-compliance--risk-disclosure-honest">7. Compliance &amp; risk
+disclosure (honest)</h2>
+<p><strong>Legal posture:</strong> Web3OS is <strong>content-neutral
+decentralized infrastructure</strong>, like IPFS/BitTorrent; its
+economic layer <strong>deliberately favors rightsholders</strong>
+(opt-in attestation payouts, an upload of another person's work earns
+its uploader at most the 1% weekly promotion at the genesis setting),
+paired with tiered takedown governance and a personal-data removal path.
+It <strong>does not advocate, design, or encourage</strong>
+circumventing DRM or unauthorized distribution. Per-jurisdiction
+applicability is subject to <strong>qualified legal counsel</strong>;
+operators choose parameters and policy per their jurisdiction.</p>
+<p><strong>KYC / privacy:</strong> Web3OS <strong>never collects or
+stores any identity documents</strong> and does not run its own KYC;
+where compliance is needed (copyright-party registration), an
+accountable registrar checks the applicant's credential off chain and
+the chain records only the registration and a nullifier, never the
+document. Wallet↔︎real-identity binding data <strong>never go on-chain
+and are never stored in plaintext by nodes</strong>.</p>
+<p><strong>License:</strong> the protocol core is <strong>BSL
+1.1</strong> (the source is not public yet: it is disclosed under BSL
+for audit once governance decides the launch is solid; restricted from
+commercial competition; each version's Change Date, when it converts to
+full open source, is no later than four years after release, the maximum
+BSL 1.1 allows), with an <strong>emergency dead-man switch</strong> (if
+<code>bslDeadManEpochs</code> pass without an executed governance
+proposal, the code converts early so the community can fully take over;
+no multisig holds this switch). This public repo is Apache-2.0 minimal
+material.</p>
+<p><strong>Honest residual risks (cannot be fully eliminated;
+disclosed):</strong></p>
+<ul>
+<li>Private files are <strong>encrypted, but not zero-knowledge
+secret</strong>: the key is derived from the file, so anyone holding the
+same file (or guessing a short, predictable one) can confirm that a copy
+is stored on the network; no owner, uploader or file list is ever
+revealed, because Private content is never announced and nothing on
+chain links it to an account. <strong>For true secrecy, encrypt a
+sensitive file yourself before uploading it, for example as a
+password-protected 7z or zip archive with AES-256 and a long random
+password; Web3OS cannot recover a lost password. Such a file stays
+Private: it can never be published or sold, because a buyer would have
+no password.</strong></li>
+<li>On an anonymous network, <strong>metadata size/frequency
+fingerprints</strong> may enable de-anonymization by advanced analysis;
+sophisticated heavy re-edits may evade fingerprints and human
+review.</li>
+<li>Key (seed) <strong>loss is unrecoverable</strong> unless on-chain
+guardians <em>(planned)</em> rotate it; your Private data key is backed
+up under your wallet, so the same wallet on a new device recovers your
+Private files.</li>
+<li>Auto-update vs decentralization is inherently tense: updates use
+reproducible builds ＋ signatures ＋ on-chain pinned hashes ＋
+verify-before-run, and <strong>never silently push</strong> code.</li>
+</ul>
+<p><strong>Investment risk:</strong> this document is <strong>not
+investment advice</strong>. Web3OS is a utility token; price can be
+highly volatile or go to zero; testnet parameters may change. DYOR,
+follow local laws, and never invest more than you can afford to
+lose.</p>
+<p><strong>Platform &amp; regulatory posture:</strong> The app runs on
+<strong>Windows, Linux, Android and TV</strong>. Native clients are
+<strong>Desktop (Windows/Linux)</strong> — full features (mining, sync,
+creation) — and <strong>Android</strong> (consumer client, phones and
+TV). <strong>macOS and iOS are untested because the project has no Apple
+hardware: Mac and iPhone testers are wanted</strong> (one test kit, one
+command, one result file; no node needed). <strong>iOS is a limited
+web/PWA app, not on the App Store</strong> in v1 (the consumer side plus
+Private upload and download, with no background sync and no native
+wallet), which avoids Apple's rule against using crypto to unlock
+content (Guideline 3.1.1) and its exchange-licensing rule (3.1.5).
+Android ships two ways: a <strong>side-loadable full APK</strong>
+(self-distributed, self-updating) as the canonical client, plus an
+optional <strong>Play 'lite' build</strong>; the wallet is
+<strong>non-custodial</strong> (exempt from Google Play crypto-wallet
+licensing) and buying and selling open the official Uniswap interface,
+an <strong>external DEX</strong> (we do not operate an exchange). Web3OS
+is designed as a <strong>utility token</strong>: it pays for and is
+earned by network services, and it is <strong>not offered as an
+investment</strong>. Its legal classification in any country has not
+been confirmed by a regulator or by counsel. Listing starts with
+<strong>permissionless DEXs</strong>; any
+<strong>centralized-exchange</strong> listing is a later step requiring
+a legal opinion, contract audits and a disclosed market maker. EU (MiCA)
+and per-country obligations are subject to qualified local counsel.</p>
+<hr />
+<h2 id="8-miner-onboarding-guide-testnet-stage">8. Miner onboarding
+guide (testnet stage)</h2>
+<blockquote>
+<p><strong>Now in testnet — install bundles and signing are still being
+released</strong>; the following is the <strong>intended flow</strong>,
+with official download links announced in the public repo later. Testnet
+tokens have no value.</p>
+</blockquote>
+<p><strong>Get the install bundle (after release):</strong></p>
+<ol type="1">
+<li>Download the official release for your OS (Linux or Windows; no
+macOS release until Mac testers have run the test kit) from the
+<strong>GitHub Releases</strong> page of the public site repo
+<code>Web3OS-space/web3os</code> (binaries only; the link is on the
+site's testers page).</li>
+<li><strong>Verify authenticity (important):</strong> a testnet kit must
+match the <code>SHA256SUMS</code> file published with its release; a
+mainnet bundle's <strong>hash</strong> must match the <strong>on-chain
+pinned release hash</strong> with a valid <strong>governance
+signature</strong>, and once the source is disclosed, advanced users can
+recompute the hash via <strong>reproducible build</strong>. <strong>Any
+"Web3OS install bundle" not verified this way is to be treated as
+counterfeit.</strong></li>
+</ol>
+<p><strong>Set up the node (conceptual):</strong></p>
+<ul>
+<li>Pick a <strong>storage root</strong> (more space, more uptime →
+better rewards) and a <strong>bandwidth cap</strong>.</li>
+<li>Check your <strong>upload</strong> speed, not only download:
+deliveries go to holders that answer quickly, and a request that a slow
+holder does not answer in time moves to the next holder of the same
+chunk, which earns the delivery. The paid floor role needs an SSD.</li>
+<li>Join the network via <strong>public seed nodes</strong> (config
+ships with the bundle).</li>
+<li>Set a <strong>miner wallet</strong> (seed/hardware wallet, back up
+offline) to receive mining rewards.</li>
+<li>Desktop runs as a <strong>background daemon</strong>: closing the
+window keeps serving blocks and earning.</li>
+</ul>
+<p><strong>Rewards &amp; duties:</strong> reliable store + delivery →
+mining rewards; a public random draw picks pieces you must prove on
+chain (live on testnet, parameters under calibration), and <strong>a
+missed proof forfeits the pay since your last proven round</strong> (see
+§4 Role 4).</p>
+<blockquote>
+<p>Desktop (Windows/Linux) is the full node (mining/sync/creation).
+Android is a consumer client on phones and TV (side-load full APK +
+optional Play lite). macOS and iOS are untested (no Apple hardware;
+testers wanted); iOS is a limited PWA, not on the App Store (v1).</p>
+</blockquote>
+<h3 id="compared-with-other-disk-mining-networks">Compared with other
+disk-mining networks</h3>
+<p>If you farm Chia or run Filecoin, Storj or Sia, you already have most
+of what Web3OS needs: spare disk, an always-on machine and a stable
+connection. The paid floor role reads its disk at random about 270 times
+per second for every TB it holds, so that part needs an SSD; hard disks
+serve cache copies. On Web3OS that disk holds real files that people pay
+to store and download, not placeholder data.</p>
+<p>Legend: ✅ strength · ⚠️ trade-off or partial · ❌ weakness · ➖ not
+offered or not applicable.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>Web3OS</strong></th>
+<th style="text-align: left;">Chia</th>
+<th style="text-align: left;">Filecoin</th>
+<th style="text-align: left;">Storj</th>
+<th style="text-align: left;">Sia</th>
+<th style="text-align: left;">Arweave</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">What your disk holds</td>
+<td style="text-align: left;">✅ Real user files, as encrypted
+chunks</td>
+<td style="text-align: left;">❌ Plots (cryptographic filler, no user
+data)</td>
+<td style="text-align: left;">⚠️ Client data or committed-capacity
+sectors</td>
+<td style="text-align: left;">✅ Real user files, as encrypted
+pieces</td>
+<td style="text-align: left;">✅ Real renter files</td>
+<td style="text-align: left;">✅ Replicas of the permanent weave</td>
+</tr>
+<tr>
+<td style="text-align: left;">Setup before earning</td>
+<td style="text-align: left;">✅ None for normal data: no plotting, no
+sealing (a light sequential seal only on durability-floor columns, live
+on testnet)</td>
+<td style="text-align: left;">⚠️ Plotting (CPU/GPU, temp space)</td>
+<td style="text-align: left;">❌ Heavy sealing (GPUs, large RAM, fast
+NVMe)</td>
+<td style="text-align: left;">⚠️ Vetting period</td>
+<td style="text-align: left;">⚠️ Host setup, collateral</td>
+<td style="text-align: left;">⚠️ Packing the data you mine</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hardware</td>
+<td style="text-align: left;">✅ SSD for the paid floor, any disk for
+cache copies; stable connection; no GPU</td>
+<td style="text-align: left;">⚠️ Disks; plotting rig</td>
+<td style="text-align: left;">❌ Server-class sealing rig</td>
+<td style="text-align: left;">✅ Disk + connection</td>
+<td style="text-align: left;">✅ Disk + connection</td>
+<td style="text-align: left;">⚠️ Fast disks</td>
+</tr>
+<tr>
+<td style="text-align: left;">How you prove storage</td>
+<td style="text-align: left;">⚠️ A public random draw picks chunks you
+hold, proven on chain within a short window (live on testnet), plus
+delivery speed</td>
+<td style="text-align: left;">✅ Proof of Space and Time</td>
+<td style="text-align: left;">✅ PoRep + PoSt (heavy, formal)</td>
+<td style="text-align: left;">⚠️ Audits by satellites
+(operator-run)</td>
+<td style="text-align: left;">✅ Storage proofs per contract</td>
+<td style="text-align: left;">✅ Proofs of random access</td>
+</tr>
+<tr>
+<td style="text-align: left;">How you earn</td>
+<td style="text-align: left;">✅ Storage pay + a fee for every download
+you deliver (real usage, not only new coins)</td>
+<td style="text-align: left;">⚠️ Block-win lottery (pools smooth
+it)</td>
+<td style="text-align: left;">✅ Block rewards + deal fees</td>
+<td style="text-align: left;">✅ Per TB stored + egress</td>
+<td style="text-align: left;">✅ Contract payments</td>
+<td style="text-align: left;">⚠️ Block rewards</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stake / collateral</td>
+<td style="text-align: left;">✅ A stake, cut only by an adjudicated
+case outcome (a missed or false storage proof forfeits pay, no
+slash)</td>
+<td style="text-align: left;">✅ None</td>
+<td style="text-align: left;">⚠️ FIL pledge, penalties for faults</td>
+<td style="text-align: left;">⚠️ None (part of early payouts
+withheld)</td>
+<td style="text-align: left;">⚠️ Collateral per contract</td>
+<td style="text-align: left;">✅ None</td>
+</tr>
+<tr>
+<td style="text-align: left;">Also rent out compute?</td>
+<td style="text-align: left;">✅ Yes, on Linux: container hosting
+(Web3OS hosting can also place deployments on Akash)</td>
+<td style="text-align: left;">➖ No</td>
+<td style="text-align: left;">➖ No</td>
+<td style="text-align: left;">➖ No</td>
+<td style="text-align: left;">➖ No</td>
+<td style="text-align: left;">➖ No</td>
+</tr>
+<tr>
+<td style="text-align: left;">Maturity</td>
+<td style="text-align: left;">❌ <strong>Testnet,
+pre-launch</strong></td>
+<td style="text-align: left;">✅ Mainnet</td>
+<td style="text-align: left;">✅ Mainnet</td>
+<td style="text-align: left;">✅ Mainnet</td>
+<td style="text-align: left;">✅ Mainnet</td>
+<td style="text-align: left;">✅ Mainnet</td>
+</tr>
+</tbody>
+</table>
+<p>The other columns reflect each network's general design; check their
+own docs for current details. The full comparison, with Web3OS's honest
+drawbacks, is in §10.</p>
+<h3 id="join-the-public-testnet">Join the public testnet</h3>
+<ul>
+<li><strong>Who:</strong> anyone who will keep one node online for a few
+weeks, report bugs and say where things were confusing.</li>
+<li><strong>How to join:</strong> send a private message on Telegram to
+<a href="https://t.me/Web3OS_AI_bot">@Web3OS_AI_bot</a> starting with
+"Miner"; we reply privately (no Telegram account: <a
+href="mailto:contact@web3os.space">contact@web3os.space</a>). Questions
+go to the <a href="https://t.me/Web3OS_Official">Telegram
+group</a>.</li>
+<li><strong>Requirements:</strong>
+<ul>
+<li>Linux (Ubuntu) is best: it runs storage and can also rent out
+compute. Windows runs storage only for now.</li>
+<li>Assign as much spare disk as you like. Web3OS uses only that space
+and never touches your plots or other data.</li>
+<li>A stable connection; home is fine. Your node address is never
+published.</li>
+</ul></li>
+<li><strong>What you get:</strong>
+<ul>
+<li>Early access and a direct line to the team.</li>
+<li>Testnet tokens from the faucet (no value), to try uploads, downloads
+and hosting.</li>
+<li>Bug reports and successful testnet attacks are recorded and rewarded
+after mainnet by a community vote (see section 11); security problems
+are reported privately as described there.</li>
+<li>No airdrop and no allocation for testnet participants: mainnet
+earnings follow the normal mining and staking rules.</li>
+<li>No payment during the testnet. Web3OS has no reference or target
+price and nothing here is an offer to sell. Test data is deleted at
+every testnet reset.</li>
+</ul></li>
+<li><strong>How:</strong>
+<ul>
+<li>The install bundle is being finished.</li>
+<li>Sign up by Telegram private message as above, with your OS, the disk
+you can spare and your upload speed. No other personal data is needed to
+join.</li>
+<li>The install steps and an invite follow when the bundle is
+released.</li>
+</ul></li>
+</ul>
+<h3 id="try-to-break-the-rules-testnet">Try to break the rules
+(testnet)</h3>
+<p><strong>It's testnet — tokens have no value — so this is the time to
+hit it hard.</strong> We invite miners and users to <strong>find bugs
+and try to cheat the rules</strong> inside the app and the chain, never
+against a computer you do not own, especially around
+<strong>deposits/withdrawals/settlement (ramps)</strong>:</p>
+<ul>
+<li><strong>Test tokens:</strong> once per account, at the fund step
+after your seed backup, the testnet faucet sends test tokens on chain
+(no value); the app shows the amount granted or the wait. <em>(The
+faucet does not exist on mainnet.)</em></li>
+<li><strong>Fair game:</strong> over/abnormal withdrawals, fake-download
+reward farming, miners faking storage, sock-puppet farming,
+refund-gaming, oracle price manipulation, ramp-spread arbitrage,
+<strong>filing false reports on fake <em>or real</em> files, spamming
+governance proposals/votes or raising genuinely contested votes</strong>
+— deliberately triggering the <strong>deterministic-detector ＋
+human-jury / governance-vote flow</strong> to see if it can be fooled or
+flooded. <strong>The harder, the better.</strong></li>
+<li><strong>The deterrents are part of the test:</strong> false reports
+and spam proposals <strong>forfeit their deposit ＋ cut
+reputation</strong> by design — testnet proves whether that actually
+holds (if it doesn't, that's a bug — report it).</li>
+<li><strong>Governance really can change the rules (explicit
+disclosure):</strong> fees, revenue splits, thresholds and parameters
+are <strong>decided by community vote</strong> — <strong>no one
+(including the team) can change them unilaterally</strong>. <strong>On
+testnet you're welcome to launch genuine <em>or</em> malicious
+proposals/votes</strong> and try to break the governance defenses: vote
+weight = <strong>stake × age multiplier</strong> (linear in stake),
+<strong>per-identity vote cap</strong>, <strong>team aggregate cap (20%
+→ 10% → 5% at handover gates, excluded from core-clause votes)</strong>,
+<strong>immutable core clauses (supermajority + timelock)</strong>,
+proposal deposits. <strong>Can money / sock-puppets / vote-flooding buy
+governance? Show us.</strong></li>
+<li><strong>Report</strong> bugs, problems and every way you found to
+cheat as a <a
+href="https://github.com/Web3OS-space/web3os/issues/new?template=bug_report.yml">GitHub
+issue</a>, which enters the bug ledger of section 11, (what happened,
+the steps, and where: Windows, Linux, Android or TV); security problems
+privately as in section 11.</li>
+<li><strong>Why it helps you too:</strong> WARNING-and-above events
+(especially ramps) are summarized into a <strong>CSV</strong> for
+AI/team analysis and parameter calibration. <strong>The harder you hit
+it, the safer launch is.</strong></li>
+<li><strong>Rules:</strong> attack within testnet only; <strong>no real
+PII, no real-world harm outside testnet</strong> (that's illegal and out
+of scope).</li>
+</ul>
+<hr />
+<h2 id="9-for-investors-read-the-risks-first">9. For investors (read the
+risks first)</h2>
+<blockquote>
+<p><strong>This section is not investment advice and not an
+offer.</strong> Web3OS is a <strong>utility token</strong>
+(payments/staking/mining/governance), <strong>not a security</strong>.
+<strong>It is testnet now — testnet tokens have no value (test swaps use
+test USDC only) and do not represent mainnet terms.</strong> Digital
+assets can be highly volatile or go to zero. DYOR, follow local laws,
+never invest more than you can afford to lose.</p>
+</blockquote>
+<p>To follow the project, the <a href="https://x.com/Web3OS_space">X
+account</a> carries the news; discussion happens in the <a
+href="https://t.me/Web3OS_Official">Telegram group</a>. There is no
+presale and no private token sale; nothing on this site is an offer to
+sell coins or shares.</p>
+<h3 id="91-how-to-buy-intended-path-after-mainnet">9.1 How to buy
+(intended path after mainnet)</h3>
+<ul>
+<li>On testnet, swaps <em>(planned)</em> use <strong>test USDC
+only</strong> and the tokens have no value; at mainnet launch (stage 1)
+the coin <strong>cannot be bought anywhere</strong>, and anyone offering
+it then is not selling the real thing. In stage 2, after the legal
+opinions and the vote, the project builds one liquidity pool for
+<strong>wrapped WEB3OS</strong> on <strong>Uniswap</strong> (Ethereum),
+which the official site and the wallet link to, with deposits and
+withdrawals to Web3OSChain through the app. That pool opens with Web3OS
+only: the price rises along the pool's curve as people buy, the first
+buyers get the lowest prices (bots included), and below the opening
+price the pool pays sellers only out of what buyers paid in.</li>
+<li>Intended flow: get a <strong>self-custody Ethereum wallet</strong> →
+hold a little ETH for gas and USDC → swap for Web3OS at the
+<strong>correct mainnet token contract address</strong> on a DEX.</li>
+<li>⚠️ <strong>The mainnet wrapped-Web3OS contract address will be
+announced via the official public repo and multiple channels; the
+testnet token on Web3OSChain testnet and its Ethereum Sepolia test pool
+are for testing only — never treat them as buyable assets.</strong> Any
+"WEB3OS" token of unknown origin is counterfeit/scam.</li>
+</ul>
+<h3 id="92-dex-trading-advice">9.2 DEX trading advice</h3>
+<ul>
+<li><strong>Use a self-custody wallet</strong> (seed/hardware); don't
+keep long-term holdings on exchanges.</li>
+<li><strong>Verify the contract address:</strong> trust only the
+officially announced one — same-name fake tokens are rampant on
+DEXs.</li>
+<li><strong>Mind slippage/liquidity:</strong> large orders into small
+pools slip hard → split orders, set sane slippage.</li>
+<li><strong>Anti-scam:</strong> don't click unknown airdrops/links,
+don't approve suspicious contracts; the team never DMs you to "send
+tokens first".</li>
+<li><strong>Gas:</strong> Ethereum transactions need a little ETH;
+withdrawing from Web3OSChain needs none, because the bridge charges the
+Ethereum gas in Web3OS.</li>
+</ul>
+<h3 id="93-risk-of-funding-via-a-kyc-walletexchange">9.3 Risk of funding
+via a KYC wallet/exchange</h3>
+<ul>
+<li>Withdrawing from a <strong>KYC'd centralized exchange</strong> to
+chain links <strong>your real identity ↔︎ your on-chain address and
+subsequent activity</strong> (<strong>de-anonymization</strong>); the
+exchange may also <strong>freeze withdrawals</strong>.</li>
+<li>For privacy: use a <strong>DEX + self-custody wallet</strong>; use a
+<strong>separate, non-KYC address</strong> for sensitive use.</li>
+<li>Web3OS itself <strong>never collects identity documents</strong>;
+but your <strong>funding source</strong> (a KYC exchange) is your own
+de-anonymization risk point, unrelated to the protocol.</li>
+</ul>
+<h3 id="94-fdv-vs-circulating-market-cap-dont-be-fooled-by-fdv">9.4 FDV
+vs circulating market cap (don't be fooled by FDV)</h3>
+<ul>
+<li><strong>FDV (fully-diluted valuation) = total supply × market
+price</strong> (1B × whatever the market pays); Web3OS has no reference
+or target price.</li>
+<li><strong>But FDV is not market cap:</strong> 80% is the mining
+reserve <strong>locked and released on a declining curve (10% less each
+year by default)</strong>, and non-mining buckets also vest →
+<strong>early circulating is only ~10–20%</strong>, so
+<strong>circulating market cap is far below FDV</strong>.</li>
+<li>Judge a project by <strong>circulating supply / circulating market
+cap + unlock schedule</strong>; <strong>high FDV + low float = ongoing
+future sell pressure</strong> — make sure you understand this.</li>
+</ul>
+<h3
+id="95-emission-simulation-curve-illustrative-only-subject-to-governance--bme-not-a-promise">9.5
+Emission simulation curve (illustrative only; subject to governance
+&amp; BME; not a promise)</h3>
+<p>The 800M mining reserve uses a <strong>rigid declining</strong>
+release: each year's release is below the last and it never ends. The
+default cut is 10% a year; at each year end the chain suggests a cut
+between 0% and 20% from the past year's price (a falling price means a
+bigger cut) and the community confirms it by vote, or the previous cut
+stays. The table assumes the default 10%. <strong>Illustrative upper
+bound</strong> (actual can be lower: above the durability floor, BME
+mints only against burns):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Year</th>
+<th style="text-align: right;">Annual emission (≈)</th>
+<th style="text-align: right;">Cumulative mining (≈)</th>
+<th style="text-align: right;">% of total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">~80M</td>
+<td style="text-align: right;">~80M</td>
+<td style="text-align: right;">~8%</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">~72M</td>
+<td style="text-align: right;">~152M</td>
+<td style="text-align: right;">~15%</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">~65M</td>
+<td style="text-align: right;">~217M</td>
+<td style="text-align: right;">~22%</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: right;">~52M</td>
+<td style="text-align: right;">~328M</td>
+<td style="text-align: right;">~33%</td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: right;">~31M</td>
+<td style="text-align: right;">~521M</td>
+<td style="text-align: right;">~52%</td>
+</tr>
+<tr>
+<td style="text-align: left;">20</td>
+<td style="text-align: right;">~11M</td>
+<td style="text-align: right;">~702M</td>
+<td style="text-align: right;">~70%</td>
+</tr>
+<tr>
+<td style="text-align: left;">30</td>
+<td style="text-align: right;">~4M</td>
+<td style="text-align: right;">~766M</td>
+<td style="text-align: right;">~77%</td>
+</tr>
+</tbody>
+</table>
+<figure><img src="/assets/emission.svg" alt="Illustrative mining emission over 30 years: annual release falling from 80M and cumulative total approaching 800M"><figcaption>Illustrative mining emission (default 10% yearly cut). An upper bound; real issuance can be lower and the schedule is governed on-chain.</figcaption></figure>
+
+<ul>
+<li>Non-mining is <strong>not a genesis bag</strong>: a <strong>4%
+genesis premint</strong> covers the protocol-owned liquidity seed, the
+security-bounty bucket and fees (each sub-bucket an on-chain group
+policy + timelock + labeled; unused returns to treasury/burn; POL: vault
+has no withdrawal key and the signers' Safe can remove liquidity only
+after the time lock and only to the chain treasury escrow or the
+winter-reserve account); team/treasury/growth are <strong>streamed
+gradually from the curve</strong> (vesting + governance control +
+timelock; the treasury is keyless; the fiat leg that backs the miner
+floor is held of record by the issuing company, and a segregated holding
+vehicle is with counsel).</li>
+<li><strong>BME:</strong> above the durability floor, no verified demand
+→ no minting; adaptation can only reduce, never over-issue → the table
+is an <strong>upper bound</strong>, real circulating can be lower.</li>
+<li><strong>Exact schedule/parameters are governed
+on-chain.</strong></li>
+</ul>
+<blockquote>
+<p>Reminder: <strong>not investment advice. Everything may change in the
+testnet stage.</strong></p>
+</blockquote>
+<hr />
+<h2 id="10-how-web3os-compares--honest-pros--cons">10. How Web3OS
+compares — honest pros &amp; cons</h2>
+<p>Web3OS is <strong>not "another Filecoin."</strong> Most decentralized
+networks do <em>one</em> thing — store blobs (Filecoin / Arweave / Storj
+/ Sia), move files (IPFS / BitTorrent), or rent GPUs (Akash / io.net /
+Render). Web3OS combines <strong>decentralized storage ＋ AI
+value-search ＋ a creator marketplace (royalties, and rights holders
+paid even when someone else uploads their work) ＋ optional
+compute</strong> — which is its differentiator <em>and</em> its biggest
+execution risk.</p>
+<h3 id="positioning-2026">Positioning (2026)</h3>
+<p>Legend: ✅ strength · ⚠️ trade-off or partial · ❌ weakness · ➖ not
+offered or not applicable.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>Web3OS</strong></th>
+<th style="text-align: left;">Filecoin</th>
+<th style="text-align: left;">Arweave</th>
+<th style="text-align: left;">Storj</th>
+<th style="text-align: left;">IPFS / BitTorrent</th>
+<th style="text-align: left;">Akash / io.net / Render</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Core</td>
+<td style="text-align: left;">Storage ＋ <strong>AI value-search ＋
+content market</strong></td>
+<td style="text-align: left;">Storage marketplace</td>
+<td style="text-align: left;"><strong>Permanent</strong> storage</td>
+<td style="text-align: left;">S3-style object storage</td>
+<td style="text-align: left;">Addressing / transport</td>
+<td style="text-align: left;">GPU compute</td>
+</tr>
+<tr>
+<td style="text-align: left;">Storage proof</td>
+<td style="text-align: left;">⚠️ <strong>PoFD (delivery-speed) ＋
+on-chain proof of random targets</strong> (ADR-224); sealing ＋ PoSt on
+floor columns only (ADR-172, live on testnet, parameters under
+calibration)</td>
+<td style="text-align: left;">✅ <strong>PoRep / PoSt</strong> (heavy,
+formal)</td>
+<td style="text-align: left;">✅ Endowment ＋ proofs</td>
+<td style="text-align: left;">⚠️ Erasure ＋ reputation (Satellites)</td>
+<td style="text-align: left;">❌ none native</td>
+<td style="text-align: left;">➖</td>
+</tr>
+<tr>
+<td style="text-align: left;">Retention</td>
+<td style="text-align: left;">⚠️ <strong>Demand/value-driven</strong>
+(cold low-value may be GC'd)</td>
+<td style="text-align: left;">⚠️ Contract-term</td>
+<td style="text-align: left;">✅ <strong>Pay-once, forever</strong></td>
+<td style="text-align: left;">⚠️ Contract</td>
+<td style="text-align: left;">❌ best-effort</td>
+<td style="text-align: left;">➖</td>
+</tr>
+<tr>
+<td style="text-align: left;">Confidentiality</td>
+<td style="text-align: left;">⚠️ <strong>Not ZK</strong> (dedup
+tradeoff; self-encrypt option)</td>
+<td style="text-align: left;">✅ opaque encrypted blobs</td>
+<td style="text-align: left;">❌ public permaweb</td>
+<td style="text-align: left;">✅ client-side encrypted</td>
+<td style="text-align: left;">❌ public</td>
+<td style="text-align: left;">➖</td>
+</tr>
+<tr>
+<td style="text-align: left;">Search / discovery</td>
+<td style="text-align: left;">✅ <strong>AI value scoring,
+multilingual</strong></td>
+<td style="text-align: left;">❌ none (blob CID)</td>
+<td style="text-align: left;">⚠️ gateway</td>
+<td style="text-align: left;">❌ none</td>
+<td style="text-align: left;">⚠️ DHT / keyword</td>
+<td style="text-align: left;">➖</td>
+</tr>
+<tr>
+<td style="text-align: left;">Creator economy / rights-holder pay</td>
+<td style="text-align: left;">✅ <strong>Built-in</strong> (royalties,
+attestation, jury)</td>
+<td style="text-align: left;">❌ no</td>
+<td style="text-align: left;">❌ no</td>
+<td style="text-align: left;">❌ no</td>
+<td style="text-align: left;">❌ no</td>
+<td style="text-align: left;">⚠️ Render: creator focus</td>
+</tr>
+<tr>
+<td style="text-align: left;">Compute</td>
+<td style="text-align: left;">⚠️ Optional container hosting,
+nascent</td>
+<td style="text-align: left;">➖</td>
+<td style="text-align: left;">➖</td>
+<td style="text-align: left;">➖</td>
+<td style="text-align: left;">➖</td>
+<td style="text-align: left;">✅ Live GPU markets</td>
+</tr>
+<tr>
+<td style="text-align: left;">Maturity</td>
+<td style="text-align: left;">❌ <strong>Testnet,
+pre-launch</strong></td>
+<td style="text-align: left;">✅ Mainnet, ~2.1 EiB stored</td>
+<td style="text-align: left;">✅ Mainnet, years (permaweb)</td>
+<td style="text-align: left;">✅ Mainnet, S3 live</td>
+<td style="text-align: left;">✅ Mature</td>
+<td style="text-align: left;">✅ Live (io.net 300K+ GPUs)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="advantages">Advantages</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Advantage</th>
+<th style="text-align: left;">What it means</th>
+<th style="text-align: left;">Compared with</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">✅</td>
+<td style="text-align: left;"><strong>Value-search ＋
+marketplace</strong></td>
+<td style="text-align: left;">Content surfaces by AI-judged value (not
+ads/SEO), with creator royalties and rights holders paid even when
+others upload their works</td>
+<td style="text-align: left;">Storage-only networks do not do this</td>
+</tr>
+<tr>
+<td style="text-align: left;">✅</td>
+<td style="text-align: left;"><strong>Lower miner barrier</strong></td>
+<td style="text-align: left;">PoFD ＋ audit, no SDR sealing or zk
+proofs; only floor columns carry a light sequential seal</td>
+<td style="text-align: left;">Cheaper and faster to join than
+Filecoin</td>
+</tr>
+<tr>
+<td style="text-align: left;">✅</td>
+<td style="text-align: left;"><strong>Space efficient</strong></td>
+<td style="text-align: left;">Network-wide convergent dedup ＋ erasure
+coding (~1.4× for large files)</td>
+<td style="text-align: left;">Instead of N× replication</td>
+</tr>
+<tr>
+<td style="text-align: left;">✅</td>
+<td style="text-align: left;"><strong>Built-in AI
+value-add</strong></td>
+<td style="text-align: left;">Multilingual subtitles/translation,
+content classification, safety scanning, deterministic detectors plus
+human-jury arbitration (AI summaries advise, never decide)</td>
+<td style="text-align: left;">No incumbent bundles these</td>
+</tr>
+<tr>
+<td style="text-align: left;">✅</td>
+<td style="text-align: left;"><strong>Non-inflationary tokenomics
+(BME)</strong></td>
+<td style="text-align: left;">Burn-and-mint against real usage, a
+release that only declines, reputation-based Sybil resistance</td>
+<td style="text-align: left;">Lottery or pure-inflation rewards</td>
+</tr>
+</tbody>
+</table>
+<h3 id="honest-disadvantages">Honest disadvantages</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Disadvantage</th>
+<th style="text-align: left;">What it means</th>
+<th style="text-align: left;">Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;"><strong>No track record — testnet,
+pre-launch</strong></td>
+<td style="text-align: left;">Filecoin stores exbibytes, Arweave has
+years of permaweb, Storj/io.net are live; <strong>Web3OS is unproven at
+scale — the single biggest risk</strong></td>
+<td style="text-align: left;">A public testnet now; only running at
+scale can remove this</td>
+</tr>
+<tr>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;"><strong>Early centralization</strong></td>
+<td style="text-align: left;">One team runs most seed nodes and holds
+the ADR-184 duty seats and a capped team vote</td>
+<td style="text-align: left;">The team cap steps down at on-chain
+conditions; governance runs on-chain from genesis</td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠️</td>
+<td style="text-align: left;"><strong>Not permanent like
+Arweave</strong></td>
+<td style="text-align: left;">Cold, low-value, zero-download content can
+be garbage-collected by design</td>
+<td style="text-align: left;">Prepaid Private storage keeps a file for
+the period paid, renewable; for pay-once-forever permanence, Arweave
+fits better</td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠️</td>
+<td style="text-align: left;"><strong>Lighter storage proof than
+Filecoin</strong></td>
+<td style="text-align: left;">PoFD is delivery-driven; only
+durability-floor columns carry sealing and PoSt (ADR-172, live on
+testnet, parameters under calibration), with no full SDR PoRep — weaker
+formal durability assurance. In simulated attacks on the sealed lanes, a
+miner that recomputes missing data on each challenge could still drop
+about 12 % of a lane at the pinned graph degree. This is a measured
+lower bound, not a proven limit, pending the ADR-119 review</td>
+<td style="text-align: left;">Per-miner sealed floor columns, random
+on-chain audits and erasure-coded repair; the per-challenge work bound
+is calibrated from these measurements before mainnet, and a missed or
+false proof forfeits the pay</td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠️</td>
+<td style="text-align: left;"><strong>Content is not zero-knowledge
+confidential</strong></td>
+<td style="text-align: left;">The price of network-wide dedup</td>
+<td style="text-align: left;">Self-encrypt for true secrecy (such a file
+stays Private)</td>
+</tr>
+<tr>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;"><strong>Broad scope = execution
+risk</strong></td>
+<td style="text-align: left;">Storage ＋ search ＋ marketplace ＋
+compute ＋ naming is far more than a focused competitor (Storj =
+storage, Render = rendering)</td>
+<td style="text-align: left;">None: the combination is the core bet
+itself</td>
+</tr>
+<tr>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;"><strong>Compute layer is
+nascent</strong></td>
+<td style="text-align: left;">Behind live io.net / Akash / Render</td>
+<td style="text-align: left;">Can place deployments on Akash
+meanwhile</td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠️</td>
+<td style="text-align: left;"><strong>Bridge and regulatory
+exposure</strong></td>
+<td style="text-align: left;">Wrapped-asset dependency (audited bridge
+standards only, never a self-built bridge); media/marketplace
+adjacency</td>
+<td style="text-align: left;">Content-neutrality ＋ BSL ＋ takedown
+governance; mitigated, not eliminated</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Bottom line:</strong> Web3OS's bet is "<strong>AI
+value-search ＋ a creator marketplace on top of decentralized
+storage</strong>", which no incumbent offers as one unit — but it must
+still prove it runs at scale, which the incumbents have done and Web3OS
+has not. Judge it as an <strong>early-stage, high-upside,
+high-risk</strong> project, not a drop-in replacement for a live
+network.</p>
+</blockquote>
+<hr />
+<h2 id="11-brand-license-security-and-contact">11. Brand, license,
+security and contact</h2>
+<h3 id="brand">Brand</h3>
+<p>The Web3OS logo is free to use when referring to Web3OS, unaltered:
+<a href="https://web3os.space/token/web3os-logo.png">transparent PNG</a>
+(<a href="https://web3os.space/token/web3os-logo-1024.png">1024 px</a>)
+and, for places that do not take transparency, <a
+href="https://web3os.space/token/web3os-logo-white.png">white-background
+PNG</a> (<a
+href="https://web3os.space/token/web3os-logo-white-1024.png">1024
+px</a>). The <a href="https://web3os.space/LISTING.md">token profile for
+exchange listing review</a> summarizes the token on one page; where it
+and this whitepaper differ, this whitepaper governs.</p>
+<h3 id="license">License</h3>
+<p>This whitepaper and the website are published under the <a
+href="https://web3os.space/LICENSE">Apache License 2.0</a>. The protocol
+core is licensed under BSL 1.1: auditable, and each version converts to
+full open source no later than four years after its release.</p>
+<h3 id="bug-reports-and-rewards">Bug reports and rewards</h3>
+<p>Bugs are reported as a <a
+href="https://github.com/Web3OS-space/web3os/issues/new?template=bug_report.yml">GitHub
+issue</a>. The first reporter of a bug whose fix ships in a tagged
+release is entered in a public ledger with the issue, its severity, the
+fixing release and the reporter's GitHub username; the amount follows
+the severity. After mainnet launch the whole ledger goes to one
+governance proposal and the community vote decides the payout in WEB3OS,
+which unlocks linearly like every network reward; the payout address is
+the one the reporter posts in a comment on the issue from the same
+GitHub account. Recording is a commitment, payment is not: the vote can
+change or refuse it. Project team members are not eligible; testnet
+tokens have no value and convert to nothing.</p>
+<p>Security problems are never posted publicly: email <a
+href="mailto:contact@web3os.space">contact@web3os.space</a> with
+SECURITY on the subject line, with the steps to reproduce and the
+impact; they enter the same ledger. Attacking the testnet rules from
+your own nodes and accounts is invited (section 8, "hit it hard") and
+enters the ledger like any bug; never test against a computer you do not
+own, including other people's testnet nodes, and never flood the
+network. Machine-readable contact: <a
+href="https://web3os.space/.well-known/security.txt">security.txt</a>.</p>
+<h3 id="join-us">Join us</h3>
+<p>Sign-up for every group is private: send a private message on
+Telegram to <a href="https://t.me/Web3OS_AI_bot">@Web3OS_AI_bot</a> that
+names the group and tells us about you (no Telegram account: <a
+href="mailto:contact@web3os.space">contact@web3os.space</a>). Questions
+and discussion: the <a href="https://t.me/Web3OS_Official">Telegram
+group</a>. News: <a href="https://x.com/Web3OS_space">X</a>. Bugs and
+problems: a <a
+href="https://github.com/Web3OS-space/web3os/issues/new/choose">GitHub
+issue</a>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Group</th>
+<th style="text-align: left;">What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Testnet miners</td>
+<td style="text-align: left;">Linux or Windows node kept online for a
+few weeks; see §8</td>
+</tr>
+<tr>
+<td style="text-align: left;">Application developers</td>
+<td style="text-align: left;">Applications on the platform; see Role
+7</td>
+</tr>
+<tr>
+<td style="text-align: left;">Testnet attackers</td>
+<td style="text-align: left;">Try to cheat the testnet from your own
+nodes and accounts (§8 "hit it hard"); every way found enters the bug
+ledger (§11)</td>
+</tr>
+<tr>
+<td style="text-align: left;">macOS and iPhone testers</td>
+<td style="text-align: left;">The app is untested on Apple hardware;
+testers wanted</td>
+</tr>
+<tr>
+<td style="text-align: left;">Investors and partners</td>
+<td style="text-align: left;">Follow X; no token sale, nothing here is
+an offer</td>
+</tr>
+</tbody>
+</table>
+<h3 id="contact">Contact</h3>
+<p><strong>Official accounts (anti-scam).</strong> The only official
+accounts are the Telegram group Web3OS.space (<a
+href="https://t.me/Web3OS_Official">t.me/Web3OS_Official</a>), its bot
+<a href="https://t.me/Web3OS_AI_bot">@Web3OS_AI_bot</a>, <a
+href="https://x.com/Web3OS_space">@Web3OS_space</a> on X (news only),
+the GitHub organisation <a
+href="https://github.com/Web3OS-space">Web3OS-space</a> and mail
+addresses ending in @web3os.space. The project never contacts anyone
+first; it replies only in a conversation the other person started. It
+never asks for recovery words, private keys or passwords, never asks
+anyone to send coins and runs no presale or token sale; any account that
+does is not the project. Web3OS Labs LLC provides web3os.space, the
+Web3OS app and this website. Postal address: Web3OS Labs LLC, 30 N Gould
+St Ste R, Sheridan, WY 82801, United States. Every address below reaches
+a person; languages: English, Chinese.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Authorities and law enforcement (EU
+Digital Services Act Art. 11)</td>
+<td style="text-align: left;"><a
+href="mailto:legal@web3os.space">legal@web3os.space</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Users (EU Digital Services Act Art.
+12)</td>
+<td style="text-align: left;"><a
+href="mailto:contact@web3os.space">contact@web3os.space</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Help with the app</td>
+<td style="text-align: left;"><a
+href="mailto:support@web3os.space">support@web3os.space</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Application developers</td>
+<td style="text-align: left;"><a
+href="mailto:contact@web3os.space">contact@web3os.space</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Sign-up (miners, testers and
+attackers)</td>
+<td style="text-align: left;">Private message on Telegram to <a
+href="https://t.me/Web3OS_AI_bot">@Web3OS_AI_bot</a> (no Telegram
+account: <a
+href="mailto:contact@web3os.space">contact@web3os.space</a>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Questions and discussion</td>
+<td style="text-align: left;"><a
+href="https://t.me/Web3OS_Official">Telegram group</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">News</td>
+<td style="text-align: left;"><a
+href="https://x.com/Web3OS_space">X</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Security vulnerabilities (see Reporting a
+security problem above)</td>
+<td style="text-align: left;"><a
+href="mailto:contact@web3os.space">contact@web3os.space</a> (SECURITY on
+the subject line)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Report illegal content or abuse (include
+the share link or content address)</td>
+<td style="text-align: left;"><a
+href="mailto:abuse@web3os.space">abuse@web3os.space</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Copyright notices and counter-notices</td>
+<td style="text-align: left;"><a
+href="mailto:dmca@web3os.space">dmca@web3os.space</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Privacy and personal data requests</td>
+<td style="text-align: left;"><a
+href="mailto:privacy@web3os.space">privacy@web3os.space</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Copyright notices.</strong> Web3OS Labs LLC has designated a
+copyright agent under 17 U.S.C. 512(c), listed in the U.S. Copyright
+Office DMCA Designated Agent Directory as DMCA-1086677 (Copyright Agent,
+address above, <a
+href="mailto:dmca@web3os.space">dmca@web3os.space</a>). The notice
+requirements, counter-notices and the Taiwan Copyright Act Chapter VI-1
+procedure are on the <a href="https://web3os.space/copyright/">copyright
+notices page</a>. Repeat infringers may lose access; a knowingly false
+notice can make the sender liable for damages under 17 U.S.C.
+512(f).</p>
+<hr />
+<p><em>Minimal-disclosure public edition. The full
+design/implementation/UI whitepaper, backend &amp; consensus
+implementation, ops tooling, deployment scripts, datasets and models
+remain private. Version tracked by public-repo git history.</em></p>
+</main>
+</div>
+<footer><div class="in">
+<img src="/token/web3os-logo.png" alt="">
+<span>© Web3OS Labs LLC · 30 N Gould St Ste R, Sheridan, WY 82801, United States</span>
+<a href="/LICENSE">License (Apache-2.0)</a><a href="/whitepaper/#11-brand-license-security-and-contact">Contact</a><a href="/copyright/">Copyright notices</a><a href="/LISTING.md">Token profile</a>
+</div></footer>
+</body>
+</html>

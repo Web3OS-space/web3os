@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>web3os.space — The Web3 Operating System</title>
+<meta name="description" content="Web3OS, the Web3 operating system: store files, find what is worth finding, sell your work and run apps on one network no single company owns. Public whitepaper.">
+<meta property="og:title" content="web3os.space — The Web3 Operating System">
+<meta property="og:description" content="A decentralized, AI-driven storage and value-search network (DePIN). Testnet stage.">
+<meta property="og:image" content="https://web3os.space/token/web3os-logo-1024.png">
+<meta property="og:url" content="https://web3os.space/">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/token/web3os-logo.png">
+<style>
+:root{--navy:#0d1433;--sky:#4fc3f7;--blue:#2f74b5;--ink:#1c2333;--muted:#5b6578;--line:#e3e8f0;--bg:#f6f8fc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font:16.5px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:#fff}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+header.bar{position:sticky;top:0;z-index:10;background:var(--navy);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+header.bar .in{max-width:1180px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:24px}
+header.bar .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+header.bar .brand img{width:34px;height:34px}
+header.bar nav{margin-left:auto;display:flex;gap:22px;font-size:15px}
+header.bar nav a{color:#cfe9fb;white-space:nowrap}header.bar nav a:hover{color:#fff;text-decoration:none}
+.hero{background:radial-gradient(1200px 400px at 70% -10%,#1d3a7a 0,var(--navy) 60%);color:#fff;text-align:center;padding:64px 20px 56px}
+.hero img{width:132px;height:132px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.35))}
+.hero h1{font-size:44px;line-height:1.15;margin:18px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:26px;font-weight:600;color:var(--sky);margin:0 0 12px;letter-spacing:.2px}
+.hero p.sub{font-size:20px;color:#cfe9fb;max-width:760px;margin:0 auto 22px}
+.hero .badge{display:inline-block;border:1px solid rgba(79,195,247,.55);color:var(--sky);border-radius:999px;padding:4px 14px;font-size:13.5px;margin-bottom:26px}
+.hero .cta a{display:inline-block;margin:6px 6px 0;padding:11px 22px;border-radius:8px;font-weight:600;font-size:15.5px}
+.hero .cta a.p{background:var(--sky);color:var(--navy)}.hero .cta a.s{border:1px solid #7fa6d6;color:#fff}
+.hero .cta a:hover{text-decoration:none;filter:brightness(1.08)}
+.wrap{max-width:1180px;margin:0 auto;padding:36px 20px 64px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:48px}
+aside.toc{position:sticky;top:84px;align-self:start;max-height:calc(100vh - 100px);overflow:auto;font-size:14px;border-right:1px solid var(--line);padding-right:16px}
+aside.toc .t{font-weight:700;color:var(--navy);text-transform:uppercase;font-size:12px;letter-spacing:1px;margin-bottom:8px}
+aside.toc ul{list-style:none;margin:0;padding:0}aside.toc ul ul{padding-left:12px;margin:2px 0 6px}
+aside.toc li{margin:3px 0}aside.toc a{color:var(--muted)}aside.toc a:hover{color:var(--blue)}
+main{min-width:0}
+main h2{font-size:28px;color:var(--navy);margin:48px 0 14px;padding-top:6px;border-top:1px solid var(--line)}
+main h2:first-of-type{margin-top:8px;border-top:0}
+main h3{font-size:20px;color:var(--navy);margin:30px 0 10px}
+main blockquote{margin:18px 0;padding:14px 18px;background:var(--bg);border-left:4px solid var(--sky);border-radius:0 8px 8px 0;color:#2c3548}
+main blockquote p{margin:6px 0}
+main table{border-collapse:collapse;width:100%;margin:16px 0;font-size:15px;display:block;overflow-x:auto}
+main th,main td{border:1px solid var(--line);padding:8px 12px;vertical-align:top}
+main th{background:var(--bg);color:var(--navy);text-align:left}
+main tr:nth-child(even) td{background:#fbfcfe}
+main hr{display:none}
+main code{background:var(--bg);padding:1px 5px;border-radius:4px;font-size:.92em}
+main figure{margin:20px 0;padding:14px;border:1px solid var(--line);border-radius:10px}
+main figure img{width:100%;height:auto;display:block}
+main figure figcaption{font-size:13.5px;color:var(--muted);margin-top:8px;text-align:center}
+footer{background:var(--navy);color:#b8c6dd;font-size:14px}
+footer .in{max-width:1180px;margin:0 auto;padding:28px 20px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center}
+footer img{width:28px;height:28px}footer a{color:#cfe9fb}
+@media (max-width:900px){.wrap{grid-template-columns:1fr;gap:20px}aside.toc{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line);padding:0 0 14px}header.bar nav{gap:14px;font-size:14px}.hero h1{font-size:34px}.hero p.tag{font-size:26px;font-weight:600;color:var(--sky);margin:0 0 12px;letter-spacing:.2px}
+.hero p.sub{font-size:17px}.hero p.tag{font-size:21px}}
+@media (max-width:560px){header.bar nav a.opt{display:none}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="in">
+<a class="brand" href="/"><img src="/token/web3os-logo.png" alt="Web3OS logo">web3os.space</a>
+<nav><a href="/whitepaper/#1-what-is-web3os">Whitepaper</a><a class="opt" href="/whitepaper/#3-tokenomics">The coin</a><a class="opt" href="/whitepaper/#8-miner-onboarding-guide-testnet-stage">Test network</a><a href="/whitepaper/#11-brand-license-security-and-contact">Contact</a></nav>
+</div></header>
+<section class="hero" id="top">
+<img src="/token/web3os-logo.png" alt="Web3OS logo">
+<h1>web3os.space</h1>
+<p class="tag">The Web3 Operating System</p>
+<p class="sub">A computer that belongs to everyone. It starts with storage that keeps your files safe, then adds apps, computing power and AI, on one network that no single company owns.</p>
+<div class="badge">Test stage · test coins have no value and are not for sale</div>
+<div class="cta"><a class="p" href="/whitepaper/">Read the public whitepaper</a><a class="s" href="/whitepaper/#8-miner-onboarding-guide-testnet-stage">Join the test network</a><a class="s" href="/whitepaper/#11-brand-license-security-and-contact">Contact</a></div>
+</section>
+<div class="wrap">
+<aside class="toc"><div class="t">web3os.space</div>
+<ul>
+<li><a href="#what-is-web3osspace" id="toc-what-is-web3osspace">What is
+web3os.space?</a></li>
+<li><a href="#what-it-can-do" id="toc-what-it-can-do">What it can
+do</a></li>
+<li><a href="#users" id="toc-users">Users</a></li>
+<li><a href="#creators" id="toc-creators">Creators</a></li>
+<li><a href="#owners-of-linux-and-windows-computers"
+id="toc-owners-of-linux-and-windows-computers">Owners of Linux and
+Windows computers</a></li>
+<li><a href="#voters" id="toc-voters">Voters</a></li>
+<li><a href="#if-something-goes-wrong"
+id="toc-if-something-goes-wrong">If something goes wrong</a></li>
+<li><a href="#developers-people-and-ai-assistants"
+id="toc-developers-people-and-ai-assistants">Developers, people and AI
+assistants</a></li>
+<li><a href="#join-us" id="toc-join-us">Join us</a></li>
+<li><a href="#found-a-bug-report-it-and-earn-coins"
+id="toc-found-a-bug-report-it-and-earn-coins">Found a bug? Report it and
+earn coins</a></li>
+<li><a href="#is-it-safe" id="toc-is-it-safe">Is it safe?</a></li>
+<li><a href="#for-experts" id="toc-for-experts">For experts</a></li>
+</ul>
+</aside>
+<main>
+<blockquote>
+<p><strong>Beware of scams: these are our only official
+accounts.</strong> Telegram: the group <strong>Web3OS.space</strong> at
+<a href="https://t.me/Web3OS_Official">t.me/Web3OS_Official</a> and its
+helper bot <strong>@Web3OS_AI_bot</strong>. X: <strong><a
+href="https://x.com/Web3OS_space">@Web3OS_space</a></strong>, for news
+only. Mail: addresses ending in <strong>@web3os.space</strong>. We never
+contact you first: no private message, call or mail from us unless you
+wrote to us first, and we reply only in the chat you started with
+@Web3OS_AI_bot. Questions and discussion happen in that one Telegram
+group, nowhere else. Nobody from web3os.space ever asks for your
+recovery words, private keys or passwords, asks you to send coins, or
+sells coins. Anyone who does is a scammer, whatever name or logo they
+use: do not answer, and tell us in the group.</p>
+</blockquote>
+<h2 id="what-is-web3osspace">What is web3os.space?</h2>
+<p><strong>web3os.space is building a computer that belongs to
+everyone.</strong> It works like the computer or phone you already know:
+you keep your files there, open apps, and pay or get paid. The
+difference is that it does not live in one company's building. It runs
+on many ordinary computers around the world, joined into one, so no
+single company owns it, can switch it off or can quietly change the
+rules. You use it through the web3os.space app, and you do not need to
+know anything about computers, coins or "crypto".</p>
+<p><strong>It starts with storage.</strong> Every computer starts with a
+place to keep things: an app needs somewhere to live, and your photos
+and messages need to still be there tomorrow. Blockchains, the shared
+record books behind digital coins, are very good at remembering who paid
+whom, but far too expensive for files. So most "Web3" apps today keep
+only the payment there and put the real thing, the pictures, the
+messages and the app itself, on one company's server; when that server
+is switched off, the app is gone. An operating system that belongs to
+everyone therefore needs storage that belongs to everyone, first. Like a
+house, the foundation comes first and the floors after: <strong>first
+storage, then apps, then computing power and AI, and then virtual and
+augmented reality (VR and AR), the shared 3D worlds often called the
+metaverse.</strong> Together, that is an operating system like Windows
+or Android, shared by everyone who uses it. That is what the name means:
+<strong>web3os.space, a space where your files and apps
+live.</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">A normal cloud service</th>
+<th style="text-align: left;">web3os.space</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Who keeps your files</td>
+<td style="text-align: left;">One company</td>
+<td style="text-align: left;">Many computers in many countries</td>
+</tr>
+<tr>
+<td style="text-align: left;">Who can read your private files</td>
+<td style="text-align: left;">The company can</td>
+<td style="text-align: left;">Nobody: your files are encrypted on your
+device before they leave it</td>
+</tr>
+<tr>
+<td style="text-align: left;">Who sets the rules and prices</td>
+<td style="text-align: left;">The company, any time</td>
+<td style="text-align: left;">Public rules that change only by a vote of
+the people who use it</td>
+</tr>
+<tr>
+<td style="text-align: left;">If the company closes</td>
+<td style="text-align: left;">Your files and purchases may be gone</td>
+<td style="text-align: left;">There is no company to close; the network
+keeps running</td>
+</tr>
+<tr>
+<td style="text-align: left;">Who earns when you buy a song or a
+video</td>
+<td style="text-align: left;">Mostly the platform</td>
+<td style="text-align: left;">Mostly the person who made it, paid
+automatically</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-it-can-do">What it can do</h2>
+<ul>
+<li><strong>Keep your files safe.</strong> Your files are cut into small
+pieces and encrypted on your own phone or computer before they leave it.
+Many computers in many places keep the pieces; the network keeps
+checking that the pieces are really still there and pays only the
+computers that pass the check.</li>
+<li><strong>Search and preview for free.</strong> Looking around,
+searching and watching previews cost nothing, up to a generous daily
+amount (for example 200 searches a day). Good content is ranked by how
+useful people find it, not by who paid for an advertisement.</li>
+<li><strong>Buy and sell videos, music, books and apps.</strong> The
+person who made a work gets the largest share of every sale, paid
+automatically, and a buyer who gets a virus, a damaged file or something
+that is not what it said can get the money back.</li>
+<li><strong>Pay and get paid, built in.</strong> web3os.space keeps its
+own public record book of every payment (a blockchain called
+Web3OSChain), kept by many computers together so nobody can secretly
+change it, and anyone can check it. Everything is paid in one coin,
+<strong>WEB3OS</strong>: there is no second coin to buy just to pay
+fees, small payments are added up and settled together, and you see
+every price before you agree.</li>
+</ul>
+<p><strong>What the coin is for.</strong> WEB3OS is the money of this
+shared computer, and inside web3os.space it pays for everything: buying
+a video, a song, a book or an app; keeping your own files; a name ending
+in .web3os for your page or app, like a web address; apps and
+subscriptions; and, once they are built, rented computing power and AI.
+That use is where the coin gets its worth: anyone who wants to buy
+something here needs coins, and most of what they pay goes to the person
+who made the work and to the computer owners who kept and delivered it.
+So a computer owner can spend what they earned on what creators make,
+and a creator can spend what they earned on storage, like a town's own
+money that pays for everything in the town.</p>
+<p>During the test stage the coin is a free test coin with no value, and
+nobody from web3os.space will ever message you to sell you coins. When
+the real network opens, coins people earn can be spent inside it, but
+cannot be sent to others or sold until there is a big enough market for
+them; no date is promised. Prices can fall, even to zero; nothing here
+is a promise of profit or investment advice.</p>
+<h2 id="users">Users</h2>
+<p>Anyone can start here. Make a free account in the app (no ID card),
+then search, browse and watch previews at no cost. Put your photos,
+videos and documents in your own private space for a small storage fee
+for the time you choose; they stay private unless you decide to share
+them. When you buy something, you pay the person who made it and the
+computers that deliver it, not a middleman, and what you buy can go into
+your private space. A refund claim needs a small deposit, which you get
+back when your claim is honest; "I watched the preview and changed my
+mind" is not a reason for a refund.</p>
+<h2 id="creators">Creators</h2>
+<p>Publish your videos, music, writing or software and receive the
+largest share of every paid download, paid automatically. The app helps
+with previews and sorts your work into the right category by itself.
+Publishing is free up to an allowance. To receive your earnings in full,
+you register as the owner of the work; until then most of the money
+waits safely, so someone who copies your work cannot collect it.
+Publishing cannot be undone, so publish only what you are happy to
+share.</p>
+<h2 id="owners-of-linux-and-windows-computers">Owners of Linux and
+Windows computers</h2>
+<p>If you have ever shared files with BitTorrent (BT), you know the
+problem: you leave your computer on and send pieces to strangers, and
+you get nothing back, so most people stop sharing as soon as their own
+download finishes and the file slowly disappears. Private sharing sites
+(often called PT) fixed part of this with upload points, but those
+points work only on that one site, cannot be moved or used for anything
+else, and are gone if the site closes.</p>
+<p>web3os.space keeps the good part and makes the reward real. If you
+have a Linux or Windows computer that is often on, you lend its spare
+disk space and internet connection to keep pieces of other people's
+files and to send them when someone downloads. The pieces are encrypted
+before they reach you, so you cannot see what is inside them. You are
+paid in WEB3OS coins for every piece you keep, checked by the network
+itself rather than by what your computer claims, and for every download
+you deliver. These coins are not points stuck on one site: you can spend
+them on anything inside web3os.space (see "What the coin is for" above).
+Today this runs on the test network with free test coins; how to join is
+in the Public Whitepaper.</p>
+<p><strong>What your computer needs: a fast upload, not only disk
+space.</strong> Much of the pay comes from sending pieces to people who
+download them, and sending uses your connection's <em>upload</em> speed,
+the direction used when you send a video or a backup, not the download
+speed that internet plans usually advertise. Many home plans upload far
+slower than they download, for example 1,000 Mbps down but only 100 Mbps
+up, or less. When someone downloads, their app takes each piece from a
+computer that answers quickly; if yours is slow to answer, the app moves
+on to another computer that holds the same piece, and that one is paid
+for the delivery. A slow disk slows your answer too: the computers paid
+to keep the main copies need a solid-state drive (SSD, the fast kind of
+disk in most new laptops), while an ordinary hard disk can still keep
+and deliver extra copies. So before you join, run a free speed test on
+the computer you plan to use and look at the upload number. A computer
+that is on day and night with a fast, stable upload earns more; one with
+a slow upload can still keep pieces and pass the checks, but wins few
+deliveries.</p>
+<h2 id="voters">Voters</h2>
+<p>People who lock some coins (about 100 US dollars' worth) can vote on
+the rules, the prices and how the shared fund is spent. No single person
+can outvote everyone, and the team's own votes are capped.</p>
+<h2 id="if-something-goes-wrong">If something goes wrong</h2>
+<p>Anyone may bring any public file onto web3os.space, including films,
+music and books made by other people: the aim is to keep the world's
+files in one place that no company can close. Bringing a work here is
+promotion, and the person who uploads it earns a promotion reward of 1%
+of the creator's share of what the work earns each week, for the disk
+space and time they gave (a brand-new account receives less of it until
+it has been here a while). The rest of the creator's share is kept aside
+for 26 weeks for the real owner of the work. When the real owner shows
+their proof on the work's page, a few users picked at random look at it
+together, like a jury. If the owner is right, the owner decides: keep
+the work up, with the creator earnings kept aside so far and all later
+ones going to them, or take it down. Nobody's purchase is undone: the
+money buyers paid stays with the work and goes to its real owner.
+Keeping it up counts against no one. Only when the owner chooses to take
+a work down does it count on the record of the account that put it up,
+and only repeated removals limit that account; the law asks every
+platform to have this rule. If no owner ever comes forward, most of the
+kept-aside money goes to a public fund that looks after the works on the
+network. Anyone can point out a harmful file, and the users who look at
+cases carefully get a small reward; a report made only to cause trouble
+costs its sender a small deposit. Every decision follows these fixed
+public rules and is never made by an AI alone.</p>
+<h2 id="developers-people-and-ai-assistants">Developers, people and AI
+assistants</h2>
+<p>An operating system is only as useful as its apps, so web3os.space
+invites developers to build them, and anyone who can make a web page
+can. You do not need a server of your own: an app is a few web pages
+plus a short file that says what the app may do, kept on the network
+under a name, like a web address. It runs inside each user's own
+web3os.space app, in a closed box that can reach nothing on the
+internet, and it must ask the user before it reads their data or spends
+their money; a dishonest app can never spend more than the limit the
+user allowed. Sign-in, keeping data, payments, subscriptions, messages
+and rented computing power are already built in, through one small free
+toolkit (one file, free to use and change under the Apache 2.0 license).
+When people pay inside your app, your share reaches you
+automatically.</p>
+<p>AI coding assistants are welcome too. The developer guide and the
+full list of what an app can ask for are plain text, written so that an
+AI assistant can read them and build an app the same way a person does:
+point your assistant at <a
+href="https://web3os.space/llms.txt">web3os.space/llms.txt</a>. Read the
+<a href="https://web3os.space/developers/guide">developer guide</a> and
+the <a href="https://web3os.space/developers/reference">list of
+calls</a> today. The download that adds the toolkit, a sample app and a
+small test network on your own computer comes when the remaining app
+connections are finished. To hear first, or to tell us what you want to
+build, write to <a
+href="mailto:contact@web3os.space">contact@web3os.space</a>.</p>
+<h2 id="join-us">Join us</h2>
+<p>This is the first public release: the test network is live and open
+to everyone, and what we need most now is people who test the programs.
+web3os.space is looking for testers and for attackers: people who try to
+break it. Talk with us and other users in our <a
+href="https://t.me/Web3OS_Official">Telegram group</a>. To sign up, send
+a private message on Telegram to <a
+href="https://t.me/Web3OS_AI_bot">@Web3OS_AI_bot</a> saying which group
+you are in and a little about yourself; it stays private between you and
+us, and we reply there. If you have no Telegram account, write to <a
+href="mailto:contact@web3os.space">contact@web3os.space</a>. For news,
+follow us on <a href="https://x.com/Web3OS_space">X</a>. Found a bug?
+See "Found a bug? Report it and earn coins" below.</p>
+<ul>
+<li><strong>Owners of Linux and Windows computers (miners):</strong>
+keep one computer on for a few weeks on the test network, report
+problems and tell us what was confusing. The steps are in the <a
+href="https://web3os.space/whitepaper/#8-miner-onboarding-guide-testnet-stage">miner
+guide</a>.</li>
+<li><strong>App developers, people and AI assistants:</strong> see the
+developer section above.</li>
+<li><strong>Attackers:</strong> on the test network, try to cheat it
+from your own computer and your own accounts: get paid without keeping
+the pieces, download without paying, read a file that is not yours, fool
+a vote or a report. Coins on the test network are worthless, so this is
+the time to hit it hard. Never touch anyone else's computer or
+data.</li>
+<li><strong>Testers with a Mac or an iPhone:</strong> we have no Apple
+computers or phones, so the app is not yet tested on them. You can help
+without running a node.</li>
+<li><strong>Investors and partners:</strong> follow us on <a
+href="https://x.com/Web3OS_space">X</a> to hear first, and write to <a
+href="mailto:contact@web3os.space">contact@web3os.space</a>. Nothing on
+this site is an offer to sell coins or shares.</li>
+</ul>
+<h2 id="found-a-bug-report-it-and-earn-coins">Found a bug? Report it and
+earn coins</h2>
+<ol type="1">
+<li>Open a <a
+href="https://github.com/Web3OS-space/web3os/issues/new?template=bug_report.yml">GitHub
+issue</a> (you need a free GitHub account). Write what happened, what
+you did just before, and on which computer, phone or TV. A screenshot
+helps.</li>
+<li>A security problem, one that could let someone steal coins or read
+other people's files, is never posted in public: email <a
+href="mailto:contact@web3os.space">contact@web3os.space</a> with
+SECURITY in the subject.</li>
+<li>When a bug you were the first to report is fixed in a new version,
+we write it in a public list next to your GitHub username, with how
+serious it was. A more serious bug earns more.</li>
+<li>After the main network starts, the community votes on paying the
+whole list in WEB3OS coins. Like every reward on the network, the coins
+then unlock a little each week.</li>
+<li>To be paid, post your wallet address for the main network in a
+comment on your own issue, from the same GitHub account. Only you can
+comment from your account, so nobody else can take your reward.</li>
+</ol>
+<p>This is a promise to record and to put the payment to a vote, not a
+guarantee of payment: the vote decides. Members of the project team are
+not paid for bugs. Test-network coins have no value and are not
+exchanged for real ones. A way to cheat or break the network counts as a
+bug too. Look for problems only on your own computer, phone and
+accounts, never on someone else's.</p>
+<h2 id="is-it-safe">Is it safe?</h2>
+<ul>
+<li><strong>Your private files</strong> are encrypted on your device
+before they leave it. Nobody else can open them, read them or see your
+file list. One small limit: someone who already has exactly the same
+file can check that a copy of it is stored somewhere on the network, but
+they cannot tell whose copy it is and never learn that you have it or
+who you are.</li>
+<li><strong>Bad files:</strong> known viruses, disguised files and known
+illegal content are stopped automatically when someone tries to publish
+them. A brand-new virus can still slip through, which is why buyers can
+get their money back.</li>
+<li><strong>Your recovery words</strong> are a list of words the app
+shows you when you make your account. They are the only master key to
+your account: write them on paper, keep them safe, and never type them
+into a website or give them to anyone, not even someone who says they
+are from web3os.space.</li>
+<li><strong>Fake accounts:</strong> scammers copy our name and logo. Our
+only official accounts are the Telegram group Web3OS.space (<a
+href="https://t.me/Web3OS_Official">t.me/Web3OS_Official</a>) with its
+bot @Web3OS_AI_bot, <a
+href="https://x.com/Web3OS_space">@Web3OS_space</a> on X and mail ending
+in @web3os.space. We never message you first, and we never ask for
+recovery words, keys, passwords or coins.</li>
+<li><strong>It is still being tested.</strong> web3os.space is in its
+test stage: storage, search, and buying and selling files run on a test
+network with free coins that are worth nothing, so mistakes cost
+nothing.</li>
+</ul>
+<h2 id="for-experts">For experts</h2>
+<p>Developers find the guide in the section above. If you know
+blockchains, the <a href="https://web3os.space/whitepaper/">Public
+Whitepaper</a> is the professional edition: the storage-first design,
+the coin and its release schedule, every role's exact rules and
+penalties, the risks, how to join the test network, how it compares with
+other networks, and the security contact.</p>
+</main>
+</div>
+<footer><div class="in">
+<img src="/token/web3os-logo.png" alt="">
+<span>© Web3OS Labs LLC · 30 N Gould St Ste R, Sheridan, WY 82801, United States</span>
+<a href="/LICENSE">License (Apache-2.0)</a><a href="/whitepaper/#11-brand-license-security-and-contact">Contact</a><a href="/copyright/">Copyright notices</a><a href="/LISTING.md">Token profile</a>
+</div></footer>
+</body>
+</html>
