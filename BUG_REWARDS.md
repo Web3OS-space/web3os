@@ -1,6 +1,6 @@
 # Bug reward ledger
 
-First reporters of fixed bugs are recorded here by GitHub username. After mainnet launch the community votes on paying the whole list; paid coins lock and unlock like every network reward. Recording is a commitment to record and to put the payment to a vote, not a guarantee. Rules: section 11 of the whitepaper, https://web3os.space/whitepaper/
+First reporters of fixed bugs are recorded here by GitHub username and numeric GitHub user id. After mainnet launch the community votes on paying the whole list; paid coins are locked like every network reward and unlock under the same rule, which may take a long time and has no promised date. Recording is a commitment to record and to put the payment to a vote, not a guarantee. Rules: section 11 of the whitepaper, https://web3os.space/whitepaper/
 
 ## Severity levels
 
@@ -11,9 +11,11 @@ First reporters of fixed bugs are recorded here by GitHub username. After mainne
 
 Pre-mainnet reports are capped at 1,000,000 Web3OS in total.
 
-To claim after mainnet: put your GitHub username in your Web3OS profile and post your mainnet address in a comment on the issue from the same GitHub account.
+Project team members, project accounts and the project's AI agents are not eligible. No payment to a party on a sanctions list; payment to US recipients waits for a legal opinion. Any tax on a reward is the recipient's own matter.
+
+To claim after mainnet: put your GitHub username in your Web3OS profile and post your mainnet address in a comment on the issue from the GitHub account with the recorded user id. The address is then written into this ledger; the payout proposal names the commit of this file it pays, so check your row before the vote. A comment edited by anyone but its author is not a claim. For a report sent by email, name your GitHub account in the email; after the fix the project opens the issue and you claim there.
 
 ## Ledger
 
-| Issue | Title | Severity | Fixed in tag | GitHub user | Amount (Web3OS) | Status |
-|-------|-------|----------|--------------|-------------|-----------------|--------|
+| Issue | Title | Severity | Fixed in tag | GitHub user | GitHub user id | Address | Amount (Web3OS) | Status |
+|-------|-------|----------|--------------|-------------|----------------|---------|-----------------|--------|

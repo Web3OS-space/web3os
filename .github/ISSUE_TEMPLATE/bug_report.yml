@@ -2,6 +2,9 @@ name: Bug report
 description: Something in the app, the node or the test network does not work as it should
 labels: [bug]
 body:
+  - type: markdown
+    attributes:
+      value: "Rewards: the first reporter of a bug that gets fixed is recorded in [BUG_REWARDS.md](https://github.com/Web3OS-space/web3os/blob/main/BUG_REWARDS.md) by GitHub user id and may be paid after mainnet by a community vote; paid coins are locked like every network reward, with no promised unlock date. To claim, put this GitHub username in your Web3OS profile and later comment your mainnet address on this issue from this account. Security problems: email contact@web3os.space with SECURITY in the subject instead."
   - type: textarea
     id: what
     attributes:
