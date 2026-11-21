@@ -539,11 +539,11 @@ receives it. The vault has no withdrawal key; the signers' Safe can
 remove liquidity only after the time lock and only to the chain treasury
 escrow or the winter-reserve account (anti-rug).</li>
 <li><strong>Security-bounty bucket (1%).</strong> Pays validated
-security reports under published terms and a severity schedule fixed in
-advance, up to 3M; the rest is burned at genesis. Testnet tokens have no
-value and earn nothing on mainnet by themselves: testnet validators and
-miners earn from mainnet epoch 0 under the same rules as everyone
-else.</li>
+security reports and bug rewards under published terms and a coin
+severity schedule fixed in advance, up to 3M; the rest is burned at
+genesis. Testnet tokens have no value and earn nothing on mainnet by
+themselves: testnet validators and miners earn from mainnet epoch 0
+under the same rules as everyone else.</li>
 <li><strong>Necessary fees (0.5%).</strong> Security audits
 (CertiK/Hacken), the legal opinion, the legal entities, on-chain
 deployment gas and project infrastructure. <strong>Plain disclosure:
@@ -1977,14 +1977,25 @@ full open source no later than four years after its release.</p>
 href="https://github.com/Web3OS-space/web3os/issues/new?template=bug_report.yml">GitHub
 issue</a>. The first reporter of a bug whose fix ships in a tagged
 release is entered in a public ledger with the issue, its severity, the
-fixing release and the reporter's GitHub username; the amount follows
-the severity. After mainnet launch the whole ledger goes to one
+fixing release and the reporter's GitHub username and numeric GitHub
+user id; the amount follows the severity (Critical 30,000, High 10,000,
+Medium 2,000, Low 300 WEB3OS; at most 1,000,000 in total for reports
+made before mainnet). After mainnet launch the whole ledger goes to one
 governance proposal and the community vote decides the payout in WEB3OS,
-which unlocks linearly like every network reward; the payout address is
-the one the reporter posts in a comment on the issue from the same
-GitHub account. Recording is a commitment, payment is not: the vote can
-change or refuse it. Project team members are not eligible; testnet
-tokens have no value and convert to nothing.</p>
+which is held under the reward lock like every network reward (usable on
+the network, sendable only under the same rule that unlocks all rewards,
+with no date promised, ADR-246); the reporter puts the GitHub username
+in the Web3OS profile and posts the payout address in a comment on the
+issue from the GitHub account with the recorded user id, and the
+proposal names the commit of the ledger it pays. A comment edited by
+anyone but its author is not a claim; for a report sent by email, name
+your GitHub account in the email and claim on the issue the project
+opens after the fix. No payment to a party on a sanctions list; payment
+to US recipients waits for a legal opinion. Any tax on a reward is the
+recipient's own matter. Recording is a commitment, payment is not: the
+vote can change or refuse it. Project team members, project accounts and
+the project's AI agents are not eligible; testnet tokens have no value
+and convert to nothing.</p>
 <p>Security problems are never posted publicly: email <a
 href="mailto:contact@web3os.space">contact@web3os.space</a> with
 SECURITY on the subject line, with the steps to reproduce and the
