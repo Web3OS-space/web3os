@@ -11,7 +11,7 @@ First reporters of fixed bugs are recorded here by GitHub username and numeric G
 
 Pre-mainnet reports are capped at 1,000,000 Web3OS in total.
 
-Project team members, project accounts and the project's AI agents are not eligible. No payment to a party on a sanctions list; payment to US recipients waits for a legal opinion. Any tax on a reward is the recipient's own matter.
+Project team members and project accounts are not eligible. No payment to a party on a sanctions list; payment to US recipients waits for a legal opinion. Any tax on a reward is the recipient's own matter.
 
 To claim after mainnet: put your GitHub username in your Web3OS profile and post your mainnet address in a comment on the issue from the GitHub account with the recorded user id. The address is then written into this ledger; the payout proposal names the commit of this file it pays, so check your row before the vote. A comment edited by anyone but its author is not a claim. For a report sent by email, name your GitHub account in the email; after the fix the project opens the issue and you claim there.
 

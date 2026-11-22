@@ -1,6 +1,6 @@
 # web3os.space
 
-**web3os.space is building a computer that belongs to everyone.** It starts with storage: your files are encrypted, split into pieces and kept on many ordinary computers around the world, so no single company owns them or can switch them off. Applications come next, then rented computing power and AI, all paid in one coin, **WEB3OS**, on the project's own chain, Web3OSChain.
+**web3os.space is building a computer that belongs to everyone.** It starts with storage: your files are encrypted, split into pieces and kept on many ordinary computers around the world, so no single company owns them or can switch them off. Payments use one coin, **WEB3OS**, on the project's own chain, Web3OSChain.
 
 **Testnet stage: the coin has no value and is not for sale; parameters may change. Nothing here is investment advice; digital assets are high-risk.**
 
@@ -8,7 +8,6 @@
 
 - **Everyday edition** (the homepage, no technical terms): [web3os.space](https://web3os.space/)
 - **Professional edition, the Public Whitepaper** (for readers who know blockchains: the storage-first design, the coin and its release schedule, every role's exact rules and penalties, risks and compliance): [web3os.space/whitepaper/](https://web3os.space/whitepaper/), source [`whitepaper/Web3OS_Public_Whitepaper.md`](whitepaper/Web3OS_Public_Whitepaper.md)
-- Developers, people and AI assistants: [`developers/guide.md`](developers/guide.md), [`developers/reference.md`](developers/reference.md), [`llms.txt`](llms.txt)
 - [Token profile for exchange listing review](LISTING.md)
 
 ## Take part

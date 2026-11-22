@@ -1,24 +1,19 @@
 # Web3OS — Public Whitepaper
 
-> **web3os.space: a decentralized operating system built up from storage on its own chain. Persistent storage first, then applications, then CPU, GPU and AI services, all settled natively on Web3OSChain.**
+> **web3os.space: decentralized storage on its own chain: files kept by many independent computers, payments settled natively on Web3OSChain.**
 > This is the **minimal-disclosure public edition**: vision, capabilities, tokenomics, per-role usage and risk/compliance only. It **omits internal module architecture, consensus/security implementation, and operational secrets** (those remain private; the protocol core is BSL 1.1-licensed — auditable, each version converting to full open source no later than four years after its release). The authoritative, precise rules are the full whitepaper and on-chain governance.
 >
-> **Currently in testnet; token and parameters may change. This is not investment advice; digital assets are high-risk.** Features marked *(planned)* are specified but not yet live; the full whitepaper's Appendix I lists what has landed.
+> **Currently in testnet; token and parameters may change. This is not investment advice; digital assets are high-risk.** Features marked *(planned)* are specified but not yet live.
 
 ---
 
 ## 1. What is Web3OS
 
-### From storage to an operating system
+### Storage first
 
-**Web3OS (web3os.space) is a decentralized operating system, and storage is its starting point.** An operating system needs persistent storage before anything else: applications, their state and their users' files must survive restarts, operators leaving and companies closing. Blockchains settle value well but do not keep data; cloud drives keep data but one company owns it. web3os.space starts where both stop:
+**Web3OS (web3os.space) is decentralized storage with its own chain.** Users' files must survive restarts, operators leaving and companies closing. Blockchains settle value well but do not keep data; cloud drives keep data but one company owns it. web3os.space starts where both stop. **Persistent storage (live on testnet):** files are compressed and encrypted on the device, erasure-coded across independent storage nodes, and paid only against storage proofs the chain checks.
 
-1. **Persistent storage (live on testnet).** Files are compressed and encrypted on the device, erasure-coded across independent storage nodes, and paid only against storage proofs the chain checks.
-2. **Applications on that storage *(being built)*.** Every application is a content-addressed service image whose code and data live in the same storage; messaging is the first platform service.
-3. **Memory, CPU, GPU and AI *(being built; GPU container passthrough is in the code, the public market is planned)*.** Compute and hosting are leases of the same kind, paid from escrow per period served, so applications and AI workloads run on the network the way files are stored on it.
-4. **Virtual and augmented reality, the Web3 metaverse *(planned)*.** 3D assets are stored as content, shared worlds run on regional hosting leases and rendering on GPU leases, so VR and AR applications use the same storage, payments and leases; web3os.space will build such applications itself.
-
-**Its own chain is the second advantage.** Web3OSChain is a sovereign chain, not a contract on someone else's: every payment, creator share, storage reward and lease settles natively on it, and the rules change only by on-chain governance.
+**Its own chain is the second advantage, after storage.** Web3OSChain is a sovereign chain, not a contract on someone else's: every payment, creator share and storage reward settles natively on it, and the rules change only by on-chain governance.
 - **No gas to think about for everyday use.** Search, browse and preview are free within a daily quota per account. Downloads are paid per chunk with off-chain signed vouchers settled in one claim, so a download is not a stream of fee-paying transactions, and the discovery cost is inside the price (§13.2, no separate gas charge).
 - **One coin.** Any chain fee is paid in WEB3OS, never ETH; withdrawing to Ethereum needs no ETH either, because the bridge charges the Ethereum gas in WEB3OS.
 
@@ -26,7 +21,7 @@ The rest of this section describes what runs today: the storage network and the 
 
 Web3OS is today a **community-run network drive ＋ media/knowledge marketplace**. You can store files, find data, and buy/sell video, music, documents, games, and software. **No single company runs it** — people around the world ("miners") run it on their own disks and machines, so **no single party can delete lawful content, and censorship is hard; illegal content is removed under the published rules (§14), and a Private file that shares bytes with removed content loses them.**
 
-- **How search works:** built-in AI scores content by *value* — good content surfaces by merit, **not ads or keyword SEO**.
+- **How search works:** content is scored by its *value* — good content surfaces by merit, **not ads or keyword SEO**.
 - **You control your data:** private data is encrypted on your device; miners only see ciphertext (encrypted, but not zero-knowledge secret; see section 7 below).
 - **Free account, tokens only when paying:** browsing/searching/previewing is free but needs an account (created on your device in the app, or a wallet you connect), because every search uses the network's resources; no ID. You need a little token only to download or to earn by uploading.
 
@@ -53,7 +48,7 @@ PT credit still has limits:
 | :-- | :-- |
 | Earned by seeding on one site | Earned by storing and delivering files for the whole network |
 | Counted from client self-reports | Paid only against storage proofs the chain checks |
-| Spent only on that site's downloads | Spent on any paid download, storage, compute or `.web3os` names |
+| Spent only on that site's downloads | Spent on any paid download, storage or `.web3os` names |
 | Cannot be bought or transferred | Transferable once the liquidity pool is built and deep enough (until then earned coins are for use on the network only, see "Launch liquidity" in section 3); from then on anyone without spare disk can buy it to pay for downloads |
 | Rules and balances set by an admin | Rules public and on chain, changed only by community governance |
 | Creators earn nothing | Creators receive the largest share of every paid download |
@@ -68,14 +63,12 @@ Think of Web3OS as a **town library, a market and a court run by the townspeople
 | :-- | :-- | :-- | :-- |
 | **A visitor** (Role 1) | Search, browse and preview | Results ranked by value, not by who paid for ads; a free daily quota; no ID | Nothing but a free account |
 | **A buyer** (Role 2) | Pay to download a file | You pay the creator and the people who deliver it, not a middleman; a refund path if the file is a virus, a degraded variant or not as described; purchases can move into your own encrypted vault | The price of the file; a small deposit when you file a refund claim, lost only if the claim is abusive |
-| **A creator / uploader** (Role 3) | Publish your videos, music, documents or software | The largest share of every paid download, paid automatically on chain; free publishing within your allowance; AI previews and classification; subtitles in the original language and English made on your own devices, translated live into each reader's language on their device *(planned)*; protection against copycats, because deposits and juries stand between you and false accusations | Publishing can't be undone; earnings wait in escrow until you register as the copyright holder; cheating (malware, fakes, re-cuts) costs your earnings and your reputation |
+| **A creator / uploader** (Role 3) | Publish your videos, music, documents or software | The largest share of every paid download, paid automatically on chain; free publishing within your allowance; previews and classification; protection against copycats, because deposits and juries stand between you and false accusations | Publishing can't be undone; earnings wait in escrow until you register as the copyright holder; cheating (malware, fakes, re-cuts) costs your earnings and your reputation |
 | **A miner** (Role 4) | Lend spare disk space and bandwidth | Tokens for keeping files safe and online, plus a fee for every download you deliver; the delivery fee comes from real usage, not only from new coins | A disk and a connection that stay up; a stake that is cut only by an adjudicated case outcome, while a missed or false storage proof costs the pay |
-| **A compute / hosting provider** (Role 4b) *(planned)* | Rent out a GPU or run other people's containers | Pay drawn from the customer's escrow for every period you serve | A stake, burned only for proven resource fraud; repeated outages end the lease and lower your reputation |
 | **A staker / voter** (Role 5) | Lock tokens with a validator | A say in fees, rules and how the shared fund is spent; a floating yield (never a fixed, guaranteed rate) | Locked tokens; their price can fall; vote weight is capped so no single account rules |
-| **An app developer** (Role 7) | Build apps, alone or with an AI coding assistant | No server to run; sign-in, storage, payments and messages built in; your share of every sale or subscription in your app, paid automatically | Your time; the storage of your app's files is paid like any other file |
-| **A juror / reporter** (Role 6) | Judge disputes the AI can't settle, or report bad files | A reward for careful rulings; valid reports raise your reputation; a safer market for everyone, including you | A deposit that is lost for careless or malicious work |
+| **A juror / reporter** (Role 6) | Judge disputes automatic checks can't settle, or report bad files | A reward for careful rulings; valid reports raise your reputation; a safer market for everyone, including you | A deposit that is lost for careless or malicious work |
 
-**Why this is better than a normal platform:** there is no company in the middle that can delete lawful content or your files at will (illegal content is removed under the published rules, and a Private file sharing bytes with removed content loses them), change the payout split overnight or sell your attention to advertisers. The rules are public, the money moves automatically, and anything that costs someone money or reputation is decided by fixed rules plus a human jury, never by an AI alone.
+**Why this is better than a normal platform:** there is no company in the middle that can delete lawful content or your files at will (illegal content is removed under the published rules, and a Private file sharing bytes with removed content loses them), change the payout split overnight or sell your attention to advertisers. The rules are public, the money moves automatically, and anything that costs someone money or reputation is decided by fixed rules plus a human jury.
 
 **Honest note:** nothing here promises a profit. Token prices move and can go to zero, rewards depend on how much the network is actually used, and several features are still *(planned)*. The full rules for each role are in §4, the penalties in §5 and the risks in §6–§7.
 
@@ -83,16 +76,16 @@ Think of Web3OS as a **town library, a market and a court run by the townspeople
 
 ## 2. Capabilities (plain language)
 
-Web3OS's built-in AI assistant automatically:
+Web3OS automatically:
 
-- **Understands your files:** detects video/music/image/document/game; generates previews, classification, original-language and English subtitles, and **live translation into your language on your own device** *(planned)*.
+- **Understands your files:** detects video/music/image/document/game; generates previews and classification.
 - **Guards safety:** scans when you publish — **known viruses and trojans, disguised file types, duplicates and known illegal content are blocked by deterministic checks** and never get listed; brand-new malware can still slip through.
-- **Protects buyers:** if you buy a virus/degraded-variant/not-as-described item, you can dispute it: automatic checks are deterministic detectors, never an AI guess, and the rest goes to a **human jury**.
+- **Protects buyers:** if you buy a virus/degraded-variant/not-as-described item, you can dispute it: automatic checks are deterministic detectors, never a guess, and the rest goes to a **human jury**.
 - **Protects honest uploaders:** obvious bad files are blocked before yours, so you're not lumped in with them; and to falsely accuse you, someone must post a deposit and risks a reputation penalty — so frivolous reports don't pay.
 
-**Honest limits of AI:** AI is good at catching *known* bad things and *obvious* impersonation/duplication; **brand-new malware or sophisticated re-cuts (re-editing, speed-changing, inserting ads to resell)** may slip past → those go to a **human jury**. **Any final decision involving money or penalties is made by "rules ＋ human jury", never AI alone** — to prevent a fooled AI from punishing you.
+**Honest limits of automatic checks:** they are good at catching *known* bad things and *obvious* impersonation/duplication; **brand-new malware or sophisticated re-cuts (re-editing, speed-changing, inserting ads to resell)** may slip past → those go to a **human jury**. **Any final decision involving money or penalties is made by "rules ＋ human jury".**
 
-Capability areas (without disclosing internals): decentralized storage & delivery, GPU compute and container hosting, value-oriented search & discovery, multilingual subtitles/translation, content safety & dispute arbitration, an optional decentralized compute market, and decentralized naming.
+Capability areas (without disclosing internals): decentralized storage & delivery, value-oriented search & discovery, content safety & dispute arbitration, and decentralized naming.
 
 ---
 
@@ -107,7 +100,7 @@ Capability areas (without disclosing internals): decentralized storage & deliver
 | Release | 80% mining reserve released on a **curve that only declines and never ends: 10% less each year by default; each year the chain suggests the cut from the past year's price (0–20%) and the community confirms it by vote**; **non-mining buckets are all vesting ＋ governance control ＋ timelock**, milestone-bound, no early dumping |
 | Inflation control | **Burn-Mint Equilibrium (BME):** above the durability floor, zero verified demand → zero minting; adaptation can only reduce issuance, never over-issue → net issuance bound never broken |
 | Staking yield (stake bonded to a validator only: own bond or delegation) | **Floating, not a fixed guaranteed rate** (target range set by governance); paid from the existing emission curve, **no out-of-curve issuance → non-inflationary** |
-| Network revenue | Public download fees, prepaid Private storage, decentralized compute and container hosting, `.web3os` domain registration/renewal |
+| Network revenue | Public download fees, prepaid Private storage, `.web3os` domain registration/renewal |
 
 **Testnet has exactly the same supply as mainnet: a fixed 1,000,000,000, the same curve and the same 4% genesis premint; on testnet the premint only funds the test faucet and the validators' starting stake, and test tokens have no value.** Mainnet uses a **genesis premint of 4%** earmarked solely for the protocol-owned liquidity seed (2.5%), the security-bounty bucket (1%; 3M cap, the rest burned at genesis) and necessary fees (0.5%); a later CEX listing is funded by a governance vote from the treasury stream; team/treasury/growth are **streamed from the curve (vesting·governance·timelock), not a genesis bag**; the ~80% mining reserve releases over the curve.
 
@@ -123,7 +116,7 @@ There is no exchange-listing batch: a later CEX listing is funded from the treas
 
 > **Example.** The team share is 8% (80,000,000). Instead of getting 80M on launch day, it **vests linearly over 347 weekly epochs (about 80 months) from launch, with no cliff** — about **1M per month**. So insiders **cannot dump a giant bag at listing** — their payout is tied to building the project for years. The mining reserve works the same way: ~80% is released to miners **slowly, each year less than the year before (10% less by default)**, not minted up front.
 
-**As emission shrinks — does the ecosystem keep going? Yes.** The declining emission is a **bootstrap subsidy, not the long-term engine.** Miner income stands on two legs: (1) **delivery miners are paid by real usage fees from day one** — every download pays a bandwidth fee, which has nothing to do with emission and lasts as long as people use the network; (2) **storage miners** keeping the durability floor are paid by floor minting within the curve; **whenever that falls short (a price drop, or the shrinking curve), the winter reserve tops it up by rule, only up to the reserve's balance — funded by fees, treasury yield, orphan-file shares and issuance set aside in good years, not by printing new tokens. This is a cost-compensation rule, not a guaranteed income for any miner.** As real demand grows, fee revenue replaces the shrinking emission; as emission shrinks the network runs on **download fees, Private-storage rental, compute usage and `.web3os` domain fees**. **BME** keeps it non-inflationary: above the durability floor, minting needs matching burns, and burned tokens never reopen minting capacity under the fixed 1B cap. This is the same "block-subsidy → transaction-fees" handoff mature networks use. **Honest caveat:** this only holds if real usage actually grows by then — if demand never shows up, fees won't replace the subsidy and miners leave. That adoption risk is the project's core bet (see §7). If both reserve legs run dry, the miner floor is only a published target: the protocol never prints above the curve to pay it, and it protects existing files by pausing new Public admissions and evicting extra cache copies first (§15.1).
+**As emission shrinks — does the ecosystem keep going? Yes.** The declining emission is a **bootstrap subsidy, not the long-term engine.** Miner income stands on two legs: (1) **delivery miners are paid by real usage fees from day one** — every download pays a bandwidth fee, which has nothing to do with emission and lasts as long as people use the network; (2) **storage miners** keeping the durability floor are paid by floor minting within the curve; **whenever that falls short (a price drop, or the shrinking curve), the winter reserve tops it up by rule, only up to the reserve's balance — funded by fees, treasury yield, orphan-file shares and issuance set aside in good years, not by printing new tokens. This is a cost-compensation rule, not a guaranteed income for any miner.** As real demand grows, fee revenue replaces the shrinking emission; as emission shrinks the network runs on **download fees, Private-storage rental and `.web3os` domain fees**. **BME** keeps it non-inflationary: above the durability floor, minting needs matching burns, and burned tokens never reopen minting capacity under the fixed 1B cap. This is the same "block-subsidy → transaction-fees" handoff mature networks use. **Honest caveat:** this only holds if real usage actually grows by then — if demand never shows up, fees won't replace the subsidy and miners leave. That adoption risk is the project's core bet (see §7). If both reserve legs run dry, the miner floor is only a published target: the protocol never prints above the curve to pay it, and it protects existing files by pausing new Public admissions and evicting extra cache copies first (§15.1).
 
 ### Who actually earns money (in plain words)
 
@@ -136,7 +129,7 @@ Every time someone pays to download a file, that **single payment is split four 
 
 Separately, the **"storage" hosts** — the people who keep your file safe and online even when nobody is downloading it — are paid by the network's **floor minting** for every file until the idle reclaim removes it, popular or not. That is **not** taken out of your download fee.
 
-**So where do the developers/operators get paid?** Two ways — and *not* by secretly skimming your downloads:
+**So where do the team and operators get paid?** Two ways — and *not* by secretly skimming your downloads:
 
 - A **dedicated team budget (8% of all tokens)** that unlocks slowly, month by month, over 80 months (the vesting drip described above) — so the team is paid to **keep building**, not to dump tokens.
 - The **platform-fund cut (#3 above):** because the treasury takes a small slice of *every* download fee, development keeps being funded by **real usage** — even long after the initial team budget is gone.
@@ -144,7 +137,7 @@ Separately, the **"storage" hosts** — the people who keep your file safe and o
 **What is "POL" (protocol-owned liquidity)?** To buy or sell Web3OS, there has to be an **"exchange pool"** holding coins on both sides. Most projects *rent* this pool from outsiders who can **yank it out at any moment** — and when they do, the price collapses and you can't sell (a "rug pull"). Web3OS instead **owns and locks** its own pool: the vault has **no withdrawal key**, and the signers' Safe can remove liquidity only after the time lock and only to the chain treasury escrow or the winter-reserve account, so once the pool is funded there is always somewhere to buy and sell, and the trading fees stay in the pool. A slice of the launch batch (the **"POL"** portion) is set aside as **protocol-owned trading liquidity**. At mainnet launch the vault does not sell Web3OS (the project's only sales are from the small necessary-fees slice described above, to pay its bills), and there is no pool at all: the coin cannot be bought, and coins paid by the network cannot be sent to anyone. The pool is built, and the vault adds half of the platform-fund cut to it each week, only if a governance vote, held after legal opinions for the US and the EU, turns that on.
 
 **Launch liquidity: use first, trade later (ADR-246).** Mainnet opens in two stages.
-- **Stage 1, no pool.** Everything the network pays you (mining, storage, hosting, message relay, creator shares, staking yield) is a utility coin: you can pay fees and gas, buy storage and downloads, post stake and collateral and stake for votes with it, but you **cannot send it to another account** or bridge it out, not even to a second account of your own. Nobody can buy the coin in this stage.
+- **Stage 1, no pool.** Everything the network pays you (mining, storage, creator shares, staking yield) is a utility coin: you can pay fees and gas, buy storage and downloads, post stake and collateral and stake for votes with it, but you **cannot send it to another account** or bridge it out, not even to a second account of your own. Nobody can buy the coin in this stage.
 - **Stage 2, the project builds liquidity.** After written legal opinions for the US and the EU and a governance vote, the liquidity batch above is placed in one pool, and the official site and the wallet link to that pool. This is building liquidity, not a sale round: there is no fixed price, no buyers' list, no allocation and no deadline, and the USDC that buyers pay stays in the pool.
 - **Then your coins unlock step by step.** Once buyers have paid enough USDC into the pool for it to pass the network's depth test (about USD 250,000 of USDC at the default setting), the lock starts to lift: one 26th of your earned coins each week, about six months in all. A week in which the pool is below the test unlocks nothing, and what was already unlocked stays unlocked. Coins you earned before the start and coins you earn during these months follow the same weekly steps, so nothing unlocks all at once.
 - ⚠️ **No date is promised, and it may never happen.** If the opinions say no, the vote fails, or buyers do not come, earned coins stay use-only. The opening price is a voted number no market has tested, the pool gives no support below it, and the holders who vote on these settings are the same people whose coins are locked. If you stake earned coins and later buy coins, the bought ones are held until the schedule releases them or your stake is back. Do not mine expecting to sell on a known day.
@@ -156,7 +149,7 @@ Separately, the **"storage" hosts** — the people who keep your file safe and o
 ## 4. Per-role manual
 
 ### Role 1 — Just browsing / searching (free, account needed)
-- **Can do:** free browse/search/preview and see AI scores. (Full content/download needs token.)
+- **Can do:** free browse/search/preview and see value scores. (Full content/download needs token.)
 - **Rules:** get an account first (searching uses network resources): create one on your device or connect a wallet you already have; free, pseudonymous (no ID; your account is public, and every paid read is recorded under it).
 - **Penalties:** virtually none; the only case is **frantic query-spamming** gets the account temporarily rate-limited (a daily free quota per kind: 200 searches, 500 browses, 10 previews, ten times that when staked; then growing delays). Normal use is unaffected.
 
@@ -167,10 +160,10 @@ Separately, the **"storage" hosts** — the people who keep your file safe and o
 
 ### Role 3 — Uploader / creator (earn by uploading)
 - **Can do:** upload media/docs/software, earn royalties on downloads, register as copyright holder; if someone else published your work, file a claim with your proof from its page ("This is my work") — a human jury decides contested cases, and if you win you choose to keep it up and collect, or take it down *(planned)*.
-- **AI helps you:** auto classification/preview, plus subtitles and live on-device translation *(planned)*; only deterministic checks block a file, never an AI guess → if you're honest you're rarely mis-accused.
+- **Automatic help:** classification and previews; only deterministic checks block a file, never a guess → if you're honest you're rarely mis-accused.
 - **Key rules:** uploads land in your private vault; **publishing is one switch, off by default, and can't be undone**; publishing is free within the allowance (beyond it, a deposit; a choice of a small refundable bond or a device puzzle is *(planned)*); a published file nobody else downloads in full for a year, scored low or never scored, is removed for good after a 7-day notice; before then anyone can renew it by paying about a year of its storage cost; **until you register as the copyright holder, you get 1% of your file's earnings once your publication is opened and 99% waits in escrow** (26 weeks without a dispute, so the real owner's money cannot be taken by someone who only uploaded the work; the registered holder or a winning claimant then receives it weekly, and an escrow nobody claims goes to the public digital asset maintenance fund, never to the uploader); **payouts stop while an ownership claim or a report freeze is open**, and an upheld buyer refund case is paid from the escrowed share first; **no malware, no impersonating originals by re-format/re-cut, no not-as-described** (fake HD, fake full version, missing DLC).
-- **Outcomes:** honest original/legal → ✅ normal royalties + AI value-add; low-value/borderline (first, minor) → ⚠️ warning; repeat → 📉 reputation cut; **impersonation/not-as-described** → 🚫 takedown + buyer refund + slash that file's reward + reputation cut (money flows to the true original creator); **bundled malware** → 💰 forfeit that file's reward and any publishing bond + 🚫 takedown + a strike + heavy reputation cut; **serious illegal** (weapons/explosives/bio) → the same + heavy penalty; **three strikes within a year** → publishing ends for good (ADR-205); **CSAM & zero-tolerance** → ⛔ instant ban + max slash + **permanent ban** (no "first warning").
-- **Tip:** changing format/filename to dodge dedup is useless — AI looks at the **content itself**.
+- **Outcomes:** honest original/legal → ✅ normal royalties; low-value/borderline (first, minor) → ⚠️ warning; repeat → 📉 reputation cut; **impersonation/not-as-described** → 🚫 takedown + buyer refund + slash that file's reward + reputation cut (money flows to the true original creator); **bundled malware** → 💰 forfeit that file's reward and any publishing bond + 🚫 takedown + a strike + heavy reputation cut; **serious illegal** (weapons/explosives/bio) → the same + heavy penalty; **three strikes within a year** → publishing ends for good (ADR-205); **CSAM & zero-tolerance** → ⛔ instant ban + max slash + **permanent ban** (no "first warning").
+- **Tip:** changing format/filename to dodge dedup is useless — checks look at the **content itself**.
 
 ### Role 3b — Sponsor (pay so that everyone gets a work free) *(planned)*
 - **Can do:** a publisher, or one advertiser the publisher names, locks coins on a Public work as a **promotion stake**. While the stake can pay, any account with a small balance and no strike takes the full work free, once a week; the stake pays the delivery and the network fee of every free copy.
@@ -189,26 +182,15 @@ Separately, the **"storage" hosts** — the people who keep your file safe and o
 - **Rules:** you **must actually store and be able to deliver**; each round a public random draw picks pieces of the copies you hold, and you must prove on chain, within a short window, that you still have them (live on testnet, parameters under calibration).
 - **Outcomes:** reliable → ✅ mining rewards; occasional dropout → ⚠️ lower score, less reward; missed or failed proof → 💰 the pay since your last proven round is forfeited and all your floor columns stop counting until you prove a later round; a missed or false proof slashes no stake, which is cut only by an adjudicated case outcome.
 
-### Role 4b — Compute / hosting customer and provider *(planned)*
-- **Customer:** rent GPU jobs or run your own containers on community machines; you fund an escrow up front, it is drawn per period, and what is not drawn comes back when you close. Keep your program's secrets in a small, capped **lease wallet**, so a leak costs at most the cap.
-- **Provider:** offer your machine's containers or GPU, win leases by bidding, and earn from the escrow; you post a stake that is burned only for proven resource fraud, and repeated outages end the lease and lower your reputation.
-
 ### Role 5 — Staker / voter (governance)
-- **Can do:** delegate stake to a validator to **vote** on rules, fees, and treasury use (above ~$100 equivalent); that stake also earns the staking yield. **Yield (floating, governance-set range) goes only to stake bonded to a validator**; juror, storage and hosting collateral earn their role pay.
+- **Can do:** delegate stake to a validator to **vote** on rules, fees, and treasury use (above ~$100 equivalent); that stake also earns the staking yield. **Yield (floating, governance-set range) goes only to stake bonded to a validator**; juror and storage collateral earn their role pay.
 - **How capital is bounded:** voting requires staking to a threshold (~$100 equiv., adjusts with price); **vote weight = stake × an age multiplier, capped per account** (stake counts linearly, so splitting across accounts never adds weight beyond the stake's own); **per-account vote cap**, so a single account cannot meet a vote's turnout bar alone, except in a small pool or right after a large drop in total stake; **the dev team caps at 20% combined, stepping to 10% and then 5% as on-chain handover conditions are met**, and **cannot use that weight to change the most core rules**.
 - **Outcomes:** normal stake/vote → ✅ voting weight + decision-making (yield only on stake bonded to a validator); proposal spam → 💰 proposal deposit slashed; sock-puppet vote farming → 💰 slash + 📉 reputation cut (farming accounts is slow and expensive — not worth it).
 
 ### Role 6 — Juror / reporter (disputes)
-- **Can do:** be **randomly drawn** as a juror to decide what AI can't (e.g., is this an impersonation); or **report** bad files. Correct rulings earn rewards; valid reports raise reputation.
+- **Can do:** be **randomly drawn** as a juror to decide what automatic checks can't (e.g., is this an impersonation); or **report** bad files. Correct rulings earn rewards; valid reports raise reputation.
 - **Rules:** ruling **with the majority** earns; bad/outlier rulings are penalized; reports require a deposit, and **false reports forfeit it**.
 - **Outcomes:** diligent & aligned → ✅ reward + reputation up; bad/outlier/committed but not revealed → 💰 juror deposit slashed + 📉 reputation cut (declining a seat by not committing costs nothing); valid report → 📈 reputation up; malicious report → 💰 report deposit slashed + 📉 reputation cut.
-
-### Role 7 — App developer (people and AI coding assistants)
-- **Can do:** build an application as a folder of static web files plus a manifest that declares its services, the scopes it asks for and the author's share of sales; publish both to the network and point a registered name at the manifest. The user's own node resolves the name, checks the user's grant and runs the front end in a sandboxed frame with no network access; every call goes through the node, which decides. One dependency-free SDK file (Apache 2.0) covers sign-in, content and streams, payments, subscriptions, compute jobs, metered calls, goods and messaging; the guide's examples come from the reference applications.
-- **Rules:** an app's spending power is a capped allowance the user sets at the point of action, and larger purchases are confirmed again, so a scam or compromised app loses at most that allowance; the author share is capped by a governance parameter; apps run no code outside the sandbox and add nothing to consensus.
-- **Outcomes:** sales, subscriptions and in-app purchases pay the author share automatically; a refused call returns a documented code the app handles.
-- **For AI coding assistants:** the [developer guide](https://web3os.space/developers/guide) and the generated [call, scope and refusal reference](https://web3os.space/developers/reference) are the whole contract, in plain text; [llms.txt](https://web3os.space/llms.txt) is the entry point. Application logic is tested without a browser under Node's built-in test runner.
-- **Status:** the guide and the reference are public. The developer kit (the SDK, a sample application and a local test node) is published once the remaining application interfaces land. Developer contact: contact@web3os.space.
 
 ---
 
@@ -313,7 +295,6 @@ Legend: ✅ strength · ⚠️ trade-off or partial · ❌ weakness · ➖ not o
 | How you prove storage | ⚠️ A public random draw picks chunks you hold, proven on chain within a short window (live on testnet), plus delivery speed | ✅ Proof of Space and Time | ✅ PoRep + PoSt (heavy, formal) | ⚠️ Audits by satellites (operator-run) | ✅ Storage proofs per contract | ✅ Proofs of random access |
 | How you earn | ✅ Storage pay + a fee for every download you deliver (real usage, not only new coins) | ⚠️ Block-win lottery (pools smooth it) | ✅ Block rewards + deal fees | ✅ Per TB stored + egress | ✅ Contract payments | ⚠️ Block rewards |
 | Stake / collateral | ✅ A stake, cut only by an adjudicated case outcome (a missed or false storage proof forfeits pay, no slash) | ✅ None | ⚠️ FIL pledge, penalties for faults | ⚠️ None (part of early payouts withheld) | ⚠️ Collateral per contract | ✅ None |
-| Also rent out compute? | ✅ Yes, on Linux: container hosting (Web3OS hosting can also place deployments on Akash) | ➖ No | ➖ No | ➖ No | ➖ No | ➖ No |
 | Maturity | ❌ **Testnet, pre-launch** | ✅ Mainnet | ✅ Mainnet | ✅ Mainnet | ✅ Mainnet | ✅ Mainnet |
 
 The other columns reflect each network's general design; check their own docs for current details. The full comparison, with Web3OS's honest drawbacks, is in §10.
@@ -323,12 +304,12 @@ The other columns reflect each network's general design; check their own docs fo
 - **Who:** anyone who will keep one node online for a few weeks, report bugs and say where things were confusing.
 - **How to join:** send a private message on Telegram to [@Web3OS_AI_bot](https://t.me/Web3OS_AI_bot) starting with "Miner"; we reply privately (no Telegram account: contact@web3os.space). Questions go to the [Telegram group](https://t.me/Web3OS_Official).
 - **Requirements:**
-  - Linux (Ubuntu) is best: it runs storage and can also rent out compute. Windows runs storage only for now.
+  - Linux (Ubuntu) and Windows both run storage.
   - Assign as much spare disk as you like. Web3OS uses only that space and never touches your plots or other data.
   - A stable connection; home is fine. Your node address is never published.
 - **What you get:**
   - Early access and a direct line to the team.
-  - Testnet tokens from the faucet (no value), to try uploads, downloads and hosting.
+  - Testnet tokens from the faucet (no value), to try uploads and downloads.
   - Bug reports and successful testnet attacks are recorded and rewarded after mainnet by a community vote (see section 11); security problems are reported privately as described there.
   - No airdrop and no allocation for testnet participants: mainnet earnings follow the normal mining and staking rules.
   - No payment during the testnet. Web3OS has no reference or target price and nothing here is an offer to sell. Test data is deleted at every testnet reset.
@@ -345,7 +326,7 @@ The other columns reflect each network's general design; check their own docs fo
 - **The deterrents are part of the test:** false reports and spam proposals **forfeit their deposit ＋ cut reputation** by design — testnet proves whether that actually holds (if it doesn't, that's a bug — report it).
 - **Governance really can change the rules (explicit disclosure):** fees, revenue splits, thresholds and parameters are **decided by community vote** — **no one (including the team) can change them unilaterally**. **On testnet you're welcome to launch genuine *or* malicious proposals/votes** and try to break the governance defenses: vote weight = **stake × age multiplier** (linear in stake), **per-identity vote cap**, **team aggregate cap (20% → 10% → 5% at handover gates, excluded from core-clause votes)**, **immutable core clauses (supermajority + timelock)**, proposal deposits. **Can money / sock-puppets / vote-flooding buy governance? Show us.**
 - **Report** bugs, problems and every way you found to cheat as a [GitHub issue](https://github.com/Web3OS-space/web3os/issues/new?template=bug_report.yml), which enters the bug ledger of section 11, (what happened, the steps, and where: Windows, Linux, Android or TV); security problems privately as in section 11.
-- **Why it helps you too:** WARNING-and-above events (especially ramps) are summarized into a **CSV** for AI/team analysis and parameter calibration. **The harder you hit it, the safer launch is.**
+- **Why it helps you too:** WARNING-and-above events (especially ramps) are summarized into a **CSV** for team analysis and parameter calibration. **The harder you hit it, the safer launch is.**
 - **Rules:** attack within testnet only; **no real PII, no real-world harm outside testnet** (that's illegal and out of scope).
 
 ---
@@ -401,47 +382,45 @@ The 800M mining reserve uses a **rigid declining** release: each year's release 
 
 ## 10. How Web3OS compares — honest pros & cons
 
-Web3OS is **not "another Filecoin."** Most decentralized networks do *one* thing — store blobs (Filecoin / Arweave / Storj / Sia), move files (IPFS / BitTorrent), or rent GPUs (Akash / io.net / Render). Web3OS combines **decentralized storage ＋ AI value-search ＋ a creator marketplace (royalties, and rights holders paid even when someone else uploads their work) ＋ optional compute** — which is its differentiator *and* its biggest execution risk.
+Web3OS is **not "another Filecoin."** Most decentralized networks do *one* thing — store blobs (Filecoin / Arweave / Storj / Sia), or move files (IPFS / BitTorrent). Web3OS combines **decentralized storage ＋ value search ＋ a creator marketplace (royalties, and rights holders paid even when someone else uploads their work)** — which is its differentiator *and* its biggest execution risk.
 
 ### Positioning (2026)
 
 Legend: ✅ strength · ⚠️ trade-off or partial · ❌ weakness · ➖ not offered or not applicable.
 
-| | **Web3OS** | Filecoin | Arweave | Storj | IPFS / BitTorrent | Akash / io.net / Render |
-| :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| Core | Storage ＋ **AI value-search ＋ content market** | Storage marketplace | **Permanent** storage | S3-style object storage | Addressing / transport | GPU compute |
-| Storage proof | ⚠️ **PoFD (delivery-speed) ＋ on-chain proof of random targets** (ADR-224); sealing ＋ PoSt on floor columns only (ADR-172, live on testnet, parameters under calibration) | ✅ **PoRep / PoSt** (heavy, formal) | ✅ Endowment ＋ proofs | ⚠️ Erasure ＋ reputation (Satellites) | ❌ none native | ➖ |
-| Retention | ⚠️ **Demand/value-driven** (cold low-value may be GC'd) | ⚠️ Contract-term | ✅ **Pay-once, forever** | ⚠️ Contract | ❌ best-effort | ➖ |
-| Confidentiality | ⚠️ **Not ZK** (dedup tradeoff; self-encrypt option) | ✅ opaque encrypted blobs | ❌ public permaweb | ✅ client-side encrypted | ❌ public | ➖ |
-| Search / discovery | ✅ **AI value scoring, multilingual** | ❌ none (blob CID) | ⚠️ gateway | ❌ none | ⚠️ DHT / keyword | ➖ |
-| Creator economy / rights-holder pay | ✅ **Built-in** (royalties, attestation, jury) | ❌ no | ❌ no | ❌ no | ❌ no | ⚠️ Render: creator focus |
-| Compute | ⚠️ Optional container hosting, nascent | ➖ | ➖ | ➖ | ➖ | ✅ Live GPU markets |
-| Maturity | ❌ **Testnet, pre-launch** | ✅ Mainnet, ~2.1 EiB stored | ✅ Mainnet, years (permaweb) | ✅ Mainnet, S3 live | ✅ Mature | ✅ Live (io.net 300K+ GPUs) |
+| | **Web3OS** | Filecoin | Arweave | Storj | IPFS / BitTorrent |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| Core | Storage ＋ **value search ＋ content market** | Storage marketplace | **Permanent** storage | S3-style object storage | Addressing / transport |
+| Storage proof | ⚠️ **PoFD (delivery-speed) ＋ on-chain proof of random targets** (ADR-224); sealing ＋ PoSt on floor columns only (ADR-172, live on testnet, parameters under calibration) | ✅ **PoRep / PoSt** (heavy, formal) | ✅ Endowment ＋ proofs | ⚠️ Erasure ＋ reputation (Satellites) | ❌ none native |
+| Retention | ⚠️ **Demand/value-driven** (cold low-value may be GC'd) | ⚠️ Contract-term | ✅ **Pay-once, forever** | ⚠️ Contract | ❌ best-effort |
+| Confidentiality | ⚠️ **Not ZK** (dedup tradeoff; self-encrypt option) | ✅ opaque encrypted blobs | ❌ public permaweb | ✅ client-side encrypted | ❌ public |
+| Search / discovery | ✅ **Value scoring** | ❌ none (blob CID) | ⚠️ gateway | ❌ none | ⚠️ DHT / keyword |
+| Creator economy / rights-holder pay | ✅ **Built-in** (royalties, attestation, jury) | ❌ no | ❌ no | ❌ no | ❌ no |
+| Maturity | ❌ **Testnet, pre-launch** | ✅ Mainnet, ~2.1 EiB stored | ✅ Mainnet, years (permaweb) | ✅ Mainnet, S3 live | ✅ Mature |
 
 ### Advantages
 
 | | Advantage | What it means | Compared with |
 | :-- | :-- | :-- | :-- |
-| ✅ | **Value-search ＋ marketplace** | Content surfaces by AI-judged value (not ads/SEO), with creator royalties and rights holders paid even when others upload their works | Storage-only networks do not do this |
+| ✅ | **Value-search ＋ marketplace** | Content surfaces by value (not ads/SEO), with creator royalties and rights holders paid even when others upload their works | Storage-only networks do not do this |
 | ✅ | **Lower miner barrier** | PoFD ＋ audit, no SDR sealing or zk proofs; only floor columns carry a light sequential seal | Cheaper and faster to join than Filecoin |
 | ✅ | **Space efficient** | Network-wide convergent dedup ＋ erasure coding (~1.4× for large files) | Instead of N× replication |
-| ✅ | **Built-in AI value-add** | Multilingual subtitles/translation, content classification, safety scanning, deterministic detectors plus human-jury arbitration (AI summaries advise, never decide) | No incumbent bundles these |
+| ✅ | **Built-in value-add** | Content classification, safety scanning, deterministic detectors plus human-jury arbitration | No incumbent bundles these |
 | ✅ | **Non-inflationary tokenomics (BME)** | Burn-and-mint against real usage, a release that only declines, reputation-based Sybil resistance | Lottery or pure-inflation rewards |
 
 ### Honest disadvantages
 
 | | Disadvantage | What it means | Mitigation |
 | :-- | :-- | :-- | :-- |
-| ❌ | **No track record — testnet, pre-launch** | Filecoin stores exbibytes, Arweave has years of permaweb, Storj/io.net are live; **Web3OS is unproven at scale — the single biggest risk** | A public testnet now; only running at scale can remove this |
+| ❌ | **No track record — testnet, pre-launch** | Filecoin stores exbibytes, Arweave has years of permaweb, Storj is live; **Web3OS is unproven at scale — the single biggest risk** | A public testnet now; only running at scale can remove this |
 | ❌ | **Early centralization** | One team runs most seed nodes and holds the ADR-184 duty seats and a capped team vote | The team cap steps down at on-chain conditions; governance runs on-chain from genesis |
 | ⚠️ | **Not permanent like Arweave** | Cold, low-value, zero-download content can be garbage-collected by design | Prepaid Private storage keeps a file for the period paid, renewable; for pay-once-forever permanence, Arweave fits better |
 | ⚠️ | **Lighter storage proof than Filecoin** | PoFD is delivery-driven; only durability-floor columns carry sealing and PoSt (ADR-172, live on testnet, parameters under calibration), with no full SDR PoRep — weaker formal durability assurance. In simulated attacks on the sealed lanes, a miner that recomputes missing data on each challenge could still drop about 12 % of a lane at the pinned graph degree. This is a measured lower bound, not a proven limit, pending the ADR-119 review | Per-miner sealed floor columns, random on-chain audits and erasure-coded repair; the per-challenge work bound is calibrated from these measurements before mainnet, and a missed or false proof forfeits the pay |
 | ⚠️ | **Content is not zero-knowledge confidential** | The price of network-wide dedup | Self-encrypt for true secrecy (such a file stays Private) |
-| ❌ | **Broad scope = execution risk** | Storage ＋ search ＋ marketplace ＋ compute ＋ naming is far more than a focused competitor (Storj = storage, Render = rendering) | None: the combination is the core bet itself |
-| ❌ | **Compute layer is nascent** | Behind live io.net / Akash / Render | Can place deployments on Akash meanwhile |
+| ❌ | **Broad scope = execution risk** | Storage ＋ search ＋ marketplace ＋ naming is far more than a focused competitor (Storj = storage) | None: the combination is the core bet itself |
 | ⚠️ | **Bridge and regulatory exposure** | Wrapped-asset dependency (audited bridge standards only, never a self-built bridge); media/marketplace adjacency | Content-neutrality ＋ BSL ＋ takedown governance; mitigated, not eliminated |
 
-> **Bottom line:** Web3OS's bet is "**AI value-search ＋ a creator marketplace on top of decentralized storage**", which no incumbent offers as one unit — but it must still prove it runs at scale, which the incumbents have done and Web3OS has not. Judge it as an **early-stage, high-upside, high-risk** project, not a drop-in replacement for a live network.
+> **Bottom line:** Web3OS's bet is "**value search ＋ a creator marketplace on top of decentralized storage**", which no incumbent offers as one unit — but it must still prove it runs at scale, which the incumbents have done and Web3OS has not. Judge it as an **early-stage, high-upside, high-risk** project, not a drop-in replacement for a live network.
 
 ---
 
@@ -454,7 +433,7 @@ The Web3OS logo is free to use when referring to Web3OS, unaltered: [transparent
 This whitepaper and the website are published under the [Apache License 2.0](https://web3os.space/LICENSE). The protocol core is licensed under BSL 1.1: auditable, and each version converts to full open source no later than four years after its release.
 
 ### Bug reports and rewards
-Bugs are reported as a [GitHub issue](https://github.com/Web3OS-space/web3os/issues/new?template=bug_report.yml). The first reporter of a bug whose fix ships in a tagged release is entered in a public ledger with the issue, its severity, the fixing release and the reporter's GitHub username and numeric GitHub user id; the amount follows the severity (Critical 30,000, High 10,000, Medium 2,000, Low 300 WEB3OS; at most 1,000,000 in total for reports made before mainnet). After mainnet launch the whole ledger goes to one governance proposal and the community vote decides the payout in WEB3OS, which is held under the reward lock like every network reward (usable on the network, sendable only under the same rule that unlocks all rewards, with no date promised, ADR-246); the reporter puts the GitHub username in the Web3OS profile and posts the payout address in a comment on the issue from the GitHub account with the recorded user id, and the proposal names the commit of the ledger it pays. A comment edited by anyone but its author is not a claim; for a report sent by email, name your GitHub account in the email and claim on the issue the project opens after the fix. No payment to a party on a sanctions list; payment to US recipients waits for a legal opinion. Any tax on a reward is the recipient's own matter. Recording is a commitment, payment is not: the vote can change or refuse it. Project team members, project accounts and the project's AI agents are not eligible; testnet tokens have no value and convert to nothing.
+Bugs are reported as a [GitHub issue](https://github.com/Web3OS-space/web3os/issues/new?template=bug_report.yml). The first reporter of a bug whose fix ships in a tagged release is entered in a public ledger with the issue, its severity, the fixing release and the reporter's GitHub username and numeric GitHub user id; the amount follows the severity (Critical 30,000, High 10,000, Medium 2,000, Low 300 WEB3OS; at most 1,000,000 in total for reports made before mainnet). After mainnet launch the whole ledger goes to one governance proposal and the community vote decides the payout in WEB3OS, which is held under the reward lock like every network reward (usable on the network, sendable only under the same rule that unlocks all rewards, with no date promised, ADR-246); the reporter puts the GitHub username in the Web3OS profile and posts the payout address in a comment on the issue from the GitHub account with the recorded user id, and the proposal names the commit of the ledger it pays. A comment edited by anyone but its author is not a claim; for a report sent by email, name your GitHub account in the email and claim on the issue the project opens after the fix. No payment to a party on a sanctions list; payment to US recipients waits for a legal opinion. Any tax on a reward is the recipient's own matter. Recording is a commitment, payment is not: the vote can change or refuse it. Project team members and project accounts are not eligible; testnet tokens have no value and convert to nothing.
 
 Security problems are never posted publicly: email contact@web3os.space with SECURITY on the subject line, with the steps to reproduce and the impact; they enter the same ledger. Attacking the testnet rules from your own nodes and accounts is invited (section 8, "hit it hard") and enters the ledger like any bug; never test against a computer you do not own, including other people's testnet nodes, and never flood the network. Machine-readable contact: [security.txt](https://web3os.space/.well-known/security.txt).
 
@@ -464,7 +443,6 @@ Sign-up for every group is private: send a private message on Telegram to [@Web3
 | Group | What it is |
 | :-- | :-- |
 | Testnet miners | Linux or Windows node kept online for a few weeks; see §8 |
-| Application developers | Applications on the platform; see Role 7 |
 | Testnet attackers | Try to cheat the testnet from your own nodes and accounts (§8 "hit it hard"); every way found enters the bug ledger (§11) |
 | macOS and iPhone testers | The app is untested on Apple hardware; testers wanted |
 | Investors and partners | Follow X; no token sale, nothing here is an offer |
@@ -479,7 +457,6 @@ Web3OS Labs LLC provides web3os.space, the Web3OS app and this website. Postal a
 | Authorities and law enforcement (EU Digital Services Act Art. 11) | legal@web3os.space |
 | Users (EU Digital Services Act Art. 12) | contact@web3os.space |
 | Help with the app | support@web3os.space |
-| Application developers | contact@web3os.space |
 | Sign-up (miners, testers and attackers) | Private message on Telegram to [@Web3OS_AI_bot](https://t.me/Web3OS_AI_bot) (no Telegram account: contact@web3os.space) |
 | Questions and discussion | [Telegram group](https://t.me/Web3OS_Official) |
 | News | [X](https://x.com/Web3OS_space) |
@@ -492,4 +469,4 @@ Web3OS Labs LLC provides web3os.space, the Web3OS app and this website. Postal a
 
 ---
 
-*Minimal-disclosure public edition. The full design/implementation/UI whitepaper, backend & consensus implementation, ops tooling, deployment scripts, datasets and models remain private. Version tracked by public-repo git history.*
+*Minimal-disclosure public edition. The full design/implementation/UI whitepaper, backend & consensus implementation, ops tooling, deployment scripts and datasets remain private. Version tracked by public-repo git history.*
