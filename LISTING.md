@@ -1,6 +1,6 @@
 # web3os.space — Token Profile for Exchange Listing Review
 
-This is a one-page summary for exchange and listing reviewers. The binding text is the public whitepaper ([`whitepaper/Web3OS_Public_Whitepaper.md`](whitepaper/Web3OS_Public_Whitepaper.md)); if the two ever differ, the whitepaper wins.
+This is a one-page summary for exchange and listing reviewers. The binding text is the homepage, [web3os.space](https://web3os.space/); if the two ever differ, the homepage wins.
 
 **Stage: testnet. Mainnet has not launched, there is no token sale, and testnet tokens have no value.**
 
@@ -9,7 +9,7 @@ This is a one-page summary for exchange and listing reviewers. The binding text 
 | Item | Value |
 | :-- | :-- |
 | Name / ticker | web3os.space / web3os.space |
-| Chain | Web3OSChain (own Cosmos SDK chain); native coin |
+| Chain | Web3OSChain (own chain); native coin |
 | Decimals | 9 |
 | Ethereum representation | Wrapped web3os.space (ERC-20) through an audited bridge standard (Axelar Interchain Token Service); no self-built bridge |
 | Total supply | 1,000,000,000 (fixed cap) |
@@ -29,18 +29,18 @@ Inflation control: Burn-Mint Equilibrium (no verified demand, no minting above t
 
 ## Utility
 
-Payments for downloads, storage, compute and `.web3os` domains; staking with validators; mining rewards for storage providers; on-chain governance. Details: whitepaper sections 2–4.
+Payments for downloads, storage and `.web3os` domains; staking with validators; mining rewards for storage providers; on-chain governance. Details: [web3os.space](https://web3os.space/).
 
 ## Listing readiness
 
 | Item | Status |
 | :-- | :-- |
-| Public whitepaper, tokenomics, risk disclosure | Available (this repository) |
+| Public homepage with the coin facts and risk disclosure | Available ([web3os.space](https://web3os.space/)) |
 | Brand logo | Available ([`token/`](token/)) |
 | Mainnet launch, token contract addresses | Not yet; announced in this repository and official channels at launch |
-| Security audits (CertiK / Hacken planned) | Not yet; reports will be published here |
+| Security audits | Not yet; reports are published here when done |
 | Legal opinion and legal entity | In preparation |
 | Source code | Protocol core under BSL 1.1 (source auditable); each version converts to full open source no later than four years after release |
-| Official website and community channels | Website https://web3os.space; X (Twitter) [@Web3OS_space](https://x.com/Web3OS_space); Telegram [@Web3OS_space](https://t.me/Web3OS_space) |
+| Official website and community channels | To be announced |
 
-Risks: see the whitepaper's risk and compliance section. Nothing here is investment advice; digital assets are high-risk.
+Risks: see the homepage. Nothing here is investment advice; digital assets are high-risk.
