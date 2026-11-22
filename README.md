@@ -1,18 +1,17 @@
 # web3os.space
 
-**web3os.space is building a computer that belongs to everyone.** It starts with storage: your files are encrypted, split into pieces and kept on many ordinary computers around the world, so no single company owns them or can switch them off. Payments use one coin, **WEB3OS**, on the project's own chain, Web3OSChain.
+**web3os.space is a place to keep and share files the way BitTorrent does.** Files are encrypted, split into pieces and kept on many ordinary computers around the world, so no single company owns them or can switch them off; computers that deliver pieces quickly are paid in the project's coin, and the network checks each delivery (proof of fast delivery). Payments use one coin, **WEB3OS**, on the project's own chain, Web3OSChain.
 
 **Testnet stage: the coin has no value and is not for sale; parameters may change. Nothing here is investment advice; digital assets are high-risk.**
 
 ## Read
 
-- **Everyday edition** (the homepage, no technical terms): [web3os.space](https://web3os.space/)
-- **Professional edition, the Public Whitepaper** (for readers who know blockchains: the storage-first design, the coin and its release schedule, every role's exact rules and penalties, risks and compliance): [web3os.space/whitepaper/](https://web3os.space/whitepaper/), source [`whitepaper/Web3OS_Public_Whitepaper.md`](whitepaper/Web3OS_Public_Whitepaper.md)
+- **The homepage** (no technical terms): [web3os.space](https://web3os.space/)
 - [Token profile for exchange listing review](LISTING.md)
 
 ## Take part
 
-- Bugs: [open an issue](https://github.com/Web3OS-space/web3os/issues/new?template=bug_report.yml). The first reporter of a fixed bug is recorded in a public list by GitHub username; after mainnet launch the community votes on paying the list in WEB3OS, held under the same lock as every network reward, which unlocks under one rule with no promised date (a commitment to record and vote, not a guarantee). To be paid, post your mainnet address in a comment on your issue from the GitHub account recorded in the list. Security vulnerabilities are never posted in public: write to contact@web3os.space.
+- Bugs: [open an issue](https://github.com/Web3OS-space/web3os/issues/new?template=bug_report.yml). The first reporter of a fixed bug is recorded in a public list by GitHub username; after mainnet launch the community votes on paying the list in WEB3OS, held back like every network reward, which is released under one rule with no promised date (a commitment to record and vote, not a guarantee). To be paid, post your mainnet address in a comment on your issue from the GitHub account recorded in the list. Security vulnerabilities are never posted in public: write to contact@web3os.space.
 - Discussion: the Telegram group [t.me/Web3OS_Official](https://t.me/Web3OS_Official) (English). Sign-up for testers, attackers (try to cheat the test network from your own computer and accounts) and testnet miners: a private message to [@Web3OS_AI_bot](https://t.me/Web3OS_AI_bot).
 - Contact (authorities, users, abuse, copyright, privacy): [`contact/`](contact/)
 

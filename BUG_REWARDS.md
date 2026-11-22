@@ -1,6 +1,6 @@
 # Bug reward ledger
 
-First reporters of fixed bugs are recorded here by GitHub username and numeric GitHub user id. After mainnet launch the community votes on paying the whole list; paid coins are locked like every network reward and unlock under the same rule, which may take a long time and has no promised date. Recording is a commitment to record and to put the payment to a vote, not a guarantee. Rules: section 11 of the whitepaper, https://web3os.space/whitepaper/
+First reporters of fixed bugs are recorded here by GitHub username and numeric GitHub user id. After mainnet launch the community votes on paying the whole list; paid coins are held back like every network reward and released under the same rule, which may take a long time and has no promised date. Recording is a commitment to record and to put the payment to a vote, not a guarantee. Rules: the section "Found a bug? Report it and earn coins" on https://web3os.space/
 
 ## Severity levels
 
