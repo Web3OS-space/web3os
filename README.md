@@ -1,6 +1,6 @@
 # web3os.space
 
-**web3os.space is a place to keep and share files the way BitTorrent does.** Files are encrypted, split into pieces and kept on many ordinary computers around the world, so no single company owns them or can switch them off; computers that deliver pieces quickly are paid in the project's coin, and the network checks each delivery (proof of fast delivery). Payments use one coin, **WEB3OS**, on the project's own chain, Web3OSChain.
+**web3os.space is a place to keep and share files the way BitTorrent does.** Files are encrypted, split into pieces and kept on many ordinary computers around the world, so no single company owns them. Only content you have the right to share belongs here: uploading infringing or illegal content is forbidden (Terms 9.1), and a valid copyright notice removes it from every official access point (web3os.space/copyright); computers that deliver pieces quickly are paid in the project's coin, and the network checks each delivery (proof of fast delivery). Payments use one coin, **WEB3OS**, on the project's own chain, Web3OSChain.
 
 **Testnet stage: the coin has no value and is not for sale; parameters may change. Nothing here is investment advice; digital assets are high-risk.**
 
