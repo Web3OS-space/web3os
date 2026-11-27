@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>web3os.space — Web3 作業系統</title>
+<meta name="description" content="Web3OS，Web3 作業系統：基於區塊鏈的點對點加密檔案儲存，電腦因快速傳送片段而用該專案的代幣獲得報酬，在沒有單一公司擁有的網路上。">
+<meta property="og:title" content="web3os.space — Web3 作業系統">
+<meta property="og:description" content="基於區塊鏈的點對點加密檔案儲存；快速傳送片段的電腦獲得報酬。測試網路階段。">
+<meta property="og:image" content="https://web3os.space/token/web3os-logo-1024.png">
+<meta property="og:url" content="https://web3os.space/zh-tw/">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/token/web3os-logo.png">
+<style>
+:root{--navy:#0d1433;--sky:#4fc3f7;--blue:#2f74b5;--ink:#1c2333;--muted:#5b6578;--line:#e3e8f0;--bg:#f6f8fc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font:16.5px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:#fff}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+header.bar{position:sticky;top:0;z-index:10;background:var(--navy);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+header.bar .in{max-width:1180px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:24px}
+header.bar .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+header.bar .brand img{width:34px;height:34px}
+header.bar nav{margin-left:auto;display:flex;gap:22px;font-size:15px}
+header.bar nav a{color:#cfe9fb;white-space:nowrap}header.bar nav a:hover{color:#fff;text-decoration:none}
+.hero{background:radial-gradient(1200px 400px at 70% -10%,#1d3a7a 0,var(--navy) 60%);color:#fff;text-align:center;padding:64px 20px 56px}
+.hero img{width:132px;height:132px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.35))}
+.hero h1{font-size:44px;line-height:1.15;margin:18px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:26px;font-weight:600;color:var(--sky);margin:0 0 12px;letter-spacing:.2px}
+.hero p.sub{font-size:20px;color:#cfe9fb;max-width:760px;margin:0 auto 22px}
+.hero .badge{display:inline-block;border:1px solid rgba(79,195,247,.55);color:var(--sky);border-radius:999px;padding:4px 14px;font-size:13.5px;margin-bottom:26px}
+.hero .cta a{display:inline-block;margin:6px 6px 0;padding:11px 22px;border-radius:8px;font-weight:600;font-size:15.5px}
+.hero .cta a.p{background:var(--sky);color:var(--navy)}.hero .cta a.s{border:1px solid #7fa6d6;color:#fff}
+.hero .cta a:hover{text-decoration:none;filter:brightness(1.08)}
+.wrap{max-width:1180px;margin:0 auto;padding:36px 20px 64px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:48px}
+aside.toc{position:sticky;top:84px;align-self:start;max-height:calc(100vh - 100px);overflow:auto;font-size:14px;border-right:1px solid var(--line);padding-right:16px}
+aside.toc .t{font-weight:700;color:var(--navy);text-transform:uppercase;font-size:12px;letter-spacing:1px;margin-bottom:8px}
+aside.toc ul{list-style:none;margin:0;padding:0}aside.toc ul ul{padding-left:12px;margin:2px 0 6px}
+aside.toc li{margin:3px 0}aside.toc a{color:var(--muted)}aside.toc a:hover{color:var(--blue)}
+main{min-width:0}
+main h2{font-size:28px;color:var(--navy);margin:48px 0 14px;padding-top:6px;border-top:1px solid var(--line)}
+main h2:first-of-type{margin-top:8px;border-top:0}
+main h3{font-size:20px;color:var(--navy);margin:30px 0 10px}
+main blockquote{margin:18px 0;padding:14px 18px;background:var(--bg);border-left:4px solid var(--sky);border-radius:0 8px 8px 0;color:#2c3548}
+main blockquote p{margin:6px 0}
+main table{border-collapse:collapse;width:100%;margin:16px 0;font-size:15px;display:block;overflow-x:auto}
+main th,main td{border:1px solid var(--line);padding:8px 12px;vertical-align:top}
+main th{background:var(--bg);color:var(--navy);text-align:left}
+main tr:nth-child(even) td{background:#fbfcfe}
+main hr{display:none}
+main code{background:var(--bg);padding:1px 5px;border-radius:4px;font-size:.92em}
+main figure{margin:20px 0;padding:14px;border:1px solid var(--line);border-radius:10px}
+main figure img{width:100%;height:auto;display:block}
+main figure figcaption{font-size:13.5px;color:var(--muted);margin-top:8px;text-align:center}
+footer{background:var(--navy);color:#b8c6dd;font-size:14px}
+footer .in{max-width:1180px;margin:0 auto;padding:28px 20px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center}
+footer img{width:28px;height:28px}footer a{color:#cfe9fb}
+@media (max-width:900px){.wrap{grid-template-columns:1fr;gap:20px}aside.toc{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line);padding:0 0 14px}header.bar nav{gap:14px;font-size:14px}.hero h1{font-size:34px}.hero p.tag{font-size:26px;font-weight:600;color:var(--sky);margin:0 0 12px;letter-spacing:.2px}
+.hero p.sub{font-size:17px}.hero p.tag{font-size:21px}}
+@media (max-width:560px){header.bar nav a.opt{display:none}}
+</style>
+<link rel="alternate" hreflang="en" href="https://web3os.space/">
+<link rel="alternate" hreflang="zh-Hant" href="https://web3os.space/zh-tw/">
+<link rel="alternate" hreflang="x-default" href="https://web3os.space/">
+</head>
+<body>
+<header class="bar"><div class="in">
+<a class="brand" href="/"><img src="/token/web3os-logo.png" alt="Web3OS 標誌">web3os.space</a>
+<nav><a href="#what-it-can-do">能做什麼</a><a class="opt" href="#owners-of-linux-and-windows-computers">電腦所有者</a><a class="opt" href="#join-us">測試網路</a><a href="#contact-license-and-copyright">聯絡</a><a class="lang" href="/?lang=en" hreflang="en" onclick="try{localStorage.setItem('w3lang','en')}catch(e){}">English</a></nav>
+</div></header>
+<section class="hero" id="top">
+<img src="/token/web3os-logo.png" alt="Web3OS 標誌">
+<h1>web3os.space</h1>
+<p class="tag">Web3 作業系統</p>
+<p class="sub">基於區塊鏈的點對點加密檔案儲存：加密片段由許多電腦保管，快速傳送它們的電腦用該專案的代幣獲得報酬。</p>
+<div class="badge">測試階段 · 測試代幣無價值且不出售</div>
+<div class="cta"><a class="p" href="#what-it-can-do">能做什麼</a><a class="s" href="#join-us">加入測試網路</a><a class="s" href="#contact-license-and-copyright">聯絡</a></div>
+</section>
+<div class="wrap">
+<aside class="toc"><div class="t">web3os.space</div>
+<ul>
+<li><a href="#what-is-web3osspace" id="toc-what-is-web3osspace">什麼是
+web3os.space？</a></li>
+<li><a href="#what-it-can-do" id="toc-what-it-can-do">能做什麼</a></li>
+<li><a href="#users" id="toc-users">使用者</a></li>
+<li><a href="#creators" id="toc-creators">創作者</a></li>
+<li><a href="#owners-of-linux-and-windows-computers"
+id="toc-owners-of-linux-and-windows-computers">Linux 和 Windows
+電腦所有者</a></li>
+<li><a href="#voters" id="toc-voters">投票者</a></li>
+<li><a href="#if-something-goes-wrong"
+id="toc-if-something-goes-wrong">如果發生問題</a></li>
+<li><a href="#join-us" id="toc-join-us">加入我們</a></li>
+<li><a href="#found-a-bug-report-it-and-earn-coins"
+id="toc-found-a-bug-report-it-and-earn-coins">發現錯誤？報告並賺取代幣</a></li>
+<li><a href="#is-it-safe" id="toc-is-it-safe">安全嗎？</a></li>
+<li><a href="#contact-license-and-copyright"
+id="toc-contact-license-and-copyright">聯絡、授權和版權</a></li>
+</ul>
+</aside>
+<main>
+<!-- source-sha256: 9dcf7a67a2e438a3 -->
+
+<blockquote>
+<p><strong>小心詐騙：這些是我們唯一的官方帳號。</strong> Telegram：群組
+<strong>Web3OS.space</strong> 在 <a
+href="https://t.me/Web3OS_Official">t.me/Web3OS_Official</a>。X：<strong><a
+href="https://x.com/Web3OS_space">@Web3OS_space</a></strong>，僅限新聞。電郵：地址以
+<strong>@web3os.space</strong>
+結尾。我們不會主動聯繫您：除非您先寫給我們，否則我們不會傳送私訊、撥電話或寄郵件，而且我們只在
+Telegram 群組中回覆。所有問題和討論都在那個 Telegram
+群組中進行，沒有其他地方。web3os.space
+的任何人都不會要求您的復原詞、私鑰或密碼，不會要求您傳送代幣，也不會出售代幣。任何這樣做的人都是詐騙集團，無論使用什麼名稱或標誌：不要回應，並在群組中告訴我們。</p>
+</blockquote>
+<h2 id="what-is-web3osspace">什麼是 web3os.space？</h2>
+<p><strong>web3os.space 是基於區塊鏈的點對點 (P2P)
+加密檔案儲存，電腦會因為保管和傳送檔案而獲得報酬。</strong>
+檔案在您自己的裝置上加密，然後切成小片段，這些片段由世界各地的許多普通電腦保管。當您下載時，您不是從一家公司的伺服器獲得整個檔案：您的應用程式從多台電腦中收集片段，如果其中一台回應緩慢，它就會向下一台持有該片段的電腦索要。快速傳送片段的電腦會用該專案的自有代幣
+WEB3OS
+獲得報酬，網路會在付款前驗證每次傳送（這種驗證稱為<strong>快速送達證明</strong>，或
+PoFD：下載者的應用程式確認片段確實送達，然後才支付傳送者）。您透過
+web3os.space
+應用程式使用所有這些功能，您不需要知道任何關於電腦、代幣或「加密貨幣」的資訊。</p>
+<p><strong>為什麼需要付款。</strong>
+點對點共享而沒有獎勵有一個已知的問題：您讓電腦保持開啟並向陌生人傳送片段，但您什麼都得不到，因此大多數人一旦自己的下載完成且檔案逐漸消失，就會停止共享。web3os.space
+保留點對點共享的優點——許多電腦同時傳送許多片段，並使獎勵真實化：無論誰保管和傳送片段都會獲得報酬，網路而不是傳送者的言詞決定真正傳送了什麼。名稱的意思正是字面上的意思：<strong>web3os.space，您的檔案存放的地方。</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">普通雲端服務</th>
+<th style="text-align: left;">web3os.space</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">誰保管您的檔案</td>
+<td style="text-align: left;">一家公司</td>
+<td style="text-align: left;">許多國家的許多電腦</td>
+</tr>
+<tr>
+<td style="text-align: left;">誰可以讀取您的私人檔案</td>
+<td style="text-align: left;">公司可以</td>
+<td
+style="text-align: left;">沒有人：您的檔案在離開裝置前已在您的裝置上加密</td>
+</tr>
+<tr>
+<td style="text-align: left;">誰設定規則和價格</td>
+<td style="text-align: left;">公司，隨時可以</td>
+<td style="text-align: left;">使用者投票才能改變的公開規則</td>
+</tr>
+<tr>
+<td style="text-align: left;">如果公司關閉</td>
+<td style="text-align: left;">您的檔案和購買可能消失</td>
+<td style="text-align: left;">沒有公司會關閉；網路會繼續運作</td>
+</tr>
+<tr>
+<td style="text-align: left;">當您購買歌曲或影片時誰獲利</td>
+<td style="text-align: left;">大多數是平台</td>
+<td style="text-align: left;">大多數是製作者，自動獲得報酬</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-it-can-do">能做什麼</h2>
+<ul>
+<li><strong>點對點共享和下載您自己和合法共享的檔案。</strong>
+檔案被分割成由許多電腦保管的片段，您的應用程式從其中幾台收集片段。快速回應的電腦是傳送片段並獲得報酬的電腦；緩慢的電腦只是在該片段中被跳過，因此下載不會因為一個緩慢的傳送者而受阻。</li>
+<li><strong>保持您的檔案安全。</strong>
+您的檔案被切成小片段並在您自己的手機或電腦上加密，然後才離開。許多地方的許多電腦保管這些片段；網路持續檢查這些片段是否真的還在，並只向通過檢查的電腦付款。</li>
+<li><strong>免費搜尋和預覽。</strong>
+瀏覽、搜尋和觀看預覽不收費，直到每天的慷慨限額（例如每天 200
+次搜尋）。好內容按人們發現的有用程度排名，而不是按誰為廣告付費。</li>
+<li><strong>購買和銷售影片、音樂和書籍。</strong>
+創作者自動獲得每次銷售最大份額，如果買方取得病毒、損壞的檔案或不符合說明的內容，可以取回金錢。</li>
+<li><strong>內建付款和獲得報酬。</strong> web3os.space
+保有每筆付款的公開紀錄簿（稱為 Web3OSChain
+的區塊鏈），由許多電腦一起保管，因此沒有人可以秘密改變它，任何人都可以檢查。所有費用都用一種代幣
+<strong>WEB3OS</strong>
+支付：沒有第二種代幣只是為了支付費用而購買，小額付款被累加並一起結算，您在同意前看到每個價格。</li>
+</ul>
+<p><strong>代幣的用途。</strong> WEB3OS 是此共享網路的貨幣，在
+web3os.space 內，它支付一切：購買影片、歌曲或書籍；保管您自己的檔案；以
+.web3os
+結尾的名稱用於您的頁面，就像網址一樣；以及訂閱。那種用途是代幣得到價值的地方：任何想在這裡購買某些東西的人都需要代幣，而他們支付的大部分都流向了製作該作品的人和保管和傳送它的電腦所有者。因此，電腦所有者可以花費他們賺取的代幣購買創作者製作的東西，創作者可以花費他們賺取的代幣購買儲存空間，就像城鎮自己的貨幣支付城鎮內的一切一樣。</p>
+<p>在測試階段，代幣是無價值的免費測試代幣，我們絕不會傳訊息向您推銷代幣。當真正的網路開啟時，人們賺取的代幣可以在其中花費，但在有足夠大的市場之前不能發送給他人或出售；不承諾任何日期。價格可能下降，甚至跌至零；這裡的任何東西都不是利潤承諾或投資建議。</p>
+<h2 id="users">使用者</h2>
+<p>任何人都可以在這裡開始。在應用程式中免費建立帳號（無需身份證），然後免費搜尋、瀏覽和觀看預覽。把照片、影片和文件放在自己的私人空間，只需付一點儲存費用；不共享就保持私密。下載購買的內容時，片段來自保管它們的電腦，您支付製作者和傳送的電腦，而不是中介；購買的內容可以進入私人空間。退款申請需要小額保證金，誠實的申請會取回；「我看了預覽並改變主意」不是退款理由。</p>
+<h2 id="creators">創作者</h2>
+<p>發佈影片、音樂或寫作，從每次付費下載中獲得最大份額，自動獲得報酬。應用程式幫助製作預覽。在限額內發佈免費。要收全額收入，需要註冊為作品的所有者；之前大部分金錢被安全保管，複製作品的人無法收集。發佈無法撤銷，只發佈願意分享的內容。</p>
+<h2 id="owners-of-linux-and-windows-computers">Linux 和 Windows
+電腦所有者</h2>
+<p>某些共享社群會以網站積分獎勵上傳，但這些積分只適用於該網站，無法移動或用於其他任何事情，如果網站關閉，積分就會消失。在
+web3os.space 上，獎勵是真實的網路貨幣。</p>
+<p>有台常開啟的 Linux 或 Windows
+電腦，可以借出閒置的磁碟空間和網路連線保管他人檔案的片段，有人下載時傳送它們。片段抵達前已加密，無法看到內容。因保管每個片段和傳送每次下載而獲得
+WEB3OS
+代幣報酬，由網路驗證而不是電腦聲稱。這些代幣不是卡在某個網站上的積分：可以在
+web3os.space
+內的任何東西上花費（見上方「代幣的用途」）。今天在免費測試代幣的測試網路上運作；要加入，見下方「加入我們」。</p>
+<p><strong>電腦需要什麼：快速上傳，不只是磁碟空間。</strong>
+大部分報酬來自將片段傳送給下載者，傳送用的是連線的<em>上傳</em>速度，即傳送影片或備份的方向，不是網路計畫通常宣傳的下載速度。許多家庭計畫上傳速度遠低於下載，例如下載
+1,000 Mbps 卻只上傳 100 Mbps
+或更少。有人下載時，應用程式從快速回應的電腦取片段；電腦回應緩慢，應用程式就移到另一台保管相同片段的電腦，那台才獲得報酬。緩慢的磁碟也會減慢回應速度：保管主要副本的需要固態硬碟（SSD，大多新筆電的快速磁碟），普通硬碟仍可保管和傳送額外副本。加入前，在計畫使用的電腦上跑免費速度測試並查看上傳數字。日夜開啟、上傳快且穩定的電腦賺更多；上傳緩慢的仍可保管片段和通過檢查，但很少贏得傳送機會。</p>
+<h2 id="voters">投票者</h2>
+<p>將一些代幣作為投票保證金（約 100
+美元價值）的人可以投票表決規則、價格以及如何花費共享基金。沒有單一個人可以超過所有人，並且團隊自己的投票被限制。</p>
+<h2 id="if-something-goes-wrong">如果發生問題</h2>
+<p>任何人都可以將任何公開檔案帶到
+web3os.space，包括由其他人製作的電影、音樂和書籍：目的是將世界的檔案保存在一個沒有公司可以關閉的地方。將作品帶到這裡是推廣，上傳者會獲得推廣獎勵，為該作品該週創作者所得的
+1%（針對他們提供的磁碟空間和時間；全新帳戶在存在一段時間後會獲得更少）。創作者份額的其餘部分被保管
+26
+週以防真正的所有者。當真正的所有者在作品的頁面上展示證明時，幾個隨機選中的使用者一起查看，就像陪審團一樣。如果所有者是正確的，所有者決定：保持作品上線，創作者收入被保管至今並且所有後續收入都流向他們，或將其下線。沒有人的購買被撤銷：購買者支付的金錢與作品一起流向其真正的所有者。保持其上線不計入任何人。只有當所有者選擇將作品下線時，它才會計入上傳它的帳戶的紀錄，只有重複移除才會限制該帳戶；法律要求每個平台都有此規則。如果沒有所有者曾經出現，大部分保管的金錢會流向照顧網路上作品的公開基金。任何人都可以指出有害檔案，仔細查看案件的使用者會獲得小額獎勵；僅為造成麻煩而提出的報告會使其傳送者損失小額保證金。每個決定都遵循這些固定的公開規則。</p>
+<h2 id="join-us">加入我們</h2>
+<p>這是第一個公開版本：測試網路已上線並對所有人開放，最需要的是測試程式的人。web3os.space
+找測試員和攻擊者：試圖破壞它的人。在 <a
+href="https://t.me/Web3OS_Official">Telegram
+群組</a>中與我們和其他使用者交談。要註冊，在群組貼出您所在的群組和一點自己的資訊；我們會回覆。沒有
+Telegram 帳號，寫信至 <a
+href="mailto:contact@web3os.space">contact@web3os.space</a>。要看新聞，在
+<a href="https://x.com/Web3OS_space">X</a>
+上追蹤。發現錯誤？見下方「發現錯誤？報告並賺取代幣」。</p>
+<ul>
+<li><strong>Linux 和 Windows 電腦所有者（礦工）：</strong>
+在測試網路上保持一台電腦開啟幾週，報告問題，告訴我們什麼令人困惑。透過上面機器人註冊，它會傳送步驟。</li>
+<li><strong>攻擊者：</strong>
+在測試網路上，試著從自己的電腦和帳號欺騙它：不保管片段卻獲報酬、不付款下載、讀取不屬於您的檔案、欺騙投票或報告。測試網路代幣毫無價值，現在該全力攻擊。永遠別接觸他人的電腦或資料。</li>
+<li><strong>用 iPhone 的測試員：</strong> 沒有 iPhone，所以版本尚未在
+iPhone 上測試。可以不執行節點也能幫忙。</li>
+<li><strong>投資者和合作夥伴：</strong> 在 <a
+href="https://x.com/Web3OS_space">X</a> 上追蹤以首先聽聞，寫信至 <a
+href="mailto:contact@web3os.space">contact@web3os.space</a>。本網站不是出售代幣或股份的要約。</li>
+</ul>
+<h2
+id="found-a-bug-report-it-and-earn-coins">發現錯誤？報告並賺取代幣</h2>
+<ol type="1">
+<li>開啟 <a
+href="https://github.com/Web3OS-space/web3os/issues/new?template=bug_report.yml">GitHub
+問題</a>（需要免費的 GitHub
+帳號）。寫下發生什麼、之前做了什麼，以及在哪台電腦、手機或電視。截圖有幫助。</li>
+<li>安全問題（可能讓人竊取代幣或讀取他人檔案），永遠不公開：在主旨寫
+SECURITY 寄至 <a
+href="mailto:contact@web3os.space">contact@web3os.space</a>。</li>
+<li>首次報告的錯誤修復時，會在您的 GitHub
+使用者名稱旁公開清單寫下，並說明嚴重程度。更嚴重的錯誤獲得更多報酬。</li>
+<li>主網開啟後，社群投票用 WEB3OS
+代幣支付整個清單。像網路上的每項獎勵，代幣被保管：可以立即在網路上使用（費用、儲存、投票），但在滿足釋放所有網路獎勵的規則前不能發送到另一帳戶，可能需要很長時間。不承諾日期，可能不發生。</li>
+<li>要獲報酬，在 Web3OS 個人資料放置 GitHub 使用者名稱，並在自己問題從
+GitHub 帳號（其數字 ID
+記錄在清單）發佈主網錢包位址評論。位址隨後寫入清單，支付投票命名它支付的確切清單版本，投票前檢查您的行。由非作者編輯的評論不是申請。透過電郵報告，在電郵命名
+GitHub 帳號；修復後我們打開問題，可在那申請。</li>
+<li>無付款流向制裁清單上的一方，美國收件人的付款等待法律意見。獎勵上的稅款是自己的事。</li>
+</ol>
+<p>這是記錄和進行付款投票的承諾，不是付款保證：投票決定。專案團隊成員和專案帳戶不會因錯誤獲得報酬。測試網路代幣無價值且不被兌換為真實代幣。欺騙或破壞網路的方式也算作錯誤。只在您自己的電腦、手機和帳戶上尋找問題，永遠不要在他人的。</p>
+<h2 id="is-it-safe">安全嗎？</h2>
+<ul>
+<li><strong>私人檔案</strong>
+在裝置上加密才離開。沒人可以打開、讀取或看到檔案清單。一個小限制：已有完全相同檔案的人可以檢查副本是否存在網路上，但無法判斷是誰的副本，永遠不知道您有它或您是誰。</li>
+<li><strong>有害檔案：</strong>
+已知病毒、偽裝檔案和已知非法內容在有人發佈時自動停止。全新病毒仍可能溜過，這是買方能取回金錢的原因。</li>
+<li><strong>復原詞</strong>
+是建立帳號時應用程式顯示的字詞清單。是帳號的唯一主鑰：寫在紙上、保管安全，永遠不在網站輸入或交給任何人，即使聲稱來自
+web3os.space。</li>
+<li><strong>虛假帳號：</strong>
+騙子複製我們的名稱和標誌。唯一的官方帳號是 Telegram 群組
+Web3OS.space（<a
+href="https://t.me/Web3OS_Official">t.me/Web3OS_Official</a>）、X 上的
+<a href="https://x.com/Web3OS_space">@Web3OS_space</a> 和以
+@web3os.space
+結尾的信箱。我們不會先訊息您，不會要求復原詞、鑰匙、密碼或代幣。</li>
+<li><strong>仍在測試中。</strong> web3os.space
+處於測試階段：儲存、共享、搜尋以及購買和銷售檔案在免費代幣毫無價值的測試網路上運作，錯誤不造成成本。</li>
+</ul>
+<h2 id="contact-license-and-copyright">聯絡、授權和版權</h2>
+<p>Web3OS Labs LLC 提供 web3os.space 和 web3os.space
+應用程式。郵寄地址：Web3OS Labs LLC, 30 N Gould St Ste R, Sheridan, WY
+82801, United
+States。下面的每個地址都能聯繫到一個人；語言：英文、中文。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">目的</th>
+<th style="text-align: left;">位址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">當局和執法機構 (EU 數位服務法第 11
+條)</td>
+<td style="text-align: left;"><a
+href="mailto:legal@web3os.space">legal@web3os.space</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">使用者 (EU 數位服務法第 12 條)</td>
+<td style="text-align: left;"><a
+href="mailto:contact@web3os.space">contact@web3os.space</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">應用程式協助</td>
+<td style="text-align: left;"><a
+href="mailto:support@web3os.space">support@web3os.space</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">安全問題 (主旨行用 SECURITY)</td>
+<td style="text-align: left;"><a
+href="mailto:contact@web3os.space">contact@web3os.space</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">報告非法內容或濫用
+(包含分享連結或內容位址)</td>
+<td style="text-align: left;"><a
+href="mailto:abuse@web3os.space">abuse@web3os.space</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">版權通知和反通知</td>
+<td style="text-align: left;"><a
+href="mailto:dmca@web3os.space">dmca@web3os.space</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">隱私和個人資料要求</td>
+<td style="text-align: left;"><a
+href="mailto:privacy@web3os.space">privacy@web3os.space</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>官方帳戶 (反詐騙)。</strong> 唯一的官方帳戶是 Telegram 群組
+Web3OS.space（<a
+href="https://t.me/Web3OS_Official">t.me/Web3OS_Official</a>）、X 上的
+<a
+href="https://x.com/Web3OS_space">@Web3OS_space</a>（僅限新聞）、GitHub
+組織 <a href="https://github.com/Web3OS-space">Web3OS-space</a> 和以
+@web3os.space
+結尾的郵件位址。該專案永遠不會首先聯絡任何人；它僅在對方開始的交談中回覆。它不會要求復原詞、私鑰或密碼，不會要求任何人發送代幣，不會執行預售或代幣銷售；任何帳戶這樣做的都不是該專案。</p>
+<p><strong>授權。</strong> 此頁面發佈在 <a
+href="https://web3os.space/LICENSE">Apache License 2.0</a>
+下；協定核心在 BSL 1.1
+下授權：可審計，每個版本在發布後不遲於四年轉換為完全開源。</p>
+<p><strong>版權通知。</strong> Web3OS Labs LLC 根據 17 U.S.C. 512(c)
+指定了版權代理，在美國著作權局 DMCA 指定代理目錄中列為
+DMCA-1086677（版權代理，位址如上，<a
+href="mailto:dmca@web3os.space">dmca@web3os.space</a>）。通知要求、反通知和台灣著作權法第
+VI-1 章程序在 <a
+href="https://web3os.space/copyright/">版權通知頁面</a>上。重複侵權者可能會失去存取權；故意提供虛假通知會使傳送者根據
+17 U.S.C. 512(f) 承擔損害賠償責任。</p>
+</main>
+</div>
+<footer><div class="in">
+<img src="/token/web3os-logo.png" alt="">
+<span>© Web3OS Labs LLC · 30 N Gould St Ste R, Sheridan, WY 82801, United States</span>
+<a href="/LICENSE">授權 (Apache-2.0)</a><a href="#contact-license-and-copyright">聯絡</a><a href="/copyright/">版權通知</a><a href="/LISTING.md">代幣概覽</a>
+</div></footer>
+</body>
+</html>
