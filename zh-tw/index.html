@@ -83,9 +83,10 @@ footer img{width:28px;height:28px}footer a{color:#cfe9fb}
 <li><a href="#what-is-web3osspace" id="toc-what-is-web3osspace">什麼是
 web3os.space？</a></li>
 <li><a href="#what-it-can-do" id="toc-what-it-can-do">能做什麼</a></li>
-<li><a href="#how-is-it-different-from-filecoin-and-others"
-id="toc-how-is-it-different-from-filecoin-and-others">它與 Filecoin
-和其他項目有什麼不同？</a></li>
+<li><a
+href="#how-is-it-different-from-filecoin-chia-bittorrent-and-others"
+id="toc-how-is-it-different-from-filecoin-chia-bittorrent-and-others">它與
+Filecoin、Chia、BitTorrent 和其他項目有什麼不同？</a></li>
 <li><a href="#is-it-safe" id="toc-is-it-safe">安全嗎？</a></li>
 <li><a href="#owners-of-linux-and-windows-computers"
 id="toc-owners-of-linux-and-windows-computers">Linux 和 Windows
@@ -100,7 +101,7 @@ id="toc-contact-license-and-copyright">聯絡、授權和版權</a></li>
 </ul>
 </aside>
 <main>
-<!-- source-sha256: 781dfe5fe66fd709 -->
+<!-- source-sha256: f6444e9f10016cd7 -->
 
 <blockquote>
 <p><strong>小心詐騙：這些是我們唯一的官方帳號。</strong> Telegram：群組
@@ -215,13 +216,21 @@ alt="音樂人與影像創作者發布作品，買家付款，大部分款項直
 <h3 id="who-decides-the-rules-and-prices">誰決定規則和價格？</h3>
 <p>使用者決定。將一些代幣作為投票保證金（約 100
 美元價值）的人可以投票表決規則、價格以及如何花費共享基金。沒有單一個人可以超過所有人，並且團隊自己的投票被限制。</p>
-<h2 id="how-is-it-different-from-filecoin-and-others">它與 Filecoin
-和其他項目有什麼不同？</h2>
+<h2
+id="how-is-it-different-from-filecoin-chia-bittorrent-and-others">它與
+Filecoin、Chia、BitTorrent 和其他項目有什麼不同？</h2>
 <h3 id="how-does-it-compare-honestly">誠實地比較如何？</h3>
 <p>web3os.space 不是「另一個
 Filecoin」。大多數其他網路做一件事：保管檔案或移動檔案。web3os.space
-結合儲存、按有用程度排名的搜尋，以及創作者獲報酬的市集，這既是它突出之處，也是它最大的風險。它在重要方面比舊網路更弱：今天它是測試網路，它更小更新，它的代幣現在沒有價值。虛線
-(—) 表示我們不確定，不進行猜測。</p>
+結合儲存、按有用程度排名的搜尋，以及創作者獲報酬的市集，這既是它突出之處，也是它最大的風險。它在重要方面比舊網路更弱：今天它是測試網路，它更小更新，它的代幣現在沒有價值。</p>
+<p>對於借出電腦的人來說，有兩個差異最重要。在 Chia
+上，硬碟充滿了「plot（繪圖檔）」：只是謎題資料，不保管任何人的檔案，唯一用途是參加獎勵抽籤，所以更大的硬碟只是更多抽籤機會，不是更多有用的工作。在
+web3os.space
+上，硬碟保管真實的人的檔案，電腦所有者因在網路檢查工作後保管和傳送它們而獲得報酬，不是透過抽籤。BitTorrent
+免費共享檔案，並在頂層增加了單獨的代幣
+BTT，主要用於更快下載的小費；web3os.space 只有一種代幣
+WEB3OS，用來支付網路已檢查的儲存和傳送。虛線 (—)
+表示我們不確定，不進行猜測。</p>
 <table>
 <thead>
 <tr>
@@ -232,9 +241,24 @@ Filecoin」。大多數其他網路做一件事：保管檔案或移動檔案。
 <th style="text-align: left;">Arweave</th>
 <th style="text-align: left;">IPFS (純版本)</th>
 <th style="text-align: left;">普通雲端服務 (Google Drive, Dropbox)</th>
+<th style="text-align: left;">Chia</th>
+<th style="text-align: left;">BitTorrent (及其 BTT 代幣)</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: left;">借出的硬碟做什麼</td>
+<td
+style="text-align: left;">保管真實的人的檔案，網路檢查儲存和傳送後付款</td>
+<td style="text-align: left;">保管用戶端的檔案</td>
+<td style="text-align: left;">保管用戶端的檔案</td>
+<td style="text-align: left;">保管網路的永久檔案</td>
+<td style="text-align: left;">保管其所有者選擇的檔案</td>
+<td style="text-align: left;">公司自己的硬碟</td>
+<td
+style="text-align: left;">持有謎題資料以進行獎勵抽籤，更大的硬碟代表更多機會</td>
+<td style="text-align: left;">共享其所有者正在下載或上傳的檔案</td>
+</tr>
 <tr>
 <td style="text-align: left;">誰保管您的檔案</td>
 <td style="text-align: left;">世界各地許多普通電腦</td>
@@ -243,6 +267,9 @@ Filecoin」。大多數其他網路做一件事：保管檔案或移動檔案。
 <td style="text-align: left;">Arweave 網路的電腦</td>
 <td style="text-align: left;">任何選擇保管它們的人</td>
 <td style="text-align: left;">一家公司</td>
+<td style="text-align: left;">沒有人：Chia
+硬碟保管謎題資料，不保管檔案</td>
+<td style="text-align: left;">當時正在分享它們的任何人</td>
 </tr>
 <tr>
 <td style="text-align: left;">其他人可以讀取它們嗎</td>
@@ -253,6 +280,8 @@ style="text-align: left;">不行：在您的裝置上先加密（已有完全相
 <td style="text-align: left;">任何人：檔案是公開的</td>
 <td style="text-align: left;">任何人：檔案是公開的</td>
 <td style="text-align: left;">公司可以</td>
+<td style="text-align: left;">不是檔案服務</td>
+<td style="text-align: left;">分享中的任何人都可以下載它們</td>
 </tr>
 <tr>
 <td style="text-align: left;">您如何付款</td>
@@ -262,6 +291,10 @@ style="text-align: left;">不行：在您的裝置上先加密（已有完全相
 <td style="text-align: left;">一次性，提前支付，用它的代幣 AR</td>
 <td style="text-align: left;">無，但沒有人獲報酬保管您的檔案</td>
 <td style="text-align: left;">月度或年度方案</td>
+<td style="text-align: left;">不是檔案服務；其代幣 XCH
+給獎勵抽籤的贏家</td>
+<td style="text-align: left;">免費；單獨的 BTT
+代幣選擇性的，用於更快下載</td>
 </tr>
 <tr>
 <td style="text-align: left;">只為費用的單獨代幣</td>
@@ -271,6 +304,8 @@ style="text-align: left;">不行：在您的裝置上先加密（已有完全相
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">不是</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
 </tr>
 <tr>
 <td style="text-align: left;">如果公司關閉它可以消失嗎</td>
@@ -280,6 +315,8 @@ style="text-align: left;">不行：在您的裝置上先加密（已有完全相
 <td style="text-align: left;">沒有單一公司</td>
 <td style="text-align: left;">如果沒有人保管檔案會褪色</td>
 <td style="text-align: left;">是的，檔案可能消失</td>
+<td style="text-align: left;">不是檔案服務</td>
+<td style="text-align: left;">當沒有人共享它們時檔案褪色</td>
 </tr>
 <tr>
 <td style="text-align: left;">幫手因快速送達獲得報酬</td>
@@ -289,6 +326,8 @@ style="text-align: left;">不行：在您的裝置上先加密（已有完全相
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">不行</td>
 <td style="text-align: left;">不行</td>
+<td style="text-align: left;">不行</td>
+<td style="text-align: left;">只有選擇性的 BTT 小費</td>
 </tr>
 <tr>
 <td style="text-align: left;">可以在其中出售您自己的電影和音樂</td>
@@ -298,6 +337,8 @@ style="text-align: left;">不行：在您的裝置上先加密（已有完全相
 <td style="text-align: left;">不行</td>
 <td style="text-align: left;">不行</td>
 <td style="text-align: left;">—</td>
+<td style="text-align: left;">不行</td>
+<td style="text-align: left;">不行</td>
 </tr>
 <tr>
 <td style="text-align: left;">檔案保管多久</td>
@@ -308,6 +349,8 @@ style="text-align: left;">為您支付的期間預付，可更新；舊的、低
 <td style="text-align: left;">一次性支付，永久保管</td>
 <td style="text-align: left;">不承諾</td>
 <td style="text-align: left;">當您付款期間</td>
+<td style="text-align: left;">不是檔案服務</td>
+<td style="text-align: left;">當有人共享它們時</td>
 </tr>
 <tr>
 <td style="text-align: left;">按有用程度搜尋</td>
@@ -317,6 +360,8 @@ style="text-align: left;">為您支付的期間預付，可更新；舊的、低
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">不行</td>
 <td style="text-align: left;">只有您自己的檔案</td>
+<td style="text-align: left;">不行</td>
+<td style="text-align: left;">不行</td>
 </tr>
 <tr>
 <td style="text-align: left;">今天的階段</td>
@@ -326,6 +371,9 @@ style="text-align: left;">為您支付的期間預付，可更新；舊的、低
 <td style="text-align: left;">多年實時</td>
 <td style="text-align: left;">成熟</td>
 <td style="text-align: left;">成熟</td>
+<td style="text-align: left;">2021 年開始實時</td>
+<td style="text-align: left;">成熟：2001 年開始檔案共享，BTT 2019
+年開始</td>
 </tr>
 </tbody>
 </table>

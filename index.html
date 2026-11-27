@@ -85,9 +85,10 @@ footer img{width:28px;height:28px}footer a{color:#cfe9fb}
 web3os.space?</a></li>
 <li><a href="#what-it-can-do" id="toc-what-it-can-do">What it can
 do</a></li>
-<li><a href="#how-is-it-different-from-filecoin-and-others"
-id="toc-how-is-it-different-from-filecoin-and-others">How is it
-different from Filecoin and others?</a></li>
+<li><a
+href="#how-is-it-different-from-filecoin-chia-bittorrent-and-others"
+id="toc-how-is-it-different-from-filecoin-chia-bittorrent-and-others">How
+is it different from Filecoin, Chia, BitTorrent and others?</a></li>
 <li><a href="#is-it-safe" id="toc-is-it-safe">Is it safe?</a></li>
 <li><a href="#owners-of-linux-and-windows-computers"
 id="toc-owners-of-linux-and-windows-computers">Owners of Linux and
@@ -283,8 +284,9 @@ prices?</h3>
 deposit (about 100 US dollars' worth) can vote on the rules, the prices
 and how the shared fund is spent. No single person can outvote everyone,
 and the team's own votes are capped.</p>
-<h2 id="how-is-it-different-from-filecoin-and-others">How is it
-different from Filecoin and others?</h2>
+<h2
+id="how-is-it-different-from-filecoin-chia-bittorrent-and-others">How is
+it different from Filecoin, Chia, BitTorrent and others?</h2>
 <h3 id="how-does-it-compare-honestly">How does it compare,
 honestly?</h3>
 <p>web3os.space is not "another Filecoin". Most other networks do one
@@ -292,8 +294,17 @@ thing: keep files, or move files. web3os.space combines storage, search
 ranked by usefulness, and a marketplace where creators are paid, and
 that is both what sets it apart and its biggest risk. It is weaker than
 the older networks in important ways: it is a test network today, it is
-smaller and newer, and its tokens have no value now. A dash (—) means we
-are not sure and do not guess.</p>
+smaller and newer, and its tokens have no value now.</p>
+<p>Two differences matter most to people who lend their computer. On
+Chia, the disk is filled with "plots": puzzle data that keeps no one's
+files and whose only use is to take part in a reward draw, so a bigger
+disk buys more chances, not more useful work. On web3os.space, the disk
+keeps real people's files, and a computer owner is paid for keeping and
+delivering them after the network checks the work, never by a draw.
+BitTorrent shares files for free and added a separate token, BTT, on
+top, mainly to tip for faster downloads; web3os.space has one coin only,
+WEB3OS, and it pays for storage and delivery the network has checked. A
+dash (—) means we are not sure and do not guess.</p>
 <table>
 <thead>
 <tr>
@@ -305,9 +316,25 @@ are not sure and do not guess.</p>
 <th style="text-align: left;">IPFS (plain)</th>
 <th style="text-align: left;">Ordinary cloud drive (Google Drive,
 Dropbox)</th>
+<th style="text-align: left;">Chia</th>
+<th style="text-align: left;">BitTorrent (with its BTT token)</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: left;">What a lent disk does</td>
+<td style="text-align: left;">Keeps real people's files, paid after the
+network checks storage and delivery</td>
+<td style="text-align: left;">Keeps clients' files</td>
+<td style="text-align: left;">Keeps clients' files</td>
+<td style="text-align: left;">Keeps the network's permanent files</td>
+<td style="text-align: left;">Keeps the files its owner chose</td>
+<td style="text-align: left;">The company's own disks</td>
+<td style="text-align: left;">Holds puzzle data to enter a reward draw,
+a bigger disk means more chances</td>
+<td style="text-align: left;">Shares the files its owner is downloading
+or seeding</td>
+</tr>
 <tr>
 <td style="text-align: left;">Who keeps your files</td>
 <td style="text-align: left;">Many ordinary computers around the
@@ -319,6 +346,10 @@ company</td>
 <td style="text-align: left;">Computers of the Arweave network</td>
 <td style="text-align: left;">Whoever chooses to keep them</td>
 <td style="text-align: left;">One company</td>
+<td style="text-align: left;">Nobody: Chia disks hold puzzle data, not
+files</td>
+<td style="text-align: left;">Whoever is sharing them at that
+moment</td>
 </tr>
 <tr>
 <td style="text-align: left;">Can others read them</td>
@@ -332,6 +363,8 @@ default</td>
 <td style="text-align: left;">Anyone: files are public</td>
 <td style="text-align: left;">Anyone: files are public</td>
 <td style="text-align: left;">The company can</td>
+<td style="text-align: left;">Not a file service</td>
+<td style="text-align: left;">Anyone in the share can download them</td>
 </tr>
 <tr>
 <td style="text-align: left;">How you pay</td>
@@ -343,6 +376,10 @@ first</td>
 <td style="text-align: left;">Nothing, but nobody is paid to keep your
 files</td>
 <td style="text-align: left;">Monthly or yearly plan</td>
+<td style="text-align: left;">Not a file service; its coin XCH goes to
+reward-draw winners</td>
+<td style="text-align: left;">Free; the separate BTT token is optional,
+for faster downloads</td>
 </tr>
 <tr>
 <td style="text-align: left;">Separate coin just for fees</td>
@@ -352,6 +389,8 @@ files</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">No</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
 </tr>
 <tr>
 <td style="text-align: left;">Can it disappear if a company closes</td>
@@ -361,6 +400,8 @@ files</td>
 <td style="text-align: left;">No single company</td>
 <td style="text-align: left;">Files fade if nobody keeps them</td>
 <td style="text-align: left;">Yes, files may be gone</td>
+<td style="text-align: left;">Not a file service</td>
+<td style="text-align: left;">Files fade when nobody shares them</td>
 </tr>
 <tr>
 <td style="text-align: left;">Do helpers get paid for fast delivery</td>
@@ -371,6 +412,8 @@ delivery</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">No</td>
 <td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Only by optional BTT tips</td>
 </tr>
 <tr>
 <td style="text-align: left;">Can you sell your own films and music in
@@ -381,6 +424,8 @@ it</td>
 <td style="text-align: left;">No</td>
 <td style="text-align: left;">No</td>
 <td style="text-align: left;">—</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
 </tr>
 <tr>
 <td style="text-align: left;">How long files are kept</td>
@@ -391,6 +436,8 @@ renewable; old, low-value files nobody downloads may be removed</td>
 <td style="text-align: left;">Pay once, kept for good</td>
 <td style="text-align: left;">Not promised</td>
 <td style="text-align: left;">While you pay</td>
+<td style="text-align: left;">Not a file service</td>
+<td style="text-align: left;">While someone shares them</td>
 </tr>
 <tr>
 <td style="text-align: left;">Search by usefulness</td>
@@ -400,6 +447,8 @@ renewable; old, low-value files nobody downloads may be removed</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">No</td>
 <td style="text-align: left;">Only your own files</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
 </tr>
 <tr>
 <td style="text-align: left;">Stage today</td>
@@ -410,6 +459,9 @@ at large size</td>
 <td style="text-align: left;">Live for years</td>
 <td style="text-align: left;">Mature</td>
 <td style="text-align: left;">Mature</td>
+<td style="text-align: left;">Live since 2021</td>
+<td style="text-align: left;">Mature: file sharing since 2001, BTT since
+2019</td>
 </tr>
 </tbody>
 </table>
