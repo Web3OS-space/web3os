@@ -40,7 +40,7 @@ Payments for downloads, storage and `.web3os` domains; staking with validators; 
 | Mainnet launch, token contract addresses | Not yet; announced in this repository and official channels at launch |
 | Security audits | Not yet; reports are published here when done |
 | Legal opinion and legal entity | In preparation |
-| Source code | Protocol core under BSL 1.1 (source auditable); each version converts to full open source no later than four years after release |
+| Source code | Protocol core under BSL 1.1; source not public yet, the community decides by governance vote when it is published for audit; each version converts to full open source no later than four years after release, earlier if the team stops maintaining it |
 | Official website and community channels | To be announced |
 
 Risks: see the homepage. Nothing here is investment advice; digital assets are high-risk.
